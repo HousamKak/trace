@@ -3,23 +3,22 @@ import SignBtn from "../../components/SignBtn";
 import InputField from "../../components/InputField";
 import { StyleSheet, View, Image } from "react-native";
 
-
 const SignUp = () => {
-
     return (
         <View style={styles.signUpView}>
             <Image
                 style={styles.logoIcon}
                 resizeMode="cover"
-                source={require("../../assets/LogInPage/logo.png")} />
+                source={require("../../assets/LogInPage/logo.png")}
+            />
             <View style={styles.rectangleView}>
                 <InputField placeholder="Username"></InputField>
                 <InputField placeholder="Email"></InputField>
                 <InputField placeholder="Password"></InputField>
-                <SignBtn navigation="" text="SIGN UP" cwidth={styles.sign}></SignBtn>
+                <SignBtn navigation="" text="SIGN UP" cwidth={styles.sign} />
             </View>
         </View>
-    )
+    );
 };
 
 const styles = StyleSheet.create({
@@ -47,6 +46,5 @@ const styles = StyleSheet.create({
         overflow: "hidden",
     },
 });
-
 
 export default SignUp;

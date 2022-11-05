@@ -4,6 +4,7 @@ const Stack = createNativeStackNavigator();
 
 import LogInPage from "./views/Logging/LogInPage";
 import SignIn from "./views/Logging/SignIn";
+import SignUp from "./views/Logging/SignUp";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
