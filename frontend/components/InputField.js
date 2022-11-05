@@ -15,4 +15,5 @@ const InputField = (props) => {
     );
 };
 
+const styles = StyleSheet.create({});
 export default InputField;
