@@ -17,7 +17,8 @@ const BtnAndLogo = (props) => {
             <Text style={styles.LoginText}> {props.text}</Text>
         </TouchableOpacity>
     );
-}
+};
+
 const styles = StyleSheet.create({
     LogoIcon: {
         width: 31,
@@ -25,14 +26,13 @@ const styles = StyleSheet.create({
         flexShrink: 0,
         overflow: "hidden",
     },
-
     LoginText: {
         fontSize: 20,
         fontWeight: "600",
         color: "#fff",
         marginLeft: 20,
     },
-    
+
     btnAndLogoTouchableOpacity: {
         borderRadius: 12,
         width: 332,
