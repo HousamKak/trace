@@ -18,3 +18,6 @@ const BtnAndLogo = (props) => {
         </TouchableOpacity>
     );
 }
+
+
+export default BtnAndLogo;
