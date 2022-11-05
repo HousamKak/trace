@@ -25,6 +25,13 @@ const styles = StyleSheet.create({
         flexShrink: 0,
         overflow: "hidden",
     },
+
+    LoginText: {
+        fontSize: 20,
+        fontWeight: "600",
+        color: "#fff",
+        marginLeft: 20,
+    },
 });
 
 export default BtnAndLogo;
