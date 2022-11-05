@@ -25,5 +25,10 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
+    signText: {
+        fontSize: 20,
+        fontWeight: "600",
+        color: "#fff",
+    },
 });
 export default SignBtn;
