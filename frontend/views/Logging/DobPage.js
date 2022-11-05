@@ -18,9 +18,9 @@ const DobPage = () => {
             <View style={styles.rectangleView}>
                 <Text style={styles.birthText}>Please enter your date of birth.</Text>
                 <View style={styles.dateSelectionView}>
-                    <DateBtn></DateBtn>
-                    <DateBtn></DateBtn>
-                    <DateBtn></DateBtn>
+                    <DateBtn datetype="month" date={date} onPress={() => setShow(true)} />
+                    <DateBtn datetype="day" date={date} onPress={() => setShow(true)} />
+                    <DateBtn datetype="year" date={date} onPress={() => setShow(true)} />
                 </View>
                 <View style={styles.centeringbtn}>
                     <SignBtn></SignBtn>
