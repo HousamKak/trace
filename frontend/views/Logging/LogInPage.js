@@ -24,7 +24,9 @@ const LogInPage = () => {
           text="Log in using Google"
         />
       </View>
-      <View style={styles.signUpContView}></View>
+      <View style={styles.signUpContView}>
+        <Text style={styles.signUpText}>Don’t have an account?</Text>
+      </View>
     </View>
   );
 };
