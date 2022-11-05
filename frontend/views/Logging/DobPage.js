@@ -46,6 +46,13 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingVertical: 30,
     },
+    dateSelectionView: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        paddingHorizontal: 35,
+        marginBottom: 20,
+    },
 });
 
 export default DobPage;
