@@ -17,6 +17,11 @@ const LogInPage = () => {
           bstyle={styles.FbCont}
           text="Log in using Facebook"
         />
+        <BtnAndLogo
+          logo={require("../../assets/LogInPage/google_logo.png")}
+          bstyle={styles.GoogleCont}
+          text="Log in using Google"
+        />
       </View>
       <View style={styles.signUpContView}></View>
     </View>
