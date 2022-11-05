@@ -46,6 +46,12 @@ const styles = StyleSheet.create({
     paddingBottom: 17,
     paddingTop: 21,
   },
+  signUpText: {
+    fontSize: 18,
+    fontWeight: "400",
+    color: "#fff",
+    textAlign: "center",
+  },
   logInPageView: {
     backgroundColor: "#1e193b",
     flex: 1,
