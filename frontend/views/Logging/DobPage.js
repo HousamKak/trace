@@ -31,6 +31,17 @@ const DobPage = () => {
     )
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    rectangleView: {
+        marginTop: "12%",
+        alignSelf: "center",
+        borderRadius: 20,
+        backgroundColor: "#302b4f",
+        width: 358,
+        height: 259,
+        justifyContent: "space-between",
+        paddingVertical: 30,
+    },
+});
 
 export default DobPage;
