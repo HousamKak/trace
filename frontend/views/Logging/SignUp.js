@@ -8,7 +8,10 @@ const SignIn = () => {
 
     return (
         <View style={styles.signInView}>
-            <Image />
+            <Image
+                style={styles.logoIcon}
+                resizeMode="cover"
+                source={require("../../assets/LogInPage/logo.png")} />
             <View style={styles.rectangleView}>
                 <InputField placeholder="Username"></InputField>
                 <InputField placeholder="Email"></InputField>
