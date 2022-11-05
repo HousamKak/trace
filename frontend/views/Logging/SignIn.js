@@ -13,7 +13,7 @@ const SignIn = () => {
             <View style={styles.rectangleView}>
                 <InputField placeholder="Email"></InputField>
                 <InputField placeholder="Password"></InputField>
-                <SignBtn></SignBtn>
+                <SignBtn navigation="" text="LOG IN" cwidth={styles.sign} ></SignBtn>
             </View>
         </View>
     );
