@@ -32,6 +32,18 @@ const styles = StyleSheet.create({
         color: "#fff",
         marginLeft: 20,
     },
+    
+    btnAndLogoTouchableOpacity: {
+        borderRadius: 12,
+        width: 332,
+        height: 55,
+        flexDirection: "row",
+        paddingLeft: 19,
+        paddingTop: 4,
+        paddingRight: 49,
+        paddingBottom: 4,
+        alignItems: "center",
+    },
 });
 
 export default BtnAndLogo;
