@@ -13,3 +13,5 @@ const LogInPage = () => {
     </View>
   );
 };
+
+export default LogInPage;
