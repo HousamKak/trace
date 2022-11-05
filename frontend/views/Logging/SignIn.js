@@ -10,9 +10,9 @@ const SignIn = () => {
                 style={styles.logoIcon}
                 resizeMode="cover"
                 source={require("../../assets/LogInPage/logo.png")} />
-            <View>
-                <InputField></InputField>
-                <InputField></InputField>
+            <View style={styles.rectangleView}>
+                <InputField placeholder="Email"></InputField>
+                <InputField placeholder="Password"></InputField>
                 <SignBtn></SignBtn>
             </View>
         </View>
