@@ -19,5 +19,11 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "column",
     },
+    text: {
+        fontSize: 16,
+        color: "#fff",
+        textAlign: "left",
+        marginBottom: 6,
+    },
 });
 export default InputField;
