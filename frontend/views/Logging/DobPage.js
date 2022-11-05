@@ -23,7 +23,11 @@ const DobPage = () => {
                     <DateBtn datetype="year" date={date} onPress={() => setShow(true)} />
                 </View>
                 <View style={styles.centeringbtn}>
-                    <SignBtn></SignBtn>
+                    <SignBtn
+                        cwidth={styles.submitBtn}
+                        navigation="SignUp"
+                        text="SUBMIT"
+                    ></SignBtn>
                 </View>
             </View>
         </View>
