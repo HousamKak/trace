@@ -16,6 +16,13 @@ const InputField = (props) => {
 };
 
 const styles = StyleSheet.create({
+    field: {
+        height: 55,
+        width: 331,
+        borderRadius: 12,
+        backgroundColor: "#fff",
+        paddingHorizontal: 8,
+    },
     container: {
         flexDirection: "column",
     },
