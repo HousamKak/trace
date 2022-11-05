@@ -8,24 +8,24 @@ const DobPage = () => {
 
     const [date, setDate] = React.useState(new Date());
     const [show, setShow] = React.useState(false);
+    return (
+        <View style={styles.dobPageView}>
 
-    <View style={styles.dobPageView}>
-
-        <Image />
-        <View style={styles.rectangleView}>
-            <Text></Text>
-            <View style={styles.dateSelectionView}>
-                <DateBtn></DateBtn>
-                <DateBtn></DateBtn>
-                <DateBtn></DateBtn>
-            </View>
-            <View style={styles.centeringbtn}>
-                <SignBtn></SignBtn>
+            <Image />
+            <View style={styles.rectangleView}>
+                <Text></Text>
+                <View style={styles.dateSelectionView}>
+                    <DateBtn></DateBtn>
+                    <DateBtn></DateBtn>
+                    <DateBtn></DateBtn>
+                </View>
+                <View style={styles.centeringbtn}>
+                    <SignBtn></SignBtn>
+                </View>
             </View>
         </View>
-    </View>
 
-
+    )
 };
 
 export default DobPage;
