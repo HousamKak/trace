@@ -4,10 +4,10 @@ import InputField from "../../components/InputField";
 import { StyleSheet, View, Image } from "react-native";
 
 
-const SignIn = () => {
+const SignUp = () => {
 
     return (
-        <View style={styles.signInView}>
+        <View style={styles.signUpView}>
             <Image
                 style={styles.logoIcon}
                 resizeMode="cover"
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: "16.3%",
     },
-    signInView: {
+    signUpView: {
         backgroundColor: "#1e193b",
         flex: 1,
         width: "100%",
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default SignIn;
+export default SignUp;
