@@ -14,4 +14,6 @@ const SignBtn = (props) => {
         </TouchableOpacity>
     );
 };
+
+const styles = StyleSheet.create({});
 export default SignBtn;
