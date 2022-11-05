@@ -62,6 +62,10 @@ const styles = StyleSheet.create({
     centeringbtn: {
         alignSelf: "center",
     },
+    logoIcon: {
+        alignSelf: "center",
+        marginTop: "16.3%",
+    },
 });
 
 export default DobPage;
