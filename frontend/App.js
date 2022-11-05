@@ -1,7 +1,9 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 const Stack = createNativeStackNavigator();
+
 import LogInPage from "./views/Logging/LogInPage";
+import SignIn from "./views/Logging/SignIn";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
@@ -17,6 +19,11 @@ const App = () => {
             <Stack.Screen
               name="LogInPage"
               component={LogInPage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="SignIn"
+              component={SignIn}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
