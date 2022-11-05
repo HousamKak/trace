@@ -18,6 +18,13 @@ const BtnAndLogo = (props) => {
         </TouchableOpacity>
     );
 }
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    LogoIcon: {
+        width: 31,
+        height: 31,
+        flexShrink: 0,
+        overflow: "hidden",
+    },
+});
 
 export default BtnAndLogo;
