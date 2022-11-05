@@ -39,6 +39,13 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: "16.3%",
     },
+    signInView: {
+        backgroundColor: "#1e193b",
+        flex: 1,
+        width: "100%",
+        height: 800,
+        overflow: "hidden",
+    },
 });
 
 
