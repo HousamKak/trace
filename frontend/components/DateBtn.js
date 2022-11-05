@@ -42,5 +42,13 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: "600",
     },
+    dateBtnTouchableOpacity: {
+        backgroundColor: "#fff",
+        width: 90,
+        height: 49,
+        borderRadius: 12,
+        alignItems: "center",
+        justifyContent: "center",
+    },
 })
 export default DateBtn;
