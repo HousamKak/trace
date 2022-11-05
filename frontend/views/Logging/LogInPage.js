@@ -12,6 +12,7 @@ const LogInPage = () => {
         source={require("../../assets/LogInPage/logo.png")}
       ></Image>
       <View style={styles.signInContView}>
+        <SignBtn navigation="SignIn" text="SIGN IN" cwidth={styles.sign} />
         <BtnAndLogo
           logo={require("../../assets/LogInPage/fb_logo.png")}
           bstyle={styles.FbCont}
