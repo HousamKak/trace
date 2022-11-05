@@ -24,6 +24,17 @@ const SignIn = () => {
 
 const styles = StyleSheet.create({
     sign: { width: 331 },
+    rectangleView: {
+        marginTop: "12%",
+        borderRadius: 20,
+        backgroundColor: "#302b4f",
+        width: 358,
+        height: 428,
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingVertical: 28,
+        alignSelf: "center",
+    },
 });
 
 
