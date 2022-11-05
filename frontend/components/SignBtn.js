@@ -15,5 +15,15 @@ const SignBtn = (props) => {
     );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    signBtnTouchableOpacity: {
+        borderRadius: 12,
+        backgroundColor: "#8a67f4",
+        height: 55,
+        paddingHorizontal: 49,
+        paddingVertical: 4,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+});
 export default SignBtn;
