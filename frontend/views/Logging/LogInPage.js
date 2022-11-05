@@ -32,6 +32,20 @@ const LogInPage = () => {
   );
 };
 const styles = StyleSheet.create({
+  signUpContView: {
+    borderRadius: 20,
+    backgroundColor: "#302b4f",
+    width: 358,
+    height: 132,
+    marginTop: "5%",
+    alignSelf: "center",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingBottom: 17,
+    paddingTop: 21,
+  },
   logInPageView: {
     backgroundColor: "#1e193b",
     flex: 1,
