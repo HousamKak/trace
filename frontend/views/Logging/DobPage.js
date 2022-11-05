@@ -69,6 +69,12 @@ const styles = StyleSheet.create({
     submitBtn: {
         width: 297,
     },
+    dobPageView: {
+        backgroundColor: "#1e193b",
+        flex: 1,
+        width: "100%",
+        height: 800,
+    },
 });
 
 export default DobPage;
