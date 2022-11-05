@@ -15,5 +15,9 @@ const InputField = (props) => {
     );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: "column",
+    },
+});
 export default InputField;
