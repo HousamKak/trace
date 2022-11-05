@@ -37,4 +37,5 @@ const DateBtn = (props) => {
     );
 };
 
+const styles = StyleSheet.create({})
 export default DateBtn;
