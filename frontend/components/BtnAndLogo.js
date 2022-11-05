@@ -14,6 +14,7 @@ const BtnAndLogo = (props) => {
                 resizeMode="cover"
                 source={props.logo}
             />
+            <Text style={styles.LoginText}> {props.text}</Text>
         </TouchableOpacity>
     );
 }
