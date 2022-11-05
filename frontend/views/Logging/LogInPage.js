@@ -49,6 +49,9 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
     paddingTop: 30,
   },
-
+  logoIcon: {
+    alignSelf: "center",
+    marginTop: "16.3%",
+  },
 });
 export default LogInPage;
