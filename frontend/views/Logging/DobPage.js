@@ -10,7 +10,6 @@ const DobPage = () => {
     const [show, setShow] = React.useState(false);
     return (
         <View style={styles.dobPageView}>
-
             <Image
                 style={styles.logoIcon}
                 resizeMode="cover"
@@ -31,5 +30,7 @@ const DobPage = () => {
 
     )
 };
+
+const styles = StyleSheet.create({});
 
 export default DobPage;
