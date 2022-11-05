@@ -6,7 +6,7 @@ import { StyleSheet, View, Text, Image, TextInput } from "react-native";
 const SignIn = () => {
     return (
         <View style={styles.signInView}>
-            <image
+            <Image
                 style={styles.logoIcon}
                 resizeMode="cover"
                 source={require("../../assets/LogInPage/logo.png")} />
