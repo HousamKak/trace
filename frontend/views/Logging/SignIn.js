@@ -32,5 +32,9 @@ const styles = StyleSheet.create({
         paddingVertical: 28,
         alignSelf: "center",
     },
+    logoIcon: {
+        alignSelf: "center",
+        marginTop: "16.3%",
+    },
 })
 export default SignIn;
