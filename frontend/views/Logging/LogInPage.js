@@ -26,6 +26,7 @@ const LogInPage = () => {
       </View>
       <View style={styles.signUpContView}>
         <Text style={styles.signUpText}>Don’t have an account?</Text>
+        <SignBtn navigation="DobPage" text="SIGN UP" cwidth={styles.sign} />
       </View>
     </View>
   );
