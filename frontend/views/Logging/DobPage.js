@@ -5,7 +5,6 @@ import DateBtn from "../../components/DateBtn";
 import SignBtn from "../../components/SignBtn";
 
 const DobPage = () => {
-
     const [date, setDate] = React.useState(new Date());
     const [show, setShow] = React.useState(false);
     return (
@@ -17,6 +16,7 @@ const DobPage = () => {
             />
             <View style={styles.rectangleView}>
                 <Text style={styles.birthText}>Please enter your date of birth.</Text>
+
                 <View style={styles.dateSelectionView}>
                     <DateBtn datetype="month" date={date} onPress={() => setShow(true)} />
                     <DateBtn datetype="day" date={date} onPress={() => setShow(true)} />
@@ -26,7 +26,6 @@ const DobPage = () => {
                             mode={"date"}
                             value={date}
                             onChange={(e) => {
-                                console.log(e);
                                 if (e.type == "set") {
                                     setDate(new Date(e.nativeEvent.timestamp));
                                 }
@@ -37,6 +36,7 @@ const DobPage = () => {
                         ""
                     )}
                 </View>
+
                 <View style={styles.centeringbtn}>
                     <SignBtn
                         cwidth={styles.submitBtn}
@@ -46,8 +46,7 @@ const DobPage = () => {
                 </View>
             </View>
         </View>
-
-    )
+    );
 };
 
 const styles = StyleSheet.create({
@@ -74,6 +73,7 @@ const styles = StyleSheet.create({
         color: "rgba(255, 255, 255, 0.8)",
         textAlign: "center",
     },
+
     centeringbtn: {
         alignSelf: "center",
     },
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     submitBtn: {
         width: 297,
     },
+
     dobPageView: {
         backgroundColor: "#1e193b",
         flex: 1,
