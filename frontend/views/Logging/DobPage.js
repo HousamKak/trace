@@ -66,6 +66,9 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: "16.3%",
     },
+    submitBtn: {
+        width: 297,
+    },
 });
 
 export default DobPage;
