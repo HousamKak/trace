@@ -10,10 +10,10 @@ const SignIn = () => {
         <View style={styles.signInView}>
             <Image />
             <View style={styles.rectangleView}>
-                <InputField></InputField>
-                <InputField></InputField>
-                <InputField></InputField>
-                <SignBtn></SignBtn>
+                <InputField placeholder="Username"></InputField>
+                <InputField placeholder="Email"></InputField>
+                <InputField placeholder="Password"></InputField>
+                <SignBtn ></SignBtn>
             </View>
         </View>
     )
