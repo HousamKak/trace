@@ -25,6 +25,16 @@ const DateBtn = (props) => {
             return props.date.getFullYear();
         }
     };
+
+    return (
+        <TouchableOpacity
+            style={styles.dateBtnTouchableOpacity}
+            activeOpacity={0.2}
+            onPress={() => props.onPress()}
+        >
+            <Text style={styles.dateText}> {datetype(props)}</Text>
+        </TouchableOpacity>
+    );
 };
 
 export default DateBtn;
