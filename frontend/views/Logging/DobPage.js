@@ -16,7 +16,7 @@ const DobPage = () => {
                 source={require("../../assets/LogInPage/logo.png")}
             />
             <View style={styles.rectangleView}>
-                <Text></Text>
+                <Text style={styles.birthText}>Please enter your date of birth.</Text>
                 <View style={styles.dateSelectionView}>
                     <DateBtn></DateBtn>
                     <DateBtn></DateBtn>
