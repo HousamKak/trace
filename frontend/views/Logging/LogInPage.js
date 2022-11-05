@@ -10,7 +10,7 @@ const LogInPage = () => {
         style={styles.logoIcon}
         resizeMode="cover"
         source={require("../../assets/LogInPage/logo.png")}
-      ></Image>
+      />
       <View style={styles.signInContView}>
         <SignBtn navigation="SignIn" text="SIGN IN" cwidth={styles.sign} />
         <BtnAndLogo
@@ -24,6 +24,7 @@ const LogInPage = () => {
           text="Log in using Google"
         />
       </View>
+
       <View style={styles.signUpContView}>
         <Text style={styles.signUpText}>Don’t have an account?</Text>
         <SignBtn navigation="DobPage" text="SIGN UP" cwidth={styles.sign} />
@@ -31,6 +32,7 @@ const LogInPage = () => {
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   GoogleCont: { backgroundColor: "#e34337" },
   FbCont: { backgroundColor: "#3575f0" },
@@ -49,19 +51,6 @@ const styles = StyleSheet.create({
     paddingBottom: 17,
     paddingTop: 21,
   },
-  signUpText: {
-    fontSize: 18,
-    fontWeight: "400",
-    color: "#fff",
-    textAlign: "center",
-  },
-  logInPageView: {
-    backgroundColor: "#1e193b",
-    flex: 1,
-    width: "100%",
-    height: 800,
-    overflow: "hidden",
-  },
   signInContView: {
     marginTop: "12%",
     borderRadius: 20,
@@ -76,9 +65,26 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
     paddingTop: 30,
   },
+
+  signUpText: {
+    fontSize: 18,
+    fontWeight: "400",
+    color: "#fff",
+    textAlign: "center",
+  },
+
   logoIcon: {
     alignSelf: "center",
     marginTop: "16.3%",
   },
+
+  logInPageView: {
+    backgroundColor: "#1e193b",
+    flex: 1,
+    width: "100%",
+    height: 800,
+    overflow: "hidden",
+  },
 });
+
 export default LogInPage;
