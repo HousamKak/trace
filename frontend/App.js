@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 const Stack = createNativeStackNavigator();
 
 import LogInPage from "./views/Logging/LogInPage";
+import DobPage from "./views/Logging/DobPage";
 import SignIn from "./views/Logging/SignIn";
 import SignUp from "./views/Logging/SignUp";
 
@@ -21,6 +22,11 @@ const App = () => {
             <Stack.Screen
               name="LogInPage"
               component={LogInPage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="DobPage"
+              component={DobPage}
               options={{ headerShown: false }}
             />
             <Stack.Screen
