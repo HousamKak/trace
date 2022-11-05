@@ -9,5 +9,5 @@ import { View } from "react-native";
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
   const SplashScreen = () => <View />;
-  
+  return <></>;
 };
