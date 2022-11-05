@@ -13,7 +13,7 @@ const SignIn = () => {
                 <InputField placeholder="Username"></InputField>
                 <InputField placeholder="Email"></InputField>
                 <InputField placeholder="Password"></InputField>
-                <SignBtn ></SignBtn>
+                <SignBtn navigation="" text="SIGN UP" cwidth={styles.sign}></SignBtn>
             </View>
         </View>
     )
