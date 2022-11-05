@@ -22,7 +22,9 @@ const SignIn = () => {
     )
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    sign: { width: 331 },
+});
 
 
 export default SignIn;
