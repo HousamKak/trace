@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 // import SignBtn from "../../components/SignBtn";
-// import BtnAndLogo from "../../components/BtnAndLogo";
+import BtnAndLogo from "../../components/BtnAndLogo";
 
 const LogInPage = () => {
   return (
@@ -11,7 +11,13 @@ const LogInPage = () => {
         resizeMode="cover"
         source={require("../../assets/LogInPage/logo.png")}
       ></Image>
-      <View style={styles.signInContView}></View>
+      <View style={styles.signInContView}>
+        <BtnAndLogo
+          logo={require("../../assets/LogInPage/fb_logo.png")}
+          bstyle={styles.FbCont}
+          text="Log in using Facebook"
+        />
+      </View>
       <View style={styles.signUpContView}></View>
     </View>
   );
