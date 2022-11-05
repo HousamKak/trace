@@ -9,11 +9,13 @@ const SignIn = () => {
             <Image
                 style={styles.logoIcon}
                 resizeMode="cover"
-                source={require("../../assets/LogInPage/logo.png")} />
+                source={require("../../assets/LogInPage/logo.png")}
+            />
+
             <View style={styles.rectangleView}>
                 <InputField placeholder="Email"></InputField>
                 <InputField placeholder="Password"></InputField>
-                <SignBtn navigation="" text="LOG IN" cwidth={styles.sign} ></SignBtn>
+                <SignBtn navigation="" text="LOG IN" cwidth={styles.sign} />
             </View>
         </View>
     );
@@ -32,6 +34,7 @@ const styles = StyleSheet.create({
         paddingVertical: 28,
         alignSelf: "center",
     },
+
     logoIcon: {
         alignSelf: "center",
         marginTop: "16.3%",
@@ -43,5 +46,6 @@ const styles = StyleSheet.create({
         height: 800,
         overflow: "hidden",
     },
-})
+});
+
 export default SignIn;
