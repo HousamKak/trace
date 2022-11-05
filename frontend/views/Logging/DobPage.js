@@ -11,7 +11,11 @@ const DobPage = () => {
     return (
         <View style={styles.dobPageView}>
 
-            <Image />
+            <Image
+                style={styles.logoIcon}
+                resizeMode="cover"
+                source={require("../../assets/LogInPage/logo.png")}
+            />
             <View style={styles.rectangleView}>
                 <Text></Text>
                 <View style={styles.dateSelectionView}>
