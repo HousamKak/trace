@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-// import SignBtn from "../../components/SignBtn";
+import SignBtn from "../../components/SignBtn";
 import BtnAndLogo from "../../components/BtnAndLogo";
 
 const LogInPage = () => {
