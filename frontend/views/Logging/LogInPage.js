@@ -35,5 +35,20 @@ const styles = StyleSheet.create({
     height: 800,
     overflow: "hidden",
   },
+  signInContView: {
+    marginTop: "12%",
+    borderRadius: 20,
+    backgroundColor: "#302b4f",
+    width: 358,
+    height: 253,
+    alignSelf: "center",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingBottom: 30,
+    paddingTop: 30,
+  },
+
 });
 export default LogInPage;
