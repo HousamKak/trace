@@ -4,3 +4,5 @@ import SignBtn from "../../components/SignBtn";
 import { StyleSheet, View, Text, Image, TextInput } from "react-native";
 
 const SignIn = () => { return (""); };
+
+export default SignIn;
