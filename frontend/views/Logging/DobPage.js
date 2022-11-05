@@ -21,6 +21,21 @@ const DobPage = () => {
                     <DateBtn datetype="month" date={date} onPress={() => setShow(true)} />
                     <DateBtn datetype="day" date={date} onPress={() => setShow(true)} />
                     <DateBtn datetype="year" date={date} onPress={() => setShow(true)} />
+                    {show == true ? (
+                        <DateTimePicker
+                            mode={"date"}
+                            value={date}
+                            onChange={(e) => {
+                                console.log(e);
+                                if (e.type == "set") {
+                                    setDate(new Date(e.nativeEvent.timestamp));
+                                }
+                                setShow(false);
+                            }}
+                        ></DateTimePicker>
+                    ) : (
+                        ""
+                    )}
                 </View>
                 <View style={styles.centeringbtn}>
                     <SignBtn
