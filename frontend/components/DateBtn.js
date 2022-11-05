@@ -37,5 +37,10 @@ const DateBtn = (props) => {
     );
 };
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    dateText: {
+        fontSize: 15,
+        fontWeight: "600",
+    },
+})
 export default DateBtn;
