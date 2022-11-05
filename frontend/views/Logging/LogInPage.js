@@ -34,6 +34,7 @@ const LogInPage = () => {
 const styles = StyleSheet.create({
   GoogleCont: { backgroundColor: "#e34337" },
   FbCont: { backgroundColor: "#3575f0" },
+  sign: { width: 331 },
   signUpContView: {
     borderRadius: 20,
     backgroundColor: "#302b4f",
