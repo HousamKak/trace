@@ -25,6 +25,10 @@ const SignUp = () => {
         if (!isValidEmail.status) {
             setErrorEmail(isValidEmail.message);
         } else { setErrorEmail("") }
+
+        if (!isValidPassword.status) {
+            setErrorPassword(isValidPassword.message);
+        }
     }
 
     return (
