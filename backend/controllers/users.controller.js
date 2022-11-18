@@ -17,6 +17,9 @@ const updateUser = async (req, res) => {
         if (name) {
             db.query('UPDATE users SET username = ? WHERE user_id = ?', [name, user_id])
         }
+        if (email) {
+            db.query('UPDATE users SET email = ? WHERE user_id = ?', [email, user_id])
+        }
     }
 }
 
