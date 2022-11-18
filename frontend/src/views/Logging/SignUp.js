@@ -33,6 +33,9 @@ const SignUp = () => {
         const configurationObject = {
             method: "POST",
             url: base_url + "/auth/signup",
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            },
         }
     }
 
