@@ -59,4 +59,11 @@ const Friends = () => {
     );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    noContent: {
+        fontSize: 20,
+        alignSelf: "center",
+        marginTop: 20,
+        color: "#fff"
+      },
+})
