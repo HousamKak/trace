@@ -26,4 +26,6 @@ const deleteTrace = (req, res) => {
     );
 }
 
+const getTrace = (req, res) => { }
+
 module.exports = { getAllUserTraces, deleteTrace };
