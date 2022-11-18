@@ -40,4 +40,23 @@ const Scripts = () => {
     React.useEffect(() => {
         script()
     }, [refreshing])
+
+    return (
+        <View style={styles.screenView}>
+            <Text style={styles.text}>SCRIPTS</Text>
+            <ScrollView style={styles.scrollView} refreshControl={
+                <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                />
+            }>
+                <View style={styles.cards}>
+                    {myscripts}
+                </View>
+            </ScrollView>
+            <View style={styles.footer}>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
+            </View>
+        </View>
+    );
 }
