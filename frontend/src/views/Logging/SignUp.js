@@ -2,7 +2,7 @@ import * as React from "react";
 import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import InputField from "../../components/InputField";
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, ScrollView, View, Image, Text } from "react-native";
 
 const SignUp = () => {
     return (
