@@ -78,5 +78,10 @@ const styles = StyleSheet.create({
     },
     cards: {
         alignItems: "center",
-      },
+    },
+    footer: {
+        alignItems: "center",
+        width: "100%",
+        paddingVertical: "10%",
+    },
 })
