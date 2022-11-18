@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const { getAllUserTraces } = require('../controllers/traces.controller');
+const { getAllUserTraces,deleteTrace } = require('../controllers/traces.controller');
 
 router.get('/user/:user_id', getAllUserTraces);
 
