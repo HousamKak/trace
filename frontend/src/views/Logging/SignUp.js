@@ -11,6 +11,7 @@ const base_url = "http://192.168.1.102:8000"
 const SignUp = () => {
     const navigation = useNavigation();
     const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
     return (
         <View style={styles.signUpView}>
             <Image
