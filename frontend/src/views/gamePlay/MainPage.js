@@ -7,3 +7,14 @@ import {
 } from "react-native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import { useNavigation } from "@react-navigation/native";
+
+
+const MainPage = () => {
+    const navigation = useNavigation();
+    return (
+        <View style={styles.middleButtonView}>
+            <View style={styles.footer}>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("Profile")}></MenuBtn>
+            </View>
+        </View>)
+}
