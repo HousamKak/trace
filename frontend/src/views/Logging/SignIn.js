@@ -21,7 +21,10 @@ const SignIn = () => {
             },
             data: { email, password }
         }
+        await axios(configurationObject).then((e) => { })
     }
+
+
     return (
         <View style={styles.signInView}>
             <Image
