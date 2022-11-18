@@ -11,4 +11,6 @@ const DataDisplay = (props) => {
         </View>)
 }
 
+const styles = StyleSheet.create({})
+
 export default DataDisplay;
