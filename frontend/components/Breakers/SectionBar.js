@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const SectionBar = (props) => { 
+const SectionBar = (props) => {
     return (
         <View style={styles.sectionBar}>
             <View style={styles.sectionLine} />
@@ -10,5 +10,7 @@ const SectionBar = (props) => {
         </View>
     );
 }
+
+const styles = StyleSheet.create({})
 
 export default SectionBar;
