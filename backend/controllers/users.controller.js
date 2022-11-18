@@ -24,6 +24,7 @@ const updateUser = async (req, res) => {
             hashed_password = await bcrypt.hash(password, 10);
             db.query('UPDATE users SET password = ? WHERE user_id = ?', [hashed_password, user_id])
         }
+        res.status(200).json({ message: "User updated" });
     }
 }
 
