@@ -29,7 +29,7 @@ const LogInPage = () => {
 
       <View style={styles.signUpContView}>
         <Text style={styles.signUpText}>Don’t have an account?</Text>
-        <SignBtn  text="SIGN UP" cwidth={styles.sign} />
+        <SignBtn onPress={() => { navigation.navigate("DobPage") }} text="SIGN UP" cwidth={styles.sign} />
       </View>
     </View>
   );
