@@ -77,5 +77,6 @@ const Items = () => {
             </View>
         </View>
     );
-
 }
+
+const styles = StyleSheet.create({})
