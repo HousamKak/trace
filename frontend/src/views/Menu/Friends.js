@@ -76,4 +76,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginBottom: "8%",
     },
+    cards: {
+        alignItems: "center",
+      },
 })
