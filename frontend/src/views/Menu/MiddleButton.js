@@ -17,7 +17,10 @@ const MiddleButton = () => {
     const navigation = useNavigation();
     const [loading, setLoading] = React.useState(false);
 
-    const getData = async (route, key) => {}
+    const getData = async (route, key) => {
+        const user_prime = await AsyncStorage.getItem("user")
+        const user = JSON.parse(user_prime)
+    }
 
- }
+}
 export default MiddleButton;
