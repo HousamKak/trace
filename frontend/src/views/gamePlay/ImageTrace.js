@@ -10,3 +10,5 @@ import { useNavigation, } from "@react-navigation/native";
 const ImageTrace = () => { };
 
 const styles = StyleSheet.create({});
+
+export default ImageTrace;
