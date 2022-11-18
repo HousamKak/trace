@@ -16,6 +16,9 @@ const SignIn = () => {
         const configurationObject = {
             method: "POST",
             url: base_url + "/auth/login",
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+              },
         }
     }
     return (
