@@ -91,6 +91,9 @@ const styles = StyleSheet.create({
     closeColor: {
         backgroundColor: "#fb7785",
     },
+    MenuIconsColor: {
+        backgroundColor: "#8a67f4",
+    },
 })
 
 export default MiddleButton;
