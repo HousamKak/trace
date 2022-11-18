@@ -3,6 +3,7 @@ import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import InputField from "../../components/InputField";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { StyleSheet, ScrollView, View, Image, Text } from "react-native";
+import { validateEmail, validatePassword } from "../../utilities/validate";
 
 const SignUp = () => {
     return (
