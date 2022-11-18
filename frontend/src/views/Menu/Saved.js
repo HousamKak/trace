@@ -13,6 +13,15 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const Saved = () => {
     const navigation = useNavigation();
     const [saves, setSaves] = React.useState([]);
+
+    const [refreshing, setRefreshing] = React.useState(false);
+    const wait = (timeout) => {
+        return new Promise(resolve => setTimeout(resolve, timeout));
+    }
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        wait(500).then(() => setRefreshing(false));
+    }, []);
 }
 
 export default Saved;
