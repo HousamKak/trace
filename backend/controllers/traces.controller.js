@@ -14,6 +14,6 @@ const getAllUserTraces = (req, res) => {
     }
 }
 
-const deleteTrace = (req, res) => {}
+const deleteTrace = (req, res) => { }
 
-module.exports = { getAllUserTraces };
+module.exports = { getAllUserTraces, deleteTrace };
