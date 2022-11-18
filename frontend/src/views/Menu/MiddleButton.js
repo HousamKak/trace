@@ -22,6 +22,7 @@ const MiddleButton = () => {
         const user = JSON.parse(user_prime)
         const configurationObject = {
             method: "GET",
+            url: base_url + route + user.user_id,
         }
     }
 
