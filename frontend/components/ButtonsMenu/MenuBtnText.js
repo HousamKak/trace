@@ -10,4 +10,6 @@ const MenuBtnText = (props) => {
         </View>);
 }
 
+const styles = StyleSheet.create({})
+
 export default MenuBtnText;
