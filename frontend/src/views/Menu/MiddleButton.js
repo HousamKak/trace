@@ -94,6 +94,13 @@ const styles = StyleSheet.create({
     MenuIconsColor: {
         backgroundColor: "#8a67f4",
     },
+    header: {
+        marginTop: "10%",
+        paddingHorizontal: 30,
+        marginBottom: "60%",
+        alignItems: "flex-end",
+        width: "100%",
+    },
 })
 
 export default MiddleButton;
