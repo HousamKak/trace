@@ -79,6 +79,11 @@ const MiddleButton = () => {
     );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    ActivityIndicator: {
+        paddingHorizontal: "3%",
+        marginTop: 4,
+    },
+})
 
 export default MiddleButton;
