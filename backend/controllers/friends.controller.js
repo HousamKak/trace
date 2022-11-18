@@ -19,6 +19,12 @@ const addFriend = (req, res) => {
     }
 }
 
-const deleteFriend = (req, res) => { }
+const deleteFriend = (req, res) => {
+    const { user_id, friend_user_id } = req.body;
+    db.query('DELETE FROM friends WHERE user_id = ? AND friend_user_id =?', [user_id, friend_user_id], (err, rows) => {
+        if (err) console.log(err);
+        res.status(200).json({ message: "friend deleted" });
+    })
+}
 
 module.exports = { getAllFriends, deleteFriend, addFriend }
