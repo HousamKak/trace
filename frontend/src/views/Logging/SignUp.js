@@ -21,6 +21,10 @@ const SignUp = () => {
     const handleClick = async () => {
         const isValidEmail = validateEmail(email);
         const isValidPassword = validatePassword(password);
+
+        if (!isValidEmail.status) {
+            setErrorEmail(isValidEmail.message);
+          }
     }
 
     return (
