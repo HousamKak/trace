@@ -27,7 +27,7 @@ const App = () => {
   const SplashScreen = () => <View />;
 
   React.useEffect(() => {
-    async () => {
+    (async () => {
       const token = await AsyncStorage.getItem("token")
       const parsedToken = JSON.parse(token)
       if (parsedToken) {
@@ -54,7 +54,7 @@ const App = () => {
         setIsLogged(false)
       }
 
-    }
+    })()
   }, []);
 
   return (
