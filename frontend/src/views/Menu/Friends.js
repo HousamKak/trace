@@ -10,4 +10,6 @@ import FullCard from "../../components/Cards/FullCard";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const Friends = () => { }
+const Friends = () => {
+    const navigation = useNavigation();
+}
