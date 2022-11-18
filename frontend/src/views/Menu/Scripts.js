@@ -35,4 +35,9 @@ const Scripts = () => {
             setMyScripts(scriptItems)
         }
     }
+
+
+    React.useEffect(() => {
+        script()
+    }, [refreshing])
 }
