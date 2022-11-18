@@ -2,6 +2,7 @@ import * as React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import SignBtn from "../../components/SignBtn";
 import BtnAndLogo from "../../components/BtnAndLogo";
+import { useNavigation } from "@react-navigation/native";
 
 const LogInPage = () => {
   return (
