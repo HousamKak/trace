@@ -14,6 +14,7 @@ import Saved from "./views/Menu/Saved";
 import Friends from "./views/Menu/Friends";
 import Scripts from "./views/Menu/Scripts";
 import Items from "./views/Menu/Items";
+import MyTraces from "./views/Menu/MyTraces";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
