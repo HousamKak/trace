@@ -23,6 +23,7 @@ import { View } from "react-native";
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
+  const [isLogged, setIsLogged] = React.useState(false);
   const SplashScreen = () => <View />;
 
   return (
