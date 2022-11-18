@@ -18,8 +18,10 @@ const SignUp = () => {
     const [errorPassword, setErrorPassword] = React.useState("");
     AsyncStorage.getItem("dob").then((value) => { setDob(JSON.parse(value)) })
 
-    const handleClick = async () => { }
-    
+    const handleClick = async () => {
+        const isValidEmail = validateEmail(email);
+    }
+
     return (
         <View style={styles.signUpView}>
             <Image
