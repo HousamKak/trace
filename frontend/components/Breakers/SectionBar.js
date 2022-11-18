@@ -11,6 +11,13 @@ const SectionBar = (props) => {
     );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    sectionLine: {
+        backgroundColor: "#181628",
+        height: 1,
+        flex: 1,
+        alignSelf: "center",
+    },
+})
 
 export default SectionBar;
