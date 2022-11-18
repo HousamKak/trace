@@ -35,4 +35,8 @@ const MyTraces = () => {
             setMyTrace(traceItems)
         }
     }
+
+    React.useEffect(() => {
+        trace()
+    }, [refreshing])
 }
