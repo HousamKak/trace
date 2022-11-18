@@ -7,6 +7,7 @@ import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import { useNavigation } from "@react-navigation/native";
 
 const DobPage = () => {
+    const navigation = useNavigation();
     const [date, setDate] = React.useState(new Date());
     const [show, setShow] = React.useState(false);
     return (
