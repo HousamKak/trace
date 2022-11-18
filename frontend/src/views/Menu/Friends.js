@@ -13,4 +13,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const Friends = () => {
     const navigation = useNavigation();
     const [myfriends, setmyfriends] = React.useState([]);
+
+    const [refreshing, setRefreshing] = React.useState(false);
 }
