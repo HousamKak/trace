@@ -79,4 +79,28 @@ const Items = () => {
     );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    screenView: {
+        flex: 1,
+        backgroundColor: "#1e193b",
+        paddingHorizontal: 20,
+    },
+    noContent: {
+        fontSize: 20,
+        alignSelf: "center",
+        marginTop: 20,
+        color: "#fff"
+    },
+    footer: {
+        alignItems: "center",
+        width: "100%",
+        paddingVertical: "10%",
+    },
+    closeColor: {
+        backgroundColor: "#fb7785",
+    },
+    scrollView: {
+        backgroundColor: "#302b4f",
+        borderRadius: 15,
+    },
+})
