@@ -23,5 +23,8 @@ const Friends = () => {
         wait(500).then(() => setRefreshing(false));
     }, []);
 
-    const friend = async () => { }
+    const friend = async () => {
+        const friends = await AsyncStorage.getItem("friends")
+        const friendsList = JSON.parse(friends)
+    }
 }
