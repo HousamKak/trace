@@ -95,6 +95,11 @@ const App = () => {
                     component={Scripts}
                     options={{ headerShown: false }}
                   />
+                  <Stack.Screen
+                    name="Items"
+                    component={Items}
+                    options={{ headerShown: false }}
+                  />
                 </>
               ) : (
                 <>
