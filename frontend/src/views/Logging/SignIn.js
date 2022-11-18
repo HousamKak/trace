@@ -18,7 +18,8 @@ const SignIn = () => {
             url: base_url + "/auth/login",
             headers: {
                 "Access-Control-Allow-Origin": "*",
-              },
+            },
+            data: { email, password }
         }
     }
     return (
