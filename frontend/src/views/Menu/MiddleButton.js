@@ -37,7 +37,7 @@ const MiddleButton = () => {
     return (
         <View style={styles.middleButtonView}>
             <View style={styles.header}>
-                <MenuBtn />
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/shutdown.png")} cwdith={styles.width} cheight={styles.height} backgroundColor={styles.closeColor} />
             </View>
             <View style={styles.body}>
                 <View style={styles.top}>
