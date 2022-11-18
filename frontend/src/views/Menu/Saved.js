@@ -37,6 +37,10 @@ const Saved = () => {
         }
 
     }
+
+    React.useEffect(() => {
+        save()
+    }, [refreshing])
 }
 
 export default Saved;
