@@ -43,6 +43,7 @@ const MiddleButton = () => {
                     DevSettings.reload()
                 }} />
             </View>
+            {loading ? <ActivityIndicator style={styles.ActivityIndicator} size="small" color="#8a67f4" /> : ""}
             <View style={styles.body}>
                 <View style={styles.top}>
                     <MenuBtnText ></MenuBtnText>
