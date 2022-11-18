@@ -88,6 +88,9 @@ const styles = StyleSheet.create({
     settingColor: {
         backgroundColor: "rgba(255, 255, 255, 0.1)",
     },
+    closeColor: {
+        backgroundColor: "#fb7785",
+    },
 })
 
 export default MiddleButton;
