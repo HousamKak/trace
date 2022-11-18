@@ -4,3 +4,5 @@ const getAllFriends = (req, res) => { }
 const addFriend = (req, res) => { }
 
 const deleteFriend = (req, res) => { }
+
+module.exports = { getAllFriends, deleteFriend, addFriend }
