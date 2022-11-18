@@ -52,4 +52,6 @@ const addTrace = (req, res) => {
     );
 }
 
+const getCloseTraces = (req, res) => { }
+
 module.exports = { getAllUserTraces, deleteTrace, getTrace, addTrace };
