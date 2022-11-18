@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: "3%",
         marginTop: 4,
     },
+    shiftText: { marginLeft: -10 },
 })
 
 export default MiddleButton;
