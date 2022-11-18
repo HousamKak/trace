@@ -28,6 +28,8 @@ const signup = async (req, res) => {
     const { username, email, password, dob } = req.body;
     try {
         hashed_password = await bcrypt.hash(password, 10);
+        db.query('INSERT INTO users (username, email, password, dob) VALUES (?, ?, ?,?)', [username, email, hashed_password, dob], (err, rows) => {
+        })
     } catch (err) {
         res.status(400).json({
             message: "registration failed",
