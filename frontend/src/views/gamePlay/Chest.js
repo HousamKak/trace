@@ -9,3 +9,5 @@ import { useNavigation, } from "@react-navigation/native";
 
 const Chest = () => { };
 const styles = StyleSheet.create({});
+
+export default Chest;
