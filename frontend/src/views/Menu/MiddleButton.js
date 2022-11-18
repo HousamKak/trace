@@ -130,6 +130,13 @@ const styles = StyleSheet.create({
         width: "100%",
         marginTop: "13%",
     },
+    middleButtonView: {
+        backgroundColor: "#302b4f",
+        flex: 1,
+        width: "100%",
+        height: 800,
+        overflow: "hidden",
+    },
 })
 
 export default MiddleButton;
