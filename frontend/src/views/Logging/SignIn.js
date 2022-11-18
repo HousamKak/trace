@@ -56,6 +56,12 @@ const SignIn = () => {
 
 const styles = StyleSheet.create({
     sign: { width: 331 },
+    error_message: {
+        fontSize: 16,
+        color: "#ebda8b",
+        alignSelf: "flex-start",
+        paddingHorizontal: 15,
+    },
     rectangleView: {
         marginTop: "12%",
         borderRadius: 20,
