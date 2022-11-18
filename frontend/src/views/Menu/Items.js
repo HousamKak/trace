@@ -122,5 +122,12 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginTop: 10,
         paddingHorizontal: 10,
-      },
+    },
+    lastRow: {
+        flexDirection: "row",
+        marginVertical: 10,
+        paddingHorizontal: 10,
+        marginRight: "20%",
+    },
+
 })
