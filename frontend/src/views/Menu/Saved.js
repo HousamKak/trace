@@ -62,4 +62,41 @@ const Saved = () => {
     );
 }
 
+const styles = StyleSheet.create({
+    noContent: {
+        fontSize: 20,
+        alignSelf: "center",
+        marginTop: 20,
+        color: "#fff"
+    },
+    text: {
+        fontSize: 30,
+        color: "#fff",
+        fontWeight: "bold",
+        marginTop: "20%",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        marginBottom: "8%",
+    },
+    cards: {
+        alignItems: "center",
+    },
+    footer: {
+        alignItems: "center",
+        width: "100%",
+        paddingVertical: "10%",
+    },
+    closeColor: {
+        backgroundColor: "#fb7785",
+    },
+    scrollView: {
+        backgroundColor: "#302b4f",
+    },
+    screenView: {
+        flex: 1,
+        backgroundColor: "#1e193b",
+    }
+});
+
 export default Saved;
