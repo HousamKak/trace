@@ -62,7 +62,7 @@ const SignUp = () => {
                     source={require("../../assets/LogInPage/logo.png")}
                 />
                 <View style={styles.rectangleView}>
-                    <InputField placeholder="Username"></InputField>
+                    <InputField placeholder="Username" onChange={setUsername}></InputField>
                     <InputField placeholder="Email"></InputField>
                     <InputField placeholder="Password"></InputField>
                     <SignBtn navigation="" text="SIGN UP" cwidth={styles.sign} />
