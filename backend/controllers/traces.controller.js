@@ -42,4 +42,4 @@ const getTrace = (req, res) => {
 
 const addTrace = (req, res) => { }
 
-module.exports = { getAllUserTraces, deleteTrace, getTrace };
+module.exports = { getAllUserTraces, deleteTrace, getTrace, addTrace };
