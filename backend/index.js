@@ -17,6 +17,9 @@ app.use('/auth', authRoutes)
 const usersRouter = require('./routes/users.routes');
 app.use('/user', usersRouter);
 
+const userSavesRouter = require('./routes/saves.routes');
+app.use('/user/saves', userSavesRouter);
+
 const userFriendsRouter = require('./routes/friends.routes');
 app.use('/user/friends', userFriendsRouter);
 
