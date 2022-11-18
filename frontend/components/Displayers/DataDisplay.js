@@ -11,6 +11,14 @@ const DataDisplay = (props) => {
         </View>)
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    DataDisplay: {
+        display: "flex",
+        flexDirection: "row",
+        marginBottom: 8,
+        justifyContent: "space-between",
+        paddingHorizontal: "30%",
+    },
+})
 
 export default DataDisplay;
