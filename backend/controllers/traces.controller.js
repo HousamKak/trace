@@ -14,4 +14,6 @@ const getAllUserTraces = (req, res) => {
     }
 }
 
+const deleteTrace = (req, res) => {}
+
 module.exports = { getAllUserTraces };
