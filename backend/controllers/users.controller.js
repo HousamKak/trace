@@ -13,6 +13,12 @@ const getUser = (req, res) => {
 
 const updateUser = async (req, res) => { }
 
-const deleteUser = (req, res) => { }
+const deleteUser = (req, res) => {
+    const { user_id } = req.body;
+    if (user_id) {
+        db.query('DELETE FROM users WHERE user_id = ?', [user_id])
+        res.status(200).json({ message: "User deleted" });
+    }
+}
 
 module.exports = { getUser, updateUser, deleteUser }
