@@ -53,7 +53,7 @@ const MiddleButton = () => {
                 </View>
             </View>
             <View style={styles.footer}>
-                <MenuBtn ></MenuBtn>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} ></MenuBtn>
             </View>
         </View>
     );
