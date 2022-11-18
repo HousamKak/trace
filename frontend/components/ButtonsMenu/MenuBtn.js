@@ -15,4 +15,6 @@ const MenuBtn = (props) => {
         </TouchableOpacity>);
 }
 
+const styles = StyleSheet.create({})
+
 export default MenuBtn;
