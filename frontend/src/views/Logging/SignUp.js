@@ -32,6 +32,7 @@ const SignUp = () => {
 
         const configurationObject = {
             method: "POST",
+            url: base_url + "/auth/signup",
         }
     }
 
