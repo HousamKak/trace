@@ -6,3 +6,5 @@ const { getAllFriends, addFriend, deleteFriend } = require('../controllers/frien
 router.get('/:user_id', getAllFriends);
 router.post('/', addFriend);
 router.delete('/', deleteFriend);
+
+module.exports = router;
