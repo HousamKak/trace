@@ -54,4 +54,9 @@ const Items = () => {
             setSaves(savedItems)
         }
     }
+
+    React.useEffect(() => {
+        item()
+    }, [refreshing])
+    
 }
