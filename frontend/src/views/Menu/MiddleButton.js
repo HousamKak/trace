@@ -46,7 +46,10 @@ const MiddleButton = () => {
             {loading ? <ActivityIndicator style={styles.ActivityIndicator} size="small" color="#8a67f4" /> : ""}
             <View style={styles.body}>
                 <View style={styles.top}>
-                    <MenuBtnText text={"Saved"} src={require("../../assets/MenuPage/MenuButtons/savedIcon.png")} backgroundColor={styles.MenuIconsColor}></MenuBtnText>
+                    <MenuBtnText text={"Saved"} src={require("../../assets/MenuPage/MenuButtons/savedIcon.png")} backgroundColor={styles.MenuIconsColor} onPress={() => {
+                        navigation.navigate("Saved")
+                        getData("/user/saves/", "saves")
+                    }}></MenuBtnText>
                     <MenuBtnText text={"Friends"} src={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} backgroundColor={styles.MenuIconsColor} ></MenuBtnText>
                 </View>
                 <View style={styles.middle}>
