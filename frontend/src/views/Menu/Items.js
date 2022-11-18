@@ -13,4 +13,5 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Items = () => {
     const [myitems, setMyItems] = React.useState([])
+    const navigation = useNavigation();
 }
