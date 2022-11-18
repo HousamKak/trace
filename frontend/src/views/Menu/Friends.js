@@ -84,4 +84,7 @@ const styles = StyleSheet.create({
         width: "100%",
         paddingVertical: "10%",
     },
+    closeColor: {
+        backgroundColor: "#fb7785",
+    },
 })
