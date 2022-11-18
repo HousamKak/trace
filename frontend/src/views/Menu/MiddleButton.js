@@ -37,7 +37,11 @@ const MiddleButton = () => {
     return (
         <View style={styles.middleButtonView}>
             <View style={styles.header}>
-                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/shutdown.png")} cwdith={styles.width} cheight={styles.height} backgroundColor={styles.closeColor} />
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/shutdown.png")} cwdith={styles.width} cheight={styles.height} backgroundColor={styles.closeColor} onPress={() => {
+                    AsyncStorage.clear()
+                    setLoading(true)
+                    DevSettings.reload()
+                }} />
             </View>
             <View style={styles.body}>
                 <View style={styles.top}>
