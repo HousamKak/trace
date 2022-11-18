@@ -30,7 +30,9 @@ const SignUp = () => {
             setErrorPassword(isValidPassword.message);
         } else { setErrorPassword("") }
 
-        const configurationObject = {}
+        const configurationObject = {
+            method: "POST",
+        }
     }
 
     return (
