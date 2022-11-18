@@ -11,6 +11,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+const authRoutes = require('./routes/auth.routes');
+app.use('/auth', authRoutes)
 
 app.listen(process.env.PORT, (err) => {
     if (err) { console.log(err); }
