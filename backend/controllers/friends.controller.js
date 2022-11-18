@@ -9,7 +9,15 @@ const getAllFriends = (req, res) => {
     }
 }
 
-const addFriend = (req, res) => { }
+const addFriend = (req, res) => {
+    const { user_id, friend_user_id } = req.body;
+    if (user_id) {
+        db.query('INSERT INTO friends (user_id, friend_user_id) VALUES (?, ?)', [user_id, friend_user_id], (err, rows) => {
+            if (err) console.log(err);
+            res.status(200).send("friend added");
+        })
+    }
+}
 
 const deleteFriend = (req, res) => { }
 
