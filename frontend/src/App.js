@@ -26,6 +26,12 @@ const App = () => {
   const [isLogged, setIsLogged] = React.useState(false);
   const SplashScreen = () => <View />;
 
+  React.useEffect(() => {
+    async () => {
+      const token = await AsyncStorage.getItem("token")
+    }
+  }, []);
+
   return (
     <>
       <NavigationContainer>
