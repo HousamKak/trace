@@ -44,7 +44,7 @@ const SignIn = () => {
             />
 
             <View style={styles.rectangleView}>
-                <InputField placeholder="Email"></InputField>
+                <InputField placeholder="Email" onChange={setEmail}></InputField>
                 <InputField placeholder="Password"></InputField>
                 <SignBtn navigation="" text="LOG IN" cwidth={styles.sign} />
             </View>
