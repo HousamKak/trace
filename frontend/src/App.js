@@ -65,6 +65,11 @@ const App = () => {
             {isLogged ?
               (
                 <>
+                <Stack.Screen
+                  name="MainPage"
+                  component={MainPage}
+                  options={{ headerShown: false }}
+                />
                 </>
               ) : (
                 <>
