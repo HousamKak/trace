@@ -40,13 +40,14 @@ const Friends = () => {
     }, [refreshing])
 
     return (
-        <View >
-            <Text >FRIENDS</Text>
-            <ScrollView
-            >
-                <View >
-                    {myfriends}
-                </View>
+        <View style={styles.screenView}>
+            <Text style={styles.text}>FRIENDS</Text>
+            <ScrollView style={styles.scrollView} refreshControl={
+                <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                />
+            }>
             </ScrollView>
             <View >
                 <MenuBtn ></MenuBtn>
