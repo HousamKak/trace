@@ -85,6 +85,9 @@ const styles = StyleSheet.create({
         marginTop: 4,
     },
     shiftText: { marginLeft: -10 },
+    settingColor: {
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
+    },
 })
 
 export default MiddleButton;
