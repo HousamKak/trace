@@ -11,6 +11,8 @@ const SignIn = () => {
     const [password, setPassword] = React.useState("");
     const [error, setError] = React.useState("");
     const [loading, setLoading] = React.useState(false);
+
+    const handleClick = async () => { }
     return (
         <View style={styles.signInView}>
             <Image
