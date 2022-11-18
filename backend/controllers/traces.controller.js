@@ -40,4 +40,6 @@ const getTrace = (req, res) => {
     }
 }
 
+const addTrace = (req, res) => { }
+
 module.exports = { getAllUserTraces, deleteTrace, getTrace };
