@@ -26,6 +26,13 @@ const login = (req, res) => {
 
 const signup = async (req, res) => {
     const { username, email, password, dob } = req.body;
+    try {
+        hashed_password = await bcrypt.hash(password, 10);
+    } catch (err) {
+        res.status(400).json({
+            message: "registration failed",
+        });
+    }
 };
 
 module.exports = { login };
