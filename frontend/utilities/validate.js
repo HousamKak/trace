@@ -1,1 +1,2 @@
-const validateEmail = (email) => {}
+const validateEmail = (email) => { }
+const validatePassword = (password) => { }
