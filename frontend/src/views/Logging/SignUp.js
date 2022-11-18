@@ -40,55 +40,58 @@ const SignUp = () => {
         }
         if (isValidEmail.status && isValidPassword.status) {
             try {
-                await axios(configurationObject)
+                await axios(configurationObject).then((e) => {
+                    if (e.data.message == "registration successful") {
+                        navigation.navigate("SignIn")
+                    }
+                })
             }
             catch (error) {
                 console.log(error)
             }
         }
-    }
 
-    return (
-        <View style={styles.signUpView}>
-            <Image
-                style={styles.logoIcon}
-                resizeMode="cover"
-                source={require("../../assets/LogInPage/logo.png")}
-            />
-            <View style={styles.rectangleView}>
-                <InputField placeholder="Username"></InputField>
-                <InputField placeholder="Email"></InputField>
-                <InputField placeholder="Password"></InputField>
-                <SignBtn navigation="" text="SIGN UP" cwidth={styles.sign} />
+        return (
+            <View style={styles.signUpView}>
+                <Image
+                    style={styles.logoIcon}
+                    resizeMode="cover"
+                    source={require("../../assets/LogInPage/logo.png")}
+                />
+                <View style={styles.rectangleView}>
+                    <InputField placeholder="Username"></InputField>
+                    <InputField placeholder="Email"></InputField>
+                    <InputField placeholder="Password"></InputField>
+                    <SignBtn navigation="" text="SIGN UP" cwidth={styles.sign} />
+                </View>
             </View>
-        </View>
-    );
-};
+        );
+    };
 
-const styles = StyleSheet.create({
-    sign: { width: 331 },
-    rectangleView: {
-        marginTop: "12%",
-        borderRadius: 20,
-        backgroundColor: "#302b4f",
-        width: 358,
-        height: 428,
-        justifyContent: "space-between",
-        alignItems: "center",
-        paddingVertical: 28,
-        alignSelf: "center",
-    },
-    logoIcon: {
-        alignSelf: "center",
-        marginTop: "16.3%",
-    },
-    signUpView: {
-        backgroundColor: "#1e193b",
-        flex: 1,
-        width: "100%",
-        height: 800,
-        overflow: "hidden",
-    },
-});
+    const styles = StyleSheet.create({
+        sign: { width: 331 },
+        rectangleView: {
+            marginTop: "12%",
+            borderRadius: 20,
+            backgroundColor: "#302b4f",
+            width: 358,
+            height: 428,
+            justifyContent: "space-between",
+            alignItems: "center",
+            paddingVertical: 28,
+            alignSelf: "center",
+        },
+        logoIcon: {
+            alignSelf: "center",
+            marginTop: "16.3%",
+        },
+        signUpView: {
+            backgroundColor: "#1e193b",
+            flex: 1,
+            width: "100%",
+            height: 800,
+            overflow: "hidden",
+        },
+    });
 
-export default SignUp;
+    export default SignUp;
