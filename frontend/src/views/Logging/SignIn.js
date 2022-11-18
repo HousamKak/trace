@@ -28,6 +28,9 @@ const SignIn = () => {
                 setLoading(true)
                 DevSettings.reload()
             }
+            else {
+                setError(e.data.message)
+            }
         })
     }
 
