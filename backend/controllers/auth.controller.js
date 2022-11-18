@@ -29,6 +29,12 @@ const signup = async (req, res) => {
     try {
         hashed_password = await bcrypt.hash(password, 10);
         db.query('INSERT INTO users (username, email, password, dob) VALUES (?, ?, ?,?)', [username, email, hashed_password, dob], (err, rows) => {
+            if (err) {
+                res.json({ message: "Email Exists" })
+            }
+            else {
+                res.json({ message: "registration successful" });
+            }
         })
     } catch (err) {
         res.status(400).json({
@@ -37,4 +43,4 @@ const signup = async (req, res) => {
     }
 };
 
-module.exports = { login };
+module.exports = { login, signup };
