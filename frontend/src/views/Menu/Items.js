@@ -116,4 +116,11 @@ const styles = StyleSheet.create({
     itemsCont: {
         width: "100%",
     },
+    row: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginBottom: 10,
+        marginTop: 10,
+        paddingHorizontal: 10,
+      },
 })
