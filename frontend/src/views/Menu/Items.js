@@ -10,3 +10,5 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
+const Items = () => { }
