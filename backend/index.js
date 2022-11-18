@@ -26,6 +26,9 @@ app.use('/user/scripts', userScriptsRouter);
 const userItemsRouter = require('./routes/items.routes');
 app.use('/user/items', userItemsRouter);
 
+const userMedalsRouter = require('./routes/medals.routes');
+app.use('/user/medals', userMedalsRouter);
+
 app.listen(process.env.PORT, (err) => {
     if (err) { console.log(err); }
     console.log(`server running on port ${process.env.PORT}`);
