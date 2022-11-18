@@ -22,4 +22,17 @@ const Scripts = () => {
         setRefreshing(true);
         wait(500).then(() => setRefreshing(false));
     }, []);
+
+    const script = async () => {
+        const scripts = await AsyncStorage.getItem("scripts")
+        const scriptsList = JSON.parse(scripts)
+        if (scriptsList) {
+            const scriptItems = scriptsList.map((script) => <FullCard key={script.script_id} text={script.title} profile={require("../../assets/MenuPage/MenuButtons/scriptsIcon.png")} icon={""} noType={0} textOnly={0} nodelete={1} />)
+            setMyScripts(scriptItems)
+        }
+        else {
+            const scriptItems = <Text style={styles.noContent}>No Scripts</Text>
+            setMyScripts(scriptItems)
+        }
+    }
 }
