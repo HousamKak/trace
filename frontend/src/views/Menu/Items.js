@@ -103,4 +103,17 @@ const styles = StyleSheet.create({
         backgroundColor: "#302b4f",
         borderRadius: 15,
     },
+    text: {
+        fontSize: 30,
+        color: "#fff",
+        fontWeight: "bold",
+        marginTop: "20%",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        marginBottom: "8%",
+    },
+    itemsCont: {
+        width: "100%",
+    },
 })
