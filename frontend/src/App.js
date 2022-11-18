@@ -62,26 +62,33 @@ const App = () => {
       <NavigationContainer>
         {hideSplashScreen ? (
           <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-              name="LogInPage"
-              component={LogInPage}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="DobPage"
-              component={DobPage}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SignIn"
-              component={SignIn}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SignUp"
-              component={SignUp}
-              options={{ headerShown: false }}
-            />
+            {isLogged ?
+              (
+                <>
+                </>
+              ) : (
+                <>
+                  <Stack.Screen
+                    name="LogInPage"
+                    component={LogInPage}
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="DobPage"
+                    component={DobPage}
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="SignIn"
+                    component={SignIn}
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="SignUp"
+                    component={SignUp}
+                    options={{ headerShown: false }}
+                  />
+                </>)}
           </Stack.Navigator>
         ) : (
           <SplashScreen />
