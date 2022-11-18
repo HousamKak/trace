@@ -52,6 +52,10 @@ const addTrace = (req, res) => {
     );
 }
 
+// Optimization Note:
+// The code here can be optimized by dividing the traces in the database into areas 
+// and then only getting the traces in the area where the user is centrally located.
+// This will reduce the amount of data that needs to be sent to the client.
 const getCloseTraces = (req, res) => {
     db.query("SELECT trace_id,file_type,x_position,y_position FROM traces", (err, rows) => {
         if (err) console.log(err);
