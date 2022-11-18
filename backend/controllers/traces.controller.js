@@ -60,4 +60,4 @@ const getCloseTraces = (req, res) => {
     );
 }
 
-module.exports = { getAllUserTraces, deleteTrace, getTrace, addTrace };
+module.exports = { getAllUserTraces, deleteTrace, getTrace, addTrace, getCloseTraces };
