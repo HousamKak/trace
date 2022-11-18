@@ -8,6 +8,10 @@ const FullCard = (props) => {
             style={styles.rectangleView}
             activeOpacity={0.2}
         >
+            <View style={styles.leftCont}>
+                {props.textOnly ? "" : <Image source={props.profile} style={styles.profileSize} />}
+                <Text style={styles.text}> {props.text}</Text>
+            </View>
 
         </TouchableOpacity >
     );
