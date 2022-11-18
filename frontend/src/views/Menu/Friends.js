@@ -49,7 +49,7 @@ const Friends = () => {
                 />
             }>
             </ScrollView>
-            <View >
+            <View style={styles.footer}>
                 <MenuBtn ></MenuBtn>
             </View>
         </View>
