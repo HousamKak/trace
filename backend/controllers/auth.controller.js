@@ -24,4 +24,8 @@ const login = (req, res) => {
     });
 };
 
+const signup = async (req, res) => {
+    const { username, email, password, dob } = req.body;
+};
+
 module.exports = { login };
