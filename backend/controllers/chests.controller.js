@@ -1,5 +1,11 @@
 const db = require("../config/db.config");
 
+
+// Optimization Note:
+// The code here can be optimized by dividing the chests in the database into areas 
+// and then only getting the chests in the area where the user is centrally located.
+// This will reduce the amount of data that needs to be sent to the client.
+
 const getCloseChests = (req, res) => {
     db.query(
         "SELECT chest_id,x_position,y_position FROM chests",
