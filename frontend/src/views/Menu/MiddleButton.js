@@ -47,7 +47,7 @@ const MiddleButton = () => {
             <View style={styles.body}>
                 <View style={styles.top}>
                     <MenuBtnText text={"Saved"} src={require("../../assets/MenuPage/MenuButtons/savedIcon.png")} backgroundColor={styles.MenuIconsColor}></MenuBtnText>
-                    <MenuBtnText ></MenuBtnText>
+                    <MenuBtnText text={"Friends"} src={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} backgroundColor={styles.MenuIconsColor} ></MenuBtnText>
                 </View>
                 <View style={styles.middle}>
                     <MenuBtnText ></MenuBtnText>
