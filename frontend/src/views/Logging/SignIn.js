@@ -9,6 +9,7 @@ const base_url = "http://192.168.1.102:8000"
 const SignIn = () => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+    const [error, setError] = React.useState("");
     return (
         <View style={styles.signInView}>
             <Image
