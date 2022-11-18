@@ -15,4 +15,7 @@ const Friends = () => {
     const [myfriends, setmyfriends] = React.useState([]);
 
     const [refreshing, setRefreshing] = React.useState(false);
+    const wait = (timeout) => {
+        return new Promise(resolve => setTimeout(resolve, timeout));
+    }
 }
