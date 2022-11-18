@@ -29,6 +29,17 @@ const App = () => {
   React.useEffect(() => {
     async () => {
       const token = await AsyncStorage.getItem("token")
+      const parsedToken = JSON.parse(token)
+      if (parsedToken) {
+        const configurationObject = {
+          method: "get",
+          headers: {
+            'Authorization': parsedToken,
+          },
+          body: {},
+          url: base_url + "/user",
+        }
+      }
     }
   }, []);
 
