@@ -4,6 +4,7 @@ const validateEmail = (email) => {
     if (!re.test(email)) {
         return { status: false, message: " Invalid Email" }
     };
+    return { status: true, message: "Valid Email" };
 }
 const validatePassword = (password) => { }
 
