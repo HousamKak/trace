@@ -4,6 +4,7 @@ import InputField from "../../components/Input/InputField";
 import { StyleSheet, ScrollView, View, Text, Image, ActivityIndicator, DevSettings } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import axios from "axios";
+const base_url = "http://192.168.1.102:8000"
 
 const SignIn = () => {
     return (
