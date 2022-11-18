@@ -17,6 +17,9 @@ app.use('/auth', authRoutes)
 const usersRouter = require('./routes/users.routes');
 app.use('/user', usersRouter);
 
+const userFriendsRouter = require('./routes/friends.routes');
+app.use('/user/friends', userFriendsRouter);
+
 app.listen(process.env.PORT, (err) => {
     if (err) { console.log(err); }
     console.log(`server running on port ${process.env.PORT}`);
