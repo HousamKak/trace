@@ -36,7 +36,7 @@ const SignIn = () => {
 
 
     return (
-        <View style={styles.signInView}>
+        <ScrollView style={styles.signInView}>
             <Image
                 style={styles.logoIcon}
                 resizeMode="cover"
@@ -48,7 +48,7 @@ const SignIn = () => {
                 <InputField placeholder="Password"></InputField>
                 <SignBtn navigation="" text="LOG IN" cwidth={styles.sign} />
             </View>
-        </View>
+        </ScrollView>
     );
 };
 
