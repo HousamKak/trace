@@ -10,6 +10,10 @@ const MenuBtnText = (props) => {
         </View>);
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    rectangleView: {
+        flexDirection: "column",
+    },
+})
 
 export default MenuBtnText;
