@@ -14,6 +14,9 @@ app.use(bodyParser.json());
 const authRoutes = require('./routes/auth.routes');
 app.use('/auth', authRoutes)
 
+const usersRouter = require('./routes/users.routes');
+app.use('/user', usersRouter);
+
 app.listen(process.env.PORT, (err) => {
     if (err) { console.log(err); }
     console.log(`server running on port ${process.env.PORT}`);
