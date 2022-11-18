@@ -41,6 +41,25 @@ const Saved = () => {
     React.useEffect(() => {
         save()
     }, [refreshing])
+
+    return (
+        <View style={styles.screenView}>
+            <Text style={styles.text}>SAVED</Text>
+            <ScrollView style={styles.scrollView} refreshControl={
+                <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                />
+            }>
+                <View style={styles.cards}>
+                    {saves}
+                </View>
+            </ScrollView>
+            <View style={styles.footer}>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
+            </View>
+        </View>
+    );
 }
 
 export default Saved;
