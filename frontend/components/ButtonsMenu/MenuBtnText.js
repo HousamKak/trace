@@ -14,6 +14,13 @@ const styles = StyleSheet.create({
     rectangleView: {
         flexDirection: "column",
     },
+    text: {
+        color: "white",
+        fontSize: 15,
+        textAlign: "center",
+        fontWeight: "bold",
+        marginBottom: 3,
+    },
 })
 
 export default MenuBtnText;
