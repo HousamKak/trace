@@ -11,6 +11,7 @@ import SignIn from "./views/Logging/SignIn";
 import SignUp from "./views/Logging/SignUp";
 import MiddleButton from "./views/Menu/MiddleButton";
 import Saved from "./views/Menu/Saved";
+import Friends from "./views/Menu/Friends";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
