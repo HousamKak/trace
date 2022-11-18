@@ -30,6 +30,11 @@ const styles = StyleSheet.create({
         fontSize: 12,
         marginLeft: 10,
     },
+    info: {
+        color: "#fff",
+        fontSize: 12,
+    },
+
 })
 
 export default DataDisplay;
