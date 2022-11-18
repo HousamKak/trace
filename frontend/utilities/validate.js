@@ -6,6 +6,8 @@ const validateEmail = (email) => {
     };
     return { status: true, message: "Valid Email" };
 }
-const validatePassword = (password) => { }
+const validatePassword = (password) => { 
+    const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+}
 
 export { validateEmail, validatePassword };
