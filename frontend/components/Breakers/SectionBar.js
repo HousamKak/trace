@@ -24,6 +24,12 @@ const styles = StyleSheet.create({
         color: "#fff",
         marginHorizontal: 15,
     },
+    sectionBar: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        padding: 2,
+    },
 })
 
 export default SectionBar;
