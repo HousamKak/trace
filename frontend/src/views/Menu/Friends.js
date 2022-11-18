@@ -90,4 +90,8 @@ const styles = StyleSheet.create({
     scrollView: {
         backgroundColor: "#1e193b",
     },
+    screenView: {
+        flex: 1,
+        backgroundColor: "#1e193b",
+    }
 })
