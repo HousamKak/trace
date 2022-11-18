@@ -44,6 +44,9 @@ const SignUp = () => {
                     if (e.data.message == "registration successful") {
                         navigation.navigate("SignIn")
                     }
+                    else {
+                        setErrorEmail(e.data.message)
+                    }
                 })
             }
             catch (error) {
