@@ -11,4 +11,6 @@ import { useNavigation } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const Items = () => { }
+const Items = () => {
+    const [myitems, setMyItems] = React.useState([])
+}
