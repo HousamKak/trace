@@ -12,4 +12,7 @@ import SectionBar from "../../components/Breakers/SectionBar";
 import DataDisplay from "../../components/Displayers/DataDisplay";
 
 
-const Profile = () => { }
+const Profile = () => {
+    const navigation = useNavigation();
+}
+
