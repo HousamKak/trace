@@ -17,5 +17,7 @@ const MiddleButton = () => {
     const navigation = useNavigation();
     const [loading, setLoading] = React.useState(false);
 
+    const getData = async (route, key) => {}
+
  }
 export default MiddleButton;
