@@ -3,3 +3,5 @@ import { Text, StyleSheet, TouchableOpacity, Image, View } from "react-native";
 
 
 const FullCard = (props) => { }
+
+export default FullCard;
