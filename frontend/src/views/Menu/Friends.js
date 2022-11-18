@@ -38,5 +38,19 @@ const Friends = () => {
     React.useEffect(() => {
         friend()
     }, [refreshing])
-    
+
+    return (
+        <View >
+            <Text >FRIENDS</Text>
+            <ScrollView
+            >
+                <View >
+                    {myfriends}
+                </View>
+            </ScrollView>
+            <View >
+                <MenuBtn ></MenuBtn>
+            </View>
+        </View>
+    );
 }
