@@ -46,6 +46,7 @@ const SignIn = () => {
             <View style={styles.rectangleView}>
                 <InputField placeholder="Email" onChange={setEmail}></InputField>
                 <InputField placeholder="Password" onChange={setPassword}></InputField>
+                {(error !== "") ? <Text style={styles.error_message}>{error}</Text> : ""}
                 <SignBtn navigation="" text="LOG IN" cwidth={styles.sign} />
             </View>
         </ScrollView>
