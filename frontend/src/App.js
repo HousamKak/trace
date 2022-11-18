@@ -85,6 +85,11 @@ const App = () => {
                     component={MiddleButton}
                     options={{ headerShown: false }}
                   />
+                  <Stack.Screen
+                    name="Friends"
+                    component={Friends}
+                    options={{ headerShown: false }}
+                  />
                 </>
               ) : (
                 <>
