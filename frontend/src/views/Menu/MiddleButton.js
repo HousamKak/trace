@@ -20,6 +20,7 @@ const MiddleButton = () => {
     const getData = async (route, key) => {
         const user_prime = await AsyncStorage.getItem("user")
         const user = JSON.parse(user_prime)
+        const configurationObject = {}
     }
 
 }
