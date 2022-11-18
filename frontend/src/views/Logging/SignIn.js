@@ -45,7 +45,7 @@ const SignIn = () => {
 
             <View style={styles.rectangleView}>
                 <InputField placeholder="Email" onChange={setEmail}></InputField>
-                <InputField placeholder="Password"></InputField>
+                <InputField placeholder="Password" onChange={setPassword}></InputField>
                 <SignBtn navigation="" text="LOG IN" cwidth={styles.sign} />
             </View>
         </ScrollView>
