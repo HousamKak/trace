@@ -42,6 +42,8 @@ const Saved = () => {
         save()
     }, [refreshing])
 
+    const getIcon = (type) => { }
+
     return (
         <View style={styles.screenView}>
             <Text style={styles.text}>SAVED</Text>
