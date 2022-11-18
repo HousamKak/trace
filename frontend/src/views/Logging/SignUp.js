@@ -24,7 +24,7 @@ const SignUp = () => {
 
         if (!isValidEmail.status) {
             setErrorEmail(isValidEmail.message);
-          }
+        } else { setErrorEmail("") }
     }
 
     return (
