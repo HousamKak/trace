@@ -5,6 +5,7 @@ import BtnAndLogo from "../../components/ButtonsLogging/BtnAndLogo";
 import { useNavigation } from "@react-navigation/native";
 
 const LogInPage = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.logInPageView}>
       <Image
