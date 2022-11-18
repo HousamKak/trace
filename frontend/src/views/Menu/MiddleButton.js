@@ -5,3 +5,4 @@ import {
     DevSettings,
     ActivityIndicator
 } from "react-native";
+import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
