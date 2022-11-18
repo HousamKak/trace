@@ -8,3 +8,4 @@ import {
 import { useNavigation, } from "@react-navigation/native";
 
 const AddTrace = () => { };
+const styles = StyleSheet.create({});
