@@ -15,6 +15,14 @@ const MenuBtn = (props) => {
         </TouchableOpacity>);
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    rectangleView: {
+        borderRadius: 20,
+        width: 56,
+        height: 53,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+})
 
 export default MenuBtn;
