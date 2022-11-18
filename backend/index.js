@@ -32,6 +32,9 @@ app.use('/user/items', userItemsRouter);
 const userMedalsRouter = require('./routes/medals.routes');
 app.use('/user/medals', userMedalsRouter);
 
+const tracesRouter = require('./routes/traces.routes');
+app.use('/traces', tracesRouter);
+
 const chestsRouter = require('./routes/chests.routes');
 app.use('/chests', chestsRouter);
 
