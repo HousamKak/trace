@@ -23,6 +23,9 @@ const MiddleButton = () => {
         const configurationObject = {
             method: "GET",
             url: base_url + route + user.user_id,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+              },
         }
     }
 
