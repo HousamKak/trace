@@ -16,6 +16,7 @@ import Scripts from "./views/Menu/Scripts";
 import Items from "./views/Menu/Items";
 import MyTraces from "./views/Menu/MyTraces";
 import MainPage from "./views/gameplay/MainPage";
+import Profile from "./views/gameplay/Profile";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
