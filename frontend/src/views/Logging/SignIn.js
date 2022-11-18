@@ -48,6 +48,7 @@ const SignIn = () => {
                 <InputField placeholder="Password" onChange={setPassword}></InputField>
                 {(error !== "") ? <Text style={styles.error_message}>{error}</Text> : ""}
                 <SignBtn onPress={handleClick} text="LOG IN" cwidth={styles.sign} />
+                {loading ? <ActivityIndicator size="small" color="#8a67f4" /> : ""}
             </View>
         </ScrollView>
     );
