@@ -29,6 +29,8 @@ const SignUp = () => {
         if (!isValidPassword.status) {
             setErrorPassword(isValidPassword.message);
         } else { setErrorPassword("") }
+
+        const configurationObject = {}
     }
 
     return (
