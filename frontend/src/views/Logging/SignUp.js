@@ -6,6 +6,7 @@ import { StyleSheet, ScrollView, View, Image, Text } from "react-native";
 import { validateEmail, validatePassword } from "../../utilities/validate";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
+const base_url = "http://192.168.1.102:8000"
 
 const SignUp = () => {
     return (
