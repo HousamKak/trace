@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 const Stack = createNativeStackNavigator();
 const base_url = "http://192.168.1.102:8000"
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import axios from "axios";
 
 import LogInPage from "./views/Logging/LogInPage";
 import DobPage from "./views/Logging/DobPage";
