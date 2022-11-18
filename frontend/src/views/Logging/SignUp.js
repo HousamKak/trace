@@ -17,6 +17,9 @@ const SignUp = () => {
     const [errorEmail, setErrorEmail] = React.useState("");
     const [errorPassword, setErrorPassword] = React.useState("");
     AsyncStorage.getItem("dob").then((value) => { setDob(JSON.parse(value)) })
+
+    const handleClick = async () => { }
+    
     return (
         <View style={styles.signUpView}>
             <Image
