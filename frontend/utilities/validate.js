@@ -8,6 +8,7 @@ const validateEmail = (email) => {
 }
 const validatePassword = (password) => { 
     const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (password === "") return { status: false, message: "Missing field" }
 }
 
 export { validateEmail, validatePassword };
