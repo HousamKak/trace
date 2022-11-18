@@ -24,5 +24,8 @@ const Items = () => {
         wait(500).then(() => setRefreshing(false));
     }, []);
 
-    const item = async () => {}
+    const item = async () => {
+        const items = await AsyncStorage.getItem("items")
+        const itemsList = JSON.parse(items)
+    }
 }
