@@ -52,6 +52,12 @@ const addTrace = (req, res) => {
     );
 }
 
-const getCloseTraces = (req, res) => { }
+const getCloseTraces = (req, res) => {
+    db.query("SELECT trace_id,file_type,x_position,y_position FROM traces", (err, rows) => {
+        if (err) console.log(err);
+        res.send(rows);
+    }
+    );
+}
 
 module.exports = { getAllUserTraces, deleteTrace, getTrace, addTrace };
