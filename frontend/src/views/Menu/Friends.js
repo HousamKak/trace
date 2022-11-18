@@ -95,3 +95,4 @@ const styles = StyleSheet.create({
         backgroundColor: "#1e193b",
     }
 })
+export default Friends;
