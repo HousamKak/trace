@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
         flex: 1,
         alignSelf: "center",
     },
+    sectionBarText: {
+        fontSize: 10,
+        fontWeight: "bold",
+        color: "#fff",
+        marginHorizontal: 15,
+    },
 })
 
 export default SectionBar;
