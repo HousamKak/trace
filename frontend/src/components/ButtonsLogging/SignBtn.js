@@ -9,7 +9,9 @@ const SignBtn = (props) => {
         <TouchableOpacity
             style={[styles.signBtnTouchableOpacity, props.cwidth]}
             activeOpacity={0.2}
-            onPress={() => navigation.navigate(props.navigation)}
+            onPress={() => {
+                props.onPress()
+            }}
         >
             <Text style={styles.signText}> {props.text}</Text>
         </TouchableOpacity>

@@ -1,12 +1,21 @@
 import * as React from "react";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { StyleSheet, View, Text, Image } from "react-native";
-import DateBtn from "../../components/DateBtn";
-import SignBtn from "../../components/SignBtn";
+import DateBtn from "../../components/ButtonsLogging/DateBtn";
+import SignBtn from "../../components/ButtonsLogging/SignBtn";
+import { useNavigation } from "@react-navigation/native";
 
 const DobPage = () => {
+    const navigation = useNavigation();
     const [date, setDate] = React.useState(new Date());
     const [show, setShow] = React.useState(false);
+
+    const handleClick = () => {
+        AsyncStorage.setItem('dob', JSON.stringify(date))
+        navigation.navigate("SignUp")
+    }
+
     return (
         <View style={styles.dobPageView}>
             <Image
@@ -40,8 +49,8 @@ const DobPage = () => {
                 <View style={styles.centeringbtn}>
                     <SignBtn
                         cwidth={styles.submitBtn}
-                        navigation="SignUp"
                         text="SUBMIT"
+                        onPress={handleClick}
                     ></SignBtn>
                 </View>
             </View>

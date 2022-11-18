@@ -10,6 +10,8 @@ const InputField = (props) => {
         placeholder={props.placeholder}
         mode="flat"
         placeholderTextColor="#818181"
+        onChangeText={(e) => props.onChange(e)}
+        secureTextEntry={props.placeholder === "Password" ? true : false}
       />
     </View>
   );

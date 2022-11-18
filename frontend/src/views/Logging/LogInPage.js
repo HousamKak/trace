@@ -1,9 +1,11 @@
 import * as React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-import SignBtn from "../../components/SignBtn";
-import BtnAndLogo from "../../components/BtnAndLogo";
+import SignBtn from "../../components/ButtonsLogging/SignBtn";
+import BtnAndLogo from "../../components/ButtonsLogging/BtnAndLogo";
+import { useNavigation } from "@react-navigation/native";
 
 const LogInPage = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.logInPageView}>
       <Image
@@ -27,7 +29,7 @@ const LogInPage = () => {
 
       <View style={styles.signUpContView}>
         <Text style={styles.signUpText}>Don’t have an account?</Text>
-        <SignBtn navigation="DobPage" text="SIGN UP" cwidth={styles.sign} />
+        <SignBtn onPress={() => { navigation.navigate("DobPage") }} text="SIGN UP" cwidth={styles.sign} />
       </View>
     </View>
   );
