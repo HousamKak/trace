@@ -18,6 +18,12 @@ const deleteSave = (req, res) => {
     })
 }
 
-const addSave = (req, res) => { }
+const addSave = (req, res) => {
+    const { user_id, trace_id } = req.body;
+    db.query('INSERT INTO saves (user_id, saved_trace_id) VALUES (?, ?)', [user_id, trace_id], (err, rows) => {
+        if (err) console.log(err);
+        res.status(200).json({ message: "Saved" });
+    })
+}
 
 module.exports = { getAllSaves, deleteSave, addSave }
