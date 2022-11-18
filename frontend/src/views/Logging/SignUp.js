@@ -12,6 +12,7 @@ const SignUp = () => {
     const navigation = useNavigation();
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+    const [username, setUsername] = React.useState("");
     return (
         <View style={styles.signUpView}>
             <Image
