@@ -14,5 +14,13 @@ import DataDisplay from "../../components/Displayers/DataDisplay";
 
 const Profile = () => {
     const navigation = useNavigation();
+    const [refreshing, setRefreshing] = React.useState(false);
+    const wait = (timeout) => {
+        return new Promise(resolve => setTimeout(resolve, timeout));
+    }
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        wait(500).then(() => setRefreshing(false));
+    }, []);
 }
 
