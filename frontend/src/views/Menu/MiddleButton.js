@@ -116,6 +116,10 @@ const styles = StyleSheet.create({
         alignItems: "space-between",
         flexDirection: "row",
     },
+    middle: {
+        alignItems: "center",
+        width: "100%",
+    },
 })
 
 export default MiddleButton;
