@@ -23,7 +23,12 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
-        width:"100%",
+        width: "100%",
+    },
+    data: {
+        color: "#fff",
+        fontSize: 12,
+        marginLeft: 10,
     },
 })
 
