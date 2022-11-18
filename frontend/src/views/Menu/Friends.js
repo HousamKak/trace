@@ -58,3 +58,5 @@ const Friends = () => {
         </View>
     );
 }
+
+const styles = StyleSheet.create({})
