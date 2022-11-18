@@ -66,7 +66,10 @@ const MiddleButton = () => {
                         navigation.navigate("MyTraces")
                         getData("/traces/user/", "mytraces")
                     }}></MenuBtnText>
-                    <MenuBtnText text={"Scripts"} src={require("../../assets/MenuPage/MenuButtons/scriptsIcon.png")} backgroundColor={styles.MenuIconsColor}></MenuBtnText>
+                    <MenuBtnText text={"Scripts"} src={require("../../assets/MenuPage/MenuButtons/scriptsIcon.png")} backgroundColor={styles.MenuIconsColor} onPress={() => {
+                        navigation.navigate("Scripts")
+                        getData("/user/scripts/", "scripts")
+                    }}></MenuBtnText>
                 </View>
             </View>
             <View style={styles.footer}>
