@@ -22,6 +22,21 @@ const Saved = () => {
         setRefreshing(true);
         wait(500).then(() => setRefreshing(false));
     }, []);
+
+    const save = async () => {
+        const saved = await AsyncStorage.getItem("saves")
+        const savesList = JSON.parse(saved)
+
+        if (savesList) {
+            const savedItems = savesList.map((save) => <FullCard key={save.trace_id} text={save.title} profile={getIcon(save.file_type)} icon={getIcon(save.file_type)} noType={0} />)
+            setSaves(savedItems)
+        }
+        else {
+            const savedItems = <Text style={styles.noContent}>No Saved Traces</Text>
+            setSaves(savedItems)
+        }
+
+    }
 }
 
 export default Saved;
