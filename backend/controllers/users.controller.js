@@ -20,6 +20,10 @@ const updateUser = async (req, res) => {
         if (email) {
             db.query('UPDATE users SET email = ? WHERE user_id = ?', [email, user_id])
         }
+        if (password) {
+            hashed_password = await bcrypt.hash(password, 10);
+            db.query('UPDATE users SET password = ? WHERE user_id = ?', [hashed_password, user_id])
+        }
     }
 }
 
