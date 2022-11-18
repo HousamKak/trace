@@ -58,5 +58,24 @@ const Items = () => {
     React.useEffect(() => {
         item()
     }, [refreshing])
-    
+
+    return (
+        <View style={styles.screenView}>
+            <Text style={styles.text}>ITEMS</Text>
+            < ScrollView style={styles.scrollView} refreshControl={
+                <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                />
+            }>
+                <View style={styles.itemsCont}>
+                    {myitems}
+                </View>
+            </ScrollView >
+            <View style={styles.footer}>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
+            </View>
+        </View>
+    );
+
 }
