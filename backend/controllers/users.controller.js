@@ -11,7 +11,14 @@ const getUser = (req, res) => {
     }
 }
 
-const updateUser = async (req, res) => { }
+const updateUser = async (req, res) => {
+    const { user_id, name, email, password } = req.body;
+    if (user_id) {
+        if (name) {
+            db.query('UPDATE users SET username = ? WHERE user_id = ?', [name, user_id])
+        }
+    }
+}
 
 const deleteUser = (req, res) => {
     const { user_id } = req.body;
