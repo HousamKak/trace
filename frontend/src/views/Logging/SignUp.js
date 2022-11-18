@@ -65,7 +65,7 @@ const SignUp = () => {
                     <InputField placeholder="Username" onChange={setUsername}></InputField>
                     <InputField placeholder="Email" onChange={setEmail}></InputField>
                     {(errorEmail !== "") ? <Text style={styles.error_message}>{errorEmail}</Text> : ""}
-                    <InputField placeholder="Password"></InputField>
+                    <InputField placeholder="Password" onChange={setPassword}></InputField>
                     <SignBtn navigation="" text="SIGN UP" cwidth={styles.sign} />
                 </View>
             </ScrollView>
