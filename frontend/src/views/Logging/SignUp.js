@@ -36,6 +36,7 @@ const SignUp = () => {
             headers: {
                 "Access-Control-Allow-Origin": "*",
             },
+            data: { username, email, password, dob }
         }
     }
 
