@@ -10,6 +10,7 @@ const SignIn = () => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [error, setError] = React.useState("");
+    const [loading, setLoading] = React.useState(false);
     return (
         <View style={styles.signInView}>
             <Image
