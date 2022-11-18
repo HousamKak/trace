@@ -6,3 +6,5 @@ const { getAllSaves, addSave, deleteSave } = require('../controllers/saves.contr
 router.get('/:user_id', getAllSaves);
 router.post('/', addSave);
 router.delete('/', deleteSave);
+
+module.exports = router;
