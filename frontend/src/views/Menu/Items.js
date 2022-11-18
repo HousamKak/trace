@@ -27,5 +27,14 @@ const Items = () => {
     const item = async () => {
         const items = await AsyncStorage.getItem("items")
         const itemsList = JSON.parse(items)
+        if (itemsList) {
+            const rapperArray = []
+            if (Math.floor(itemsList.length / 4) > 0) { }
+            else { }
+        }
+        else {
+            const savedItems = <Text style={styles.noContent}>No Saved Items</Text>
+            setSaves(savedItems)
+        }
     }
 }
