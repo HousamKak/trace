@@ -41,7 +41,13 @@ const Items = () => {
                 const savedItems = rapperArray.map((rap) => rap)
                 setMyItems(savedItems)
             }
-            else { }
+            else {
+                const savedItem = itemsList.map((it) => <Image key={it.item_id} source={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} style={styles.aloneitem} />)
+                const rapper = <View style={styles.lastRow}>{savedItem}</View>
+                rapperArray.push(rapper)
+                const savedItems = rapperArray.map((rap) => rap)
+                setMyItems(savedItems)
+            }
         }
         else {
             const savedItems = <Text style={styles.noContent}>No Saved Items</Text>
