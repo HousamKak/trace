@@ -18,3 +18,24 @@ const MainPage = () => {
             </View>
         </View>)
 }
+
+
+const styles = StyleSheet.create({
+    closeColor: {
+        backgroundColor: "#fb7785",
+    },
+    footer: {
+        marginTop: "100%",
+        alignItems: "center",
+        width: "100%",
+    },
+    middleButtonView: {
+        backgroundColor: "#302b4f",
+        flex: 1,
+        width: "100%",
+        height: 800,
+        overflow: "hidden",
+    },
+})
+
+export default MainPage;
