@@ -46,7 +46,7 @@ const MiddleButton = () => {
             {loading ? <ActivityIndicator style={styles.ActivityIndicator} size="small" color="#8a67f4" /> : ""}
             <View style={styles.body}>
                 <View style={styles.top}>
-                    <MenuBtnText ></MenuBtnText>
+                    <MenuBtnText text={"Saved"} src={require("../../assets/MenuPage/MenuButtons/savedIcon.png")} backgroundColor={styles.MenuIconsColor}></MenuBtnText>
                     <MenuBtnText ></MenuBtnText>
                 </View>
                 <View style={styles.middle}>
