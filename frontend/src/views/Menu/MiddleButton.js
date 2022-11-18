@@ -56,7 +56,10 @@ const MiddleButton = () => {
                     }} ></MenuBtnText>
                 </View>
                 <View style={styles.middle}>
-                    <MenuBtnText text={"Items"} src={require("../../assets/MenuPage/MenuButtons/swordIcon.png")} backgroundColor={styles.MenuIconsColor} ></MenuBtnText>
+                    <MenuBtnText text={"Items"} src={require("../../assets/MenuPage/MenuButtons/swordIcon.png")} backgroundColor={styles.MenuIconsColor} onPress={() => {
+                        navigation.navigate("Items")
+                        getData("/user/items/", "items")
+                    }}></MenuBtnText>
                 </View>
                 <View style={styles.bottom}>
                     <MenuBtnText text={"My Traces"} src={require("../../assets/MenuPage/MenuButtons/handIcon.png")} edits={styles.shiftText} backgroundColor={styles.MenuIconsColor} ></MenuBtnText>
