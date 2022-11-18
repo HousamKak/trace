@@ -10,11 +10,12 @@ const DobPage = () => {
     const navigation = useNavigation();
     const [date, setDate] = React.useState(new Date());
     const [show, setShow] = React.useState(false);
-    
+
     const handleClick = () => {
         AsyncStorage.setItem('dob', JSON.stringify(date))
         navigation.navigate("SignUp")
       }
+
     return (
         <View style={styles.dobPageView}>
             <Image
@@ -48,7 +49,6 @@ const DobPage = () => {
                 <View style={styles.centeringbtn}>
                     <SignBtn
                         cwidth={styles.submitBtn}
-                        navigation="SignUp"
                         text="SUBMIT"
                     ></SignBtn>
                 </View>
