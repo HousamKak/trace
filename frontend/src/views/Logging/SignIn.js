@@ -15,6 +15,7 @@ const SignIn = () => {
     const handleClick = async () => {
         const configurationObject = {
             method: "POST",
+            url: base_url + "/auth/login",
         }
     }
     return (
