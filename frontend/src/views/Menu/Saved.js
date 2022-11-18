@@ -11,5 +11,7 @@ import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Saved = () => { 
-    
+
 }
+
+export default Saved;
