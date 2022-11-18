@@ -65,16 +65,21 @@ const App = () => {
             {isLogged ?
               (
                 <>
-                <Stack.Screen
-                  name="MainPage"
-                  component={MainPage}
-                  options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                  name="Profile"
-                  component={Profile}
-                  options={{ headerShown: false }}
-                />
+                  <Stack.Screen
+                    name="MainPage"
+                    component={MainPage}
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="Profile"
+                    component={Profile}
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="Saved"
+                    component={Saved}
+                    options={{ headerShown: false }}
+                  />
                 </>
               ) : (
                 <>
