@@ -49,4 +49,22 @@ const MyTraces = () => {
             return require("../../assets/MenuPage/TraceTypes/musicIcon.png")
         }
     }
+    return (
+        <View style={styles.screenView}>
+            <Text style={styles.text}>MY TRACES</Text>
+            <ScrollView style={styles.scrollView} refreshControl={
+                <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                />
+            }>
+                <View style={styles.cards}>
+                    {myTrace}
+                </View>
+            </ScrollView>
+            <View style={styles.footer}>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
+            </View>
+        </View>
+    );
 }
