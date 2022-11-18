@@ -34,4 +34,9 @@ const Friends = () => {
             setmyfriends(friendItems)
         }
     }
+
+    React.useEffect(() => {
+        friend()
+    }, [refreshing])
+    
 }
