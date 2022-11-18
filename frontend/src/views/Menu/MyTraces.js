@@ -10,4 +10,7 @@ import FullCard from "../../components/Cards/FullCard";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const MyTraces = () => { }
+const MyTraces = () => {
+    const navigation = useNavigation();
+    const [myTrace, setMyTrace] = React.useState([]);
+}
