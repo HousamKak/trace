@@ -10,7 +10,13 @@ const getAllSaves = (req, res) => {
     }
 }
 
-const deleteSave = (req, res) => { }
+const deleteSave = (req, res) => {
+    const { user_id, trace_id } = req.body;
+    db.query('DELETE FROM saves WHERE user_id = ? AND saved_trace_id =? ', [user_id, trace_id], (err, rows) => {
+        if (err) console.log(err);
+        res.status(200).json({ message: "Save deleted" });
+    })
+}
 
 const addSave = (req, res) => { }
 
