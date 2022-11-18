@@ -10,8 +10,9 @@ import FullCard from "../../components/Cards/FullCard";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const Saved = () => { 
-
+const Saved = () => {
+    const navigation = useNavigation();
+    const [saves, setSaves] = React.useState([]);
 }
 
 export default Saved;
