@@ -87,4 +87,7 @@ const styles = StyleSheet.create({
     closeColor: {
         backgroundColor: "#fb7785",
     },
+    scrollView: {
+        backgroundColor: "#1e193b",
+    },
 })
