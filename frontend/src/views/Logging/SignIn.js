@@ -24,6 +24,7 @@ const SignIn = () => {
         await axios(configurationObject).then((e) => {
             if (e.data.message == "Login Successful") {
                 AsyncStorage.setItem("token", JSON.stringify("Bearer " + e.data.token))
+                setError("")
             }
         })
     }
