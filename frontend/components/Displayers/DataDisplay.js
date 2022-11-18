@@ -19,6 +19,12 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingHorizontal: "30%",
     },
+    query: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        width:"100%",
+    },
 })
 
 export default DataDisplay;
