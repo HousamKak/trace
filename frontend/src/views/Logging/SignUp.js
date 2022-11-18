@@ -38,6 +38,14 @@ const SignUp = () => {
             },
             data: { username, email, password, dob }
         }
+        if (isValidEmail.status && isValidPassword.status) {
+            try {
+                await axios(configurationObject)
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
     }
 
     return (
