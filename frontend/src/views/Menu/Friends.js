@@ -29,6 +29,9 @@ const Friends = () => {
         if (friendsList) {
             const friendItems = friendsList.map((friend) => <FullCard key={friend.user_id} text={friend.username} profile={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} icon={"../../assets/MenuPage/MenuButtons/friendsIcon.png"} noType={1} />)
             setmyfriends(friendItems)
+        } else {
+            const friendItems = <Text style={styles.noContent}>No Added Friends</Text>
+            setmyfriends(friendItems)
         }
     }
 }
