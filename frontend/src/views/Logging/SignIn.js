@@ -26,6 +26,7 @@ const SignIn = () => {
                 AsyncStorage.setItem("token", JSON.stringify("Bearer " + e.data.token))
                 setError("")
                 setLoading(true)
+                DevSettings.reload()
             }
         })
     }
