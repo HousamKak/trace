@@ -78,4 +78,7 @@ const MiddleButton = () => {
         </View>
     );
 }
+
+const styles = StyleSheet.create({})
+
 export default MiddleButton;
