@@ -53,7 +53,7 @@ const MiddleButton = () => {
                     <MenuBtnText text={"Items"} src={require("../../assets/MenuPage/MenuButtons/swordIcon.png")} backgroundColor={styles.MenuIconsColor} ></MenuBtnText>
                 </View>
                 <View style={styles.bottom}>
-                    <MenuBtnText ></MenuBtnText>
+                    <MenuBtnText text={"My Traces"} src={require("../../assets/MenuPage/MenuButtons/handIcon.png")} edits={styles.shiftText} backgroundColor={styles.MenuIconsColor} ></MenuBtnText>
                     <MenuBtnText ></MenuBtnText>
                 </View>
             </View>
