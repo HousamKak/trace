@@ -9,6 +9,7 @@ import LogInPage from "./views/Logging/LogInPage";
 import DobPage from "./views/Logging/DobPage";
 import SignIn from "./views/Logging/SignIn";
 import SignUp from "./views/Logging/SignUp";
+import MiddleButton from "./views/Menu/MiddleButton";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
