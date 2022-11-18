@@ -20,6 +20,7 @@ const SignUp = () => {
 
     const handleClick = async () => {
         const isValidEmail = validateEmail(email);
+        const isValidPassword = validatePassword(password);
     }
 
     return (
