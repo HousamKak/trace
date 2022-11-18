@@ -42,7 +42,15 @@ const Saved = () => {
         save()
     }, [refreshing])
 
-    const getIcon = (type) => { }
+    const getIcon = (type) => {
+        if (type == 1) {
+            return require("../../assets/MenuPage/TraceTypes/cameraIcon.png")
+        } else if (type == 2) {
+            return require("../../assets/MenuPage/TraceTypes/videoIcon.png")
+        } else if (type == 3) {
+            return require("../../assets/MenuPage/TraceTypes/musicIcon.png")
+        }
+    }
 
     return (
         <View style={styles.screenView}>
