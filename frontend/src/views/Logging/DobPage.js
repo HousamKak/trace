@@ -14,7 +14,7 @@ const DobPage = () => {
     const handleClick = () => {
         AsyncStorage.setItem('dob', JSON.stringify(date))
         navigation.navigate("SignUp")
-      }
+    }
 
     return (
         <View style={styles.dobPageView}>
@@ -50,6 +50,7 @@ const DobPage = () => {
                     <SignBtn
                         cwidth={styles.submitBtn}
                         text="SUBMIT"
+                        onPress={handleClick}
                     ></SignBtn>
                 </View>
             </View>
