@@ -40,6 +40,16 @@ const getTrace = (req, res) => {
     }
 }
 
-const addTrace = (req, res) => { }
+const addTrace = (req, res) => {
+    const { user_id, file_type, file, title, description, x_position, y_position } = req.body;
+    db.query(
+        "INSERT INTO traces (user_id,file_type,file,title,description,x_position,y_position) VALUES (?,?,?,?,?,?,?)",
+        [user_id, file_type, file, title, description, x_position, y_position],
+        (err, rows) => {
+            if (err) console.log(err);
+            res.status(200).json({ message: "Trace added" });
+        }
+    );
+}
 
 module.exports = { getAllUserTraces, deleteTrace, getTrace, addTrace };
