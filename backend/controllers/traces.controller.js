@@ -14,6 +14,16 @@ const getAllUserTraces = (req, res) => {
     }
 }
 
-const deleteTrace = (req, res) => { }
+const deleteTrace = (req, res) => {
+    const { trace_id } = req.body;
+    db.query(
+        "DELETE FROM traces WHERE trace_id = ?",
+        [trace_id],
+        (err, rows) => {
+            if (err) console.log(err);
+            res.status(200).json({ message: "Trace deleted" });
+        }
+    );
+}
 
 module.exports = { getAllUserTraces, deleteTrace };
