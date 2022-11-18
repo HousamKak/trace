@@ -13,7 +13,9 @@ const SignIn = () => {
     const [loading, setLoading] = React.useState(false);
 
     const handleClick = async () => {
-        const configurationObject = {}
+        const configurationObject = {
+            method: "POST",
+        }
     }
     return (
         <View style={styles.signInView}>
