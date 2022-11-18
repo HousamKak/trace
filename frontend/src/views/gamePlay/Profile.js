@@ -22,7 +22,7 @@ const Profile = () => {
         setRefreshing(true);
         wait(500).then(() => setRefreshing(false));
     }, []);
-    
+
     return (
         <View style={styles.screenView}>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.ScrollView} refreshControl={
@@ -82,3 +82,118 @@ const Profile = () => {
     )
 }
 
+const styles = StyleSheet.create({
+    weeklyProgressText: {
+        color: "#fff",
+        fontSize: 15,
+    },
+    userDataCont: {
+        marginBottom: 20,
+    },
+    weeklyProgressCont: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "20%",
+    },
+    cheat: {
+        marginLeft: -5,
+    },
+    levelAndMeter: {
+        display: "flex",
+        flexDirection: "row",
+        width: "100%",
+    },
+    XP: {
+        display: "flex",
+        alignSelf: "flex-end",
+        color: "#fff",
+        fontSize: 15,
+    },
+    yellow: {
+        position: "absolute",
+        width: "20%",
+        backgroundColor: "#D6B545",
+        height: 8,
+        borderRadius: 11,
+        zIndex: 2,
+        elevation: 2,
+    },
+    black: {
+        position: "absolute",
+        backgroundColor: "#000000",
+        width: "80%",
+        height: 8,
+        borderRadius: 11,
+        zIndex: 1,
+        elevation: 1,
+    },
+    levelBarCont: {
+        width: "100%",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        marginLeft: 15,
+    },
+    levelIndicatorSection: {
+        width: "100%",
+        marginTop: 16,
+        paddingLeft: 5,
+        paddingRight: 20,
+        marginBottom: 20,
+    },
+    level: {
+        fontSize: 15,
+        color: "#fff",
+    },
+    status: {
+        textAlign: "center",
+        color: "#fff",
+        fontSize: 10,
+        fontWeight: "bold",
+    },
+    name: {
+        color: "#fff",
+        fontSize: 18,
+        fontWeight: "bold",
+        textAlign: "center",
+        marginTop: 15,
+    },
+    profileImage: {
+        width: 150,
+        height: 150,
+        alignSelf: "center",
+        marginTop: 35,
+    },
+    statusContShape: {
+        backgroundColor: "#e86e6e",
+        width: "10%",
+        fontSize: 10,
+        borderRadius: 10,
+        alignSelf: "center",
+        marginTop: 12,
+        height: 24,
+        width: 80,
+        justifyContent: "center",
+    },
+    footer: {
+        alignItems: "center",
+        width: "100%",
+        paddingVertical: "10%",
+    },
+    closeColor: {
+        backgroundColor: "#fb7785",
+    },
+    ScrollView: {
+        backgroundColor: "#302b4f",
+        borderRadius: 15,
+        overflow: "hidden",
+    },
+    screenView: {
+        flex: 1,
+        backgroundColor: "#1e193b",
+        paddingHorizontal: "5%",
+        paddingTop: "15%",
+
+    }
+});
