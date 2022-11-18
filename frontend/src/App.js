@@ -100,6 +100,11 @@ const App = () => {
                     component={Items}
                     options={{ headerShown: false }}
                   />
+                  <Stack.Screen
+                    name="MyTraces"
+                    component={MyTraces}
+                    options={{ headerShown: false }}
+                  />
                 </>
               ) : (
                 <>
