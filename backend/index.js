@@ -20,6 +20,9 @@ app.use('/user', usersRouter);
 const userFriendsRouter = require('./routes/friends.routes');
 app.use('/user/friends', userFriendsRouter);
 
+const userScriptsRouter = require('./routes/scripts.routes');
+app.use('/user/scripts', userScriptsRouter);
+
 const userItemsRouter = require('./routes/items.routes');
 app.use('/user/items', userItemsRouter);
 
