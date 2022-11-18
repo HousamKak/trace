@@ -6,3 +6,4 @@ import {
     ActivityIndicator
 } from "react-native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
+import MenuBtnText from "../../components/ButtonsMenu/MenuBtnText";
