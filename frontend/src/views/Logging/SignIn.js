@@ -1,7 +1,7 @@
 import * as React from "react";
 import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import InputField from "../../components/Input/InputField";
-import { StyleSheet, View, Text, Image, TextInput } from "react-native";
+import { StyleSheet, ScrollView, View, Text, Image, ActivityIndicator, DevSettings } from "react-native";
 
 const SignIn = () => {
     return (
