@@ -23,4 +23,6 @@ const Items = () => {
         setRefreshing(true);
         wait(500).then(() => setRefreshing(false));
     }, []);
+
+    const item = async () => {}
 }
