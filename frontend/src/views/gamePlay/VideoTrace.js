@@ -10,3 +10,5 @@ import { useNavigation, } from "@react-navigation/native";
 const VideoTrace = () => { };
 
 const styles = StyleSheet.create({});
+
+export default VideoTrace;
