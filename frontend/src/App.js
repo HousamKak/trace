@@ -40,6 +40,16 @@ const App = () => {
           url: base_url + "/user",
         }
       }
+      try {
+        const response = await axios(configurationObject)
+        if (response.status === 200) {
+          AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
+          setIsLogged(true)
+        }
+      }
+      catch (e) {
+        console.log(e.message)
+      }
     }
   }, []);
 
