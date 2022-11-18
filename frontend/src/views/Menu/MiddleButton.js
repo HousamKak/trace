@@ -34,6 +34,29 @@ const MiddleButton = () => {
             }
         } catch (e) { console.log(e.message) }
     }
+    return (
+        <View style={styles.middleButtonView}>
+            <View style={styles.header}>
+                <MenuBtn />
+            </View>
+            <View style={styles.body}>
+                <View style={styles.top}>
+                    <MenuBtnText ></MenuBtnText>
+                    <MenuBtnText ></MenuBtnText>
+                </View>
+                <View style={styles.middle}>
+                    <MenuBtnText ></MenuBtnText>
+                </View>
+                <View style={styles.bottom}>
+                    <MenuBtnText ></MenuBtnText>
+                    <MenuBtnText ></MenuBtnText>
+                </View>
+            </View>
+            <View style={styles.footer}>
+                <MenuBtn ></MenuBtn>
+            </View>
+        </View>
+    );
 
 }
 export default MiddleButton;
