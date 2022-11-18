@@ -20,6 +20,9 @@ app.use('/user', usersRouter);
 const userFriendsRouter = require('./routes/friends.routes');
 app.use('/user/friends', userFriendsRouter);
 
+const userItemsRouter = require('./routes/items.routes');
+app.use('/user/items', userItemsRouter);
+
 app.listen(process.env.PORT, (err) => {
     if (err) { console.log(err); }
     console.log(`server running on port ${process.env.PORT}`);
