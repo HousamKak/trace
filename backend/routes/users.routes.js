@@ -5,3 +5,5 @@ const { getUser, updateUser, deleteUser } = require('../controllers/users.contro
 router.get('/', getUser);
 router.put('/', updateUser);
 router.delete('/', deleteUser);
+
+module.exports = router;      
