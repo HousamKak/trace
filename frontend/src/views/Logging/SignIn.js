@@ -12,7 +12,9 @@ const SignIn = () => {
     const [error, setError] = React.useState("");
     const [loading, setLoading] = React.useState(false);
 
-    const handleClick = async () => { }
+    const handleClick = async () => {
+        const configurationObject = {}
+    }
     return (
         <View style={styles.signInView}>
             <Image
