@@ -13,6 +13,11 @@ const FullCard = (props) => {
                 <Text style={styles.text}> {props.text}</Text>
             </View>
 
+            <View style={styles.rightCont}>
+                {props.noType ? "" : <Image source={props.icon} style={styles.iconSize} />}
+                {props.nodelete ? "" : <Image source={require("../../assets/MenuPage/MenuButtons/delete.png")} style={styles.delete} />}
+            </View>
+
         </TouchableOpacity >
     );
 }
