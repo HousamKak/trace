@@ -118,6 +118,11 @@ const App = () => {
                     component={ImageTrace}
                     options={{ headerShown: false }}
                   />
+                  <Stack.Screen
+                    name="Chest"
+                    component={Chest}
+                    options={{ headerShown: false }}
+                  />
                 </>
               ) : (
                 <>
