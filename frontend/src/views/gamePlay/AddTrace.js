@@ -37,6 +37,11 @@ const AddTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    logoIcon: {
+        alignSelf: "center",
+        marginTop: "12%",
+        marginBottom: "6%",
+    },
     footer: {
         alignItems: "center",
         width: "100%",
@@ -54,10 +59,13 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 800,
         overflow: "hidden",
+        paddingHorizontal: "5%",
     },
-    IconTypeContainer:{
+    IconTypeContainer: {
         display: "flex",
         flexDirection: "row",
+        justifyContent: "space-between",
+        paddingHorizontal: "5%",
     }
 });
 
