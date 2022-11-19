@@ -13,15 +13,20 @@ const ImageTrace = () => {
     return (
         <ScrollView style={styles.ImageTracePage}>
             <View style={styles.header}>
-                <View>
-                    <View></View>
-                    <View></View>
+                <View style={styles.upperheader}>
+                    <View style={styles.rightheader}>
+                        <Image source={""} style={styles.profilePicture}></Image>
+                        <Text style={styles.name}> Random Text</Text>
+                    </View>
+                    <View style={styles.leftheader}>
+                        <Image source={""}></Image>
+                        <Image source={""}></Image>
+                    </View>
                 </View>
-                <View>
-                    <Text ></Text>
-                    <Text></Text>
+                <View style={styles.lowerheader}>
+                    <Text style={styles.title}>Random random reando</Text>
+                    <Text style={styles.description}> random I am</Text>
                 </View>
-
             </View>
             <View style={styles.ImageTrace}>
                 <Image source={""}></Image>
