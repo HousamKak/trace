@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
         marginLeft: 15
     },
     profileSize: {
-        height: 60,
-        width: 60,
+        height: 50,
+        width: 50,
 
     },
     delete: {

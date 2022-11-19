@@ -28,7 +28,7 @@ const Saved = () => {
         const savesList = JSON.parse(saved)
 
         if (savesList) {
-            const savedItems = savesList.map((save) => <FullCard key={save.trace_id} text={save.title} profile={getIcon(save.file_type)} icon={getIcon(save.file_type)} noType={0} />)
+            const savedItems = savesList.map((save) => <FullCard key={save.trace_id} text={save.title} profile={require("../../assets/MenuPage/trialprofile.png")} icon={getIcon(save.file_type)} noType={0} />)
             setSaves(savedItems)
         }
         else {
