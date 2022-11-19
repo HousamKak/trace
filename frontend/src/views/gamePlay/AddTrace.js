@@ -1,6 +1,6 @@
 import * as React from "react";
 import {
-    Text,
+    Image,
     StyleSheet,
     View,
     ScrollView, RefreshControl, TextInput
@@ -9,6 +9,7 @@ import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
 import InputField from "../../components/Inputs/InputField";
 import SignBtn from "../../components/ButtonsLogging/SignBtn";
+import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 
 const AddTrace = () => {
     const navigation = useNavigation();
