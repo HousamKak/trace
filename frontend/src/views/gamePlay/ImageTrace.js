@@ -9,7 +9,7 @@ import { useNavigation, } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 
 const ImageTrace = () => {
-
+    const navigation = useNavigation();
     return (
         <ScrollView style={styles.ImageTracePage}>
             <View style={styles.header}>
