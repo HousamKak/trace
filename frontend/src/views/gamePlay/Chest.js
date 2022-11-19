@@ -13,7 +13,29 @@ const Chest = () => {
         <View>
             <ScrollView>
                 <Image></Image>
-                <DataDisplay
+                <DataDisplay />
+                <View>
+
+                </View>
+                <DataDisplay />
+                <View>
+
+                </View>
+
+                <View>
+                    <View>
+                        <Image></Image>
+                        <Text></Text>
+                    </View>
+                    <View>
+                        <Image></Image>
+                        <Text></Text>
+                    </View>
+                    <View>
+                        <Image></Image>
+                        <Text></Text>
+                    </View>
+                </View>
             </ScrollView>
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MainPage")}></MenuBtn>
