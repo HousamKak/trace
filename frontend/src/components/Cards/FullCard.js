@@ -22,4 +22,6 @@ const FullCard = (props) => {
     );
 }
 
+const styles = StyleSheet.create({})
+
 export default FullCard;
