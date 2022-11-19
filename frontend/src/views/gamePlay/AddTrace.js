@@ -40,7 +40,7 @@ const AddTrace = () => {
                         multiline={true}
                         maxLength={280} />
                 </View>
-                <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="SIGN IN" cwidth={styles.sign} />
+                <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="DROP ON MAP" cwidth={styles.sign} />
             </View>
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
