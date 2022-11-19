@@ -3,7 +3,7 @@ import {
     Text,
     StyleSheet,
     View,
-    ScrollView, RefreshControl,Image
+    ScrollView, RefreshControl, Image
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
@@ -44,6 +44,15 @@ const Chest = () => {
 
     )
 };
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    closeColor: {
+        backgroundColor: "#fb7785",
+    },
+    footer: {
+        marginTop: "100%",
+        alignItems: "center",
+        width: "100%",
+    },
+});
 
 export default Chest;
