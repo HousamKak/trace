@@ -11,31 +11,33 @@ import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 const ImageTrace = () => {
     const navigation = useNavigation();
     return (
-        <ScrollView style={styles.ImageTracePage}>
-            <View style={styles.header}>
-                <View style={styles.upperheader}>
-                    <View style={styles.rightheader}>
-                        <Image source={require("../../assets/MenuPage/trialprofile.png")} style={styles.profilePicture}></Image>
-                        <Text style={styles.name}> Random Text</Text>
+        <View style={styles.ImageTracePage}>
+            <ScrollView >
+                <View style={styles.header}>
+                    <View style={styles.upperheader}>
+                        <View style={styles.rightheader}>
+                            <Image source={require("../../assets/MenuPage/trialprofile.png")} style={styles.profilePicture}></Image>
+                            <Text style={styles.name}> Random Text</Text>
+                        </View>
+                        <View style={styles.leftheader}>
+                            <Image source={require("../../assets/MenuPage/Friends/addFriendIcon.png")}></Image>
+                            <Image source={require("../../assets/MenuPage/Friends/saveFriendIcon.png")}></Image>
+                        </View>
                     </View>
-                    <View style={styles.leftheader}>
-                        <Image source={require("../../assets/MenuPage/Friends/addFriendIcon.png")}></Image>
-                        <Image source={require("../../assets/MenuPage/Friends/saveFriendIcon.png")}></Image>
+                    <View style={styles.lowerheader}>
+                        <Text style={styles.title}>Check my tree</Text>
+                        <Text style={styles.description}>This is some random text and the likes are
+                            whatever you think they are.</Text>
                     </View>
                 </View>
-                <View style={styles.lowerheader}>
-                    <Text style={styles.title}>Check my tree</Text>
-                    <Text style={styles.description}>This is some random text and the likes are
-                        whatever you think they are.</Text>
+                <View style={styles.ImageTrace}>
+                    <Image source={""} style={styles.Image}></Image>
                 </View>
-            </View>
-            <View style={styles.ImageTrace}>
-                <Image source={""}></Image>
-            </View>
+            </ScrollView>
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
             </View>
-        </ScrollView>
+        </View>
     )
 };
 
