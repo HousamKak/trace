@@ -3,7 +3,8 @@ import {
     StyleSheet,
     View,
     DevSettings,
-    ActivityIndicator
+    ActivityIndicator,
+    ScrollView
 } from "react-native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import MenuBtnText from "../../components/ButtonsMenu/MenuBtnText";
@@ -35,7 +36,7 @@ const MiddleButton = () => {
         } catch (e) { console.log(e.message) }
     }
     return (
-        <View style={styles.middleButtonView}>
+        <ScrollView style={styles.middleButtonView}>
             <View style={styles.header}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/shutdown.png")} cwdith={styles.width} cheight={styles.height} backgroundColor={styles.closeColor} onPress={() => {
                     AsyncStorage.clear()
@@ -75,7 +76,7 @@ const MiddleButton = () => {
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => { navigation.navigate("MainPage") }} ></MenuBtn>
             </View>
-        </View>
+        </ScrollView>
     );
 }
 
