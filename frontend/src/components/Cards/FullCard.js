@@ -22,6 +22,19 @@ const FullCard = (props) => {
     );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    rectangleView: {
+        borderRadius: 15,
+        backgroundColor: "#302b4f",
+        width: '90%',
+        height: 65,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingRight: 15,
+        paddingLeft: 15,
+        marginBottom: 8,
+        justifyContent: 'space-between'
+    },
+})
 
 export default FullCard;
