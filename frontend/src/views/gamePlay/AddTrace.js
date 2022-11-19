@@ -33,7 +33,12 @@ const AddTrace = () => {
                     placeholderTextColor="#818181"
                     onChangeText={(e) => handleTitleChnage(e)}
                 />
-                <TextInput placeholder="Write Something" style={styles.multiline} multiline={true} maxLength={280} />
+                <TextInput
+                    placeholder="Write Something" mode="flat"
+                    placeholderTextColor="#818181"
+                    style={styles.multiline}
+                    multiline={true}
+                    maxLength={280} />
                 <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="SIGN IN" cwidth={styles.sign} />
             </View>
             <View style={styles.footer}>
@@ -64,7 +69,11 @@ const styles = StyleSheet.create({
         backgroundColor: "#fb7785",
     },
     multiline: {
+        height: 55,
+        width: 331,
         borderRadius: 12,
+        backgroundColor: "#fff",
+        paddingHorizontal: 8,
     },
     AddTracePage: {
         backgroundColor: "#1e193b",
@@ -80,7 +89,9 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingHorizontal: "5%",
     },
-    textInputFields: {}
+    textInputFields: {
+        backgroundColor: "#302b4f",
+    }
 });
 
 export default AddTrace;
