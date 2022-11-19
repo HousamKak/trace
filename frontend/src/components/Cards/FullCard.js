@@ -43,6 +43,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
+    iconSize: {
+        marginRight: 15
+    },
 })
 
 export default FullCard;
