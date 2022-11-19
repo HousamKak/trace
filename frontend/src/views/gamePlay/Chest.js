@@ -7,10 +7,14 @@ import {
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
+import DataDisplay from "../../components/Displayers/DataDisplay";
 const Chest = () => {
     return (
         <View>
-            <ScrollView></ScrollView>
+            <ScrollView>
+                <Image></Image>
+                <DataDisplay
+            </ScrollView>
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MainPage")}></MenuBtn>
             </View>
