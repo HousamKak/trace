@@ -10,16 +10,17 @@ const IconTypeDisplay = (props) => {
 
 const styles = StyleSheet.create({
     ContDisplay: {
-        width: 84,
-        height: 84,
+        width: 120,
+        height: 120,
         borderRadius: 20,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#302b4f",
     },
     Icon: {
-        width: 60,
-        height: 60,
+        // resizeMode: "center",
+        width: 100,
+        height: 100,
     }
 })
 

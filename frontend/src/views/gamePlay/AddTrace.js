@@ -17,7 +17,7 @@ const AddTrace = () => {
             <Image
                 style={styles.logoIcon}
                 resizeMode="cover"
-                source={require("../../assets/LogInPage/logo.png")}
+                source={require("../../assets/MenuPage/AddTrace/BigHand.png")}
             />
             <View style={styles.IconTypeContainer}>
                 <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/cameraIcon.png")} />
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     logoIcon: {
         alignSelf: "center",
         marginTop: "12%",
-        marginBottom: "6%",
+        marginBottom: "12%",
     },
     footer: {
         alignItems: "center",
@@ -92,7 +92,6 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingHorizontal: "5%",
         marginBottom: "10%",
     },
     textInputFields: {
