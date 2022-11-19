@@ -45,18 +45,28 @@ const styles = StyleSheet.create({
     },
     rightheader: {
         flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: 145,
     },
     leftheader: {
         flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        width: 85,
     },
     upperheader: {
-
         flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 25,
     },
     header: {
         backgroundColor: "#302b4f",
         width: "100%",
         marginTop: "15%",
+        paddingRight: "3%",
+        paddingLeft: "5%",
+        borderRadius: 20,
     },
     title: {
         color: "#ffffff",
