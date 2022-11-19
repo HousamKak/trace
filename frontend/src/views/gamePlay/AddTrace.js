@@ -8,6 +8,7 @@ import {
 import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
 import InputField from "../../components/Inputs/InputField";
+import SignBtn from "../../components/ButtonsLogging/SignBtn";
 
 const AddTrace = () => {
     <View style={styles.AddTracePage}>
@@ -23,7 +24,8 @@ const AddTrace = () => {
         </View>
         <View style={styles.textInputFields}>
             <InputField placeholder="Title" />
-            <TextInput multiline={true}  maxLength={280} />
+            <TextInput multiline={true} maxLength={280} />
+            <SignBtn onPress={() => { navigation.navigate("SignIn") }} text="SIGN IN" cwidth={styles.sign} />
 
         </View>
     </View>
