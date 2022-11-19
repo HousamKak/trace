@@ -9,6 +9,13 @@ const IconTypeDisplay = (props) => {
 }
 
 const styles = StyleSheet.create({
+    ContDisplay: {
+        width: 84,
+        height: 84,
+        borderRadius: 20,
+        justifyContent: "center",
+        alignItems: "center",
+    },
 
 })
 
