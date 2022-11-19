@@ -55,7 +55,7 @@ const Saved = () => {
     return (
         <View style={styles.screenView}>
             <Text style={styles.text}>SAVED</Text>
-            <ScrollView style={styles.scrollView} refreshControl={
+            <ScrollView refreshControl={
                 <RefreshControl
                     refreshing={refreshing}
                     onRefresh={onRefresh}
@@ -99,9 +99,6 @@ const styles = StyleSheet.create({
     },
     closeColor: {
         backgroundColor: "#fb7785",
-    },
-    scrollView: {
-        backgroundColor: "#302b4f",
     },
     screenView: {
         flex: 1,
