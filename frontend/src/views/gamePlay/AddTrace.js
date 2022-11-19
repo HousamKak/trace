@@ -16,7 +16,9 @@ const AddTrace = () => {
             source={require("../../assets/LogInPage/logo.png")}
         />
         <View styles={styles.IconTypeContainer}>
-
+            <IconTypeDisplay src={require("../../assets/TraceTypes/cameraIcon.png")} />
+            <IconTypeDisplay src={require("../../assets/TraceTypes/videoIcon.png")} />
+            <IconTypeDisplay src={require("../../assets/TraceTypes/musicIcon.png")} />
         </View>
     </View>
 };
