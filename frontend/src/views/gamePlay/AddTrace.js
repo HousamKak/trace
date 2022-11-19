@@ -13,39 +13,41 @@ import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 const AddTrace = () => {
     const navigation = useNavigation();
     return (
-        <ScrollView style={styles.AddTracePage}>
-            <Image
-                style={styles.logoIcon}
-                resizeMode="cover"
-                source={require("../../assets/MenuPage/AddTrace/BigHand.png")}
-            />
-            <View style={styles.IconTypeContainer}>
-                <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/cameraIcon.png")} />
-                <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/videoIcon.png")} />
-                <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} />
-            </View>
-            <View style={styles.textInputFields}>
-                <View style={styles.textInputContainer}>
-                    <TextInput
-                        style={styles.field}
-                        placeholder={"Add Title"}
-                        mode="flat"
-                        placeholderTextColor="#818181"
-                        onChangeText={(e) => handleTitleChnage(e)}
-                    />
-                    <TextInput
-                        placeholder="Write Something" mode="flat"
-                        placeholderTextColor="#818181"
-                        style={styles.multiline}
-                        multiline={true}
-                        maxLength={280} />
+        <View style={styles.AddTracePage}>
+            <ScrollView >
+                <Image
+                    style={styles.logoIcon}
+                    resizeMode="cover"
+                    source={require("../../assets/MenuPage/AddTrace/BigHand.png")}
+                />
+                <View style={styles.IconTypeContainer}>
+                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/cameraIcon.png")} />
+                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/videoIcon.png")} />
+                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} />
                 </View>
-                <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="DROP ON MAP" cwidth={styles.sign} />
-            </View>
+                <View style={styles.textInputFields}>
+                    <View style={styles.textInputContainer}>
+                        <TextInput
+                            style={styles.field}
+                            placeholder={"Add Title"}
+                            mode="flat"
+                            placeholderTextColor="#818181"
+                            onChangeText={(e) => handleTitleChnage(e)}
+                        />
+                        <TextInput
+                            placeholder="Write Something" mode="flat"
+                            placeholderTextColor="#818181"
+                            style={styles.multiline}
+                            multiline={true}
+                            maxLength={280} />
+                    </View>
+                    <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="DROP ON MAP" cwidth={styles.sign} />
+                </View>
+            </ScrollView>
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
             </View>
-        </ScrollView>)
+        </View>)
 };
 
 const styles = StyleSheet.create({
