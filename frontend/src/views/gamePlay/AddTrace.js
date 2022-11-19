@@ -25,7 +25,7 @@ const AddTrace = () => {
         </View>
         <View style={styles.textInputFields}>
             <InputField placeholder="Title" />
-            <TextInput multiline={true} maxLength={280} />
+            <TextInput style={styles.multiline} multiline={true} maxLength={280} />
             <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="SIGN IN" cwidth={styles.sign} />
         </View>
         <View style={styles.footer}>
@@ -43,6 +43,9 @@ const styles = StyleSheet.create({
     closeColor: {
         backgroundColor: "#fb7785",
     },
+    multiline: {
+        borderRadius: 12,
+    }
 });
 
 export default AddTrace;
