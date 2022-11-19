@@ -22,4 +22,46 @@ const FullCard = (props) => {
     );
 }
 
+const styles = StyleSheet.create({
+    rectangleView: {
+        borderRadius: 15,
+        backgroundColor: "#302b4f",
+        width: '90%',
+        height: 65,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingLeft: 10,
+        paddingRight: 10,
+        marginBottom: 8,
+        justifyContent: 'space-between'
+    },
+    leftCont: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    rightCont: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    iconSize: {
+        marginRight: 15,
+        width: 50,
+        height: 60,
+    },
+    text: {
+        fontSize: 15,
+        color: "#fff",
+        marginLeft: 15
+    },
+    profileSize: {
+        height: 50,
+        width: 50,
+
+    },
+    delete: {
+        width: 40,
+        height: 40,
+    }
+})
+
 export default FullCard;

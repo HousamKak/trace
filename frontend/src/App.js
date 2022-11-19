@@ -15,8 +15,9 @@ import Friends from "./views/Menu/Friends";
 import Scripts from "./views/Menu/Scripts";
 import Items from "./views/Menu/Items";
 import MyTraces from "./views/Menu/MyTraces";
-import MainPage from "./views/gameplay/MainPage";
-import Profile from "./views/gameplay/Profile";
+import MainPage from "././views/gamePlay/MainPage";
+import Profile from "././views/gamePlay/Profile";
+import AddTrace from "./views/gamePlay/AddTrace";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
@@ -103,6 +104,11 @@ const App = () => {
                   <Stack.Screen
                     name="MyTraces"
                     component={MyTraces}
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="AddTrace"
+                    component={AddTrace}
                     options={{ headerShown: false }}
                   />
                 </>

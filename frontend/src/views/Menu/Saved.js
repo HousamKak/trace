@@ -28,7 +28,7 @@ const Saved = () => {
         const savesList = JSON.parse(saved)
 
         if (savesList) {
-            const savedItems = savesList.map((save) => <FullCard key={save.trace_id} text={save.title} profile={getIcon(save.file_type)} icon={getIcon(save.file_type)} noType={0} />)
+            const savedItems = savesList.map((save) => <FullCard key={save.trace_id} text={save.title} profile={require("../../assets/MenuPage/trialprofile.png")} icon={getIcon(save.file_type)} noType={0} />)
             setSaves(savedItems)
         }
         else {
@@ -55,7 +55,7 @@ const Saved = () => {
     return (
         <View style={styles.screenView}>
             <Text style={styles.text}>SAVED</Text>
-            <ScrollView style={styles.scrollView} refreshControl={
+            <ScrollView refreshControl={
                 <RefreshControl
                     refreshing={refreshing}
                     onRefresh={onRefresh}
@@ -99,9 +99,6 @@ const styles = StyleSheet.create({
     },
     closeColor: {
         backgroundColor: "#fb7785",
-    },
-    scrollView: {
-        backgroundColor: "#302b4f",
     },
     screenView: {
         flex: 1,

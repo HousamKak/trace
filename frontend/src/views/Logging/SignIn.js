@@ -1,6 +1,6 @@
 import * as React from "react";
 import SignBtn from "../../components/ButtonsLogging/SignBtn";
-import InputField from "../../components/Input/InputField";
+import InputField from "../../components/Inputs/InputField";
 import { StyleSheet, ScrollView, View, Text, Image, ActivityIndicator, DevSettings } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import axios from "axios";
