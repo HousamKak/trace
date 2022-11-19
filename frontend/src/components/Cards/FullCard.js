@@ -44,12 +44,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     iconSize: {
-        marginRight: 15
+        marginRight: 15,
+        width: 50,
+        height: 60,
     },
     text: {
         fontSize: 15,
         color: "#fff",
         marginLeft: 15
+    },
+    profileSize: {
+
+
     },
 })
 
