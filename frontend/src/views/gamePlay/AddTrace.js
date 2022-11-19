@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
     IconTypeContainer: {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
-        marginBottom: "10%",
+        justifyContent: "space-around",
+        marginBottom: "5%",
     },
     textInputFields: {
         backgroundColor: "#302b4f",
