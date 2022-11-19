@@ -52,13 +52,13 @@ const styles = StyleSheet.create({
         height: 800,
         overflow: "hidden",
     },
-    closeColor: {
-        backgroundColor: "#fb7785",
-    },
     footer: {
-        marginTop: "100%",
         alignItems: "center",
         width: "100%",
+        paddingVertical: "10%",
+    },
+    closeColor: {
+        backgroundColor: "#fb7785",
     },
 });
 
