@@ -7,18 +7,22 @@ import {
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 
-const AddTrace = () => { 
-    <View>
-        <Image/>
-        <View>
+const AddTrace = () => {
+    <View style={styles.AddTracePage}>
+        <Image
+            style={styles.logoIcon}
+            resizeMode="cover"
+            source={require("../../assets/LogInPage/logo.png")}
+        />
+        <View styles={styles.IconTypeContainer}>
             <View>
 
             </View>
             <View>
-                
+
             </View>
             <View>
-                
+
             </View>
         </View>
     </View>
