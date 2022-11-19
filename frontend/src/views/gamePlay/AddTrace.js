@@ -47,7 +47,14 @@ const styles = StyleSheet.create({
     },
     multiline: {
         borderRadius: 12,
-    }
+    },
+    AddTracePage: {
+        backgroundColor: "#1e193b",
+        flex: 1,
+        width: "100%",
+        height: 800,
+        overflow: "hidden",
+    },
 });
 
 export default AddTrace;
