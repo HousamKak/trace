@@ -15,12 +15,12 @@ const ImageTrace = () => {
             <View style={styles.header}>
                 <View style={styles.upperheader}>
                     <View style={styles.rightheader}>
-                        <Image source={""} style={styles.profilePicture}></Image>
+                        <Image source={require("../../assets/MenuPage/trialprofile.png")} style={styles.profilePicture}></Image>
                         <Text style={styles.name}> Random Text</Text>
                     </View>
                     <View style={styles.leftheader}>
-                        <Image source={""}></Image>
-                        <Image source={""}></Image>
+                        <Image source={require("../../assets/MenuPage/Friends/addFriendIcon.png")}></Image>
+                        <Image source={require("../../assets/MenuPage/Friends/saveFriendIcon.png")}></Image>
                     </View>
                 </View>
                 <View style={styles.lowerheader}>
@@ -63,6 +63,10 @@ const styles = StyleSheet.create({
     closeColor: {
         backgroundColor: "#fb7785",
     },
+    ImageTrace: {
+        backgroundColor: "#302b4f",
+    }
+    
 });
 
 export default ImageTrace;
