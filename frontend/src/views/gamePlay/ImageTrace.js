@@ -39,6 +39,10 @@ const ImageTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    profilePicture: {
+        height: 50,
+        width: 50,
+    },
     rightheader: {
         flexDirection: "row",
     },
@@ -46,8 +50,13 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     upperheader: {
-        backgroundColor: "#302b4f",
+
         flexDirection: "row",
+    },
+    header: {
+        backgroundColor: "#302b4f",
+        width: "100%",
+        marginTop: "15%",
     },
     title: {
         color: "#ffffff",
@@ -64,6 +73,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 800,
         overflow: "hidden",
+        paddingHorizontal: 20,
     },
     footer: {
         alignItems: "center",
