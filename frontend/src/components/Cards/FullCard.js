@@ -35,6 +35,10 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         justifyContent: 'space-between'
     },
+    leftCont: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
 })
 
 export default FullCard;
