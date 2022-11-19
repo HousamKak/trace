@@ -14,29 +14,29 @@ const Chest = () => {
         <View style={styles.ChestPage}>
             <ScrollView style={styles.ScrollView}>
                 <Image source={require("../../assets/MenuPage/MenuButtons/chest.png")} style={styles.chest}></Image>
-                <SectionBar>
-                    <View>
-                        {/* {scripts} */}
-                    </View>
-                    <DataDisplay />
-                    <View>
-                        {/* {medals} */}
-                    </View>
+                <SectionBar text="SCRIPTS" />
+                <View>
+                    {/* {scripts} */}
+                </View>
+                <SectionBar text="MEDALS" />
+                <View>
+                    {/* {medals} */}
+                </View>
 
-                    <View>
-                        <View>
-                            <Image source={require("../../assets/MenuPage/MenuButtons/Gem.png")}></Image>
-                            <Text>3</Text>
-                        </View>
-                        <View>
-                            <Image source={require("../../assets/MenuPage/MenuButtons/Coin.png")}></Image>
-                            <Text>2000</Text>
-                        </View>
-                        <View>
-                            <Text>XP</Text>
-                            <Text>3000</Text>
-                        </View>
+                <View style={styles.treasureCont}>
+                    <View style={styles.treasure}>
+                        <Image style={styles.image} source={require("../../assets/MenuPage/MenuButtons/Gem.png")}></Image>
+                        <Text style={styles.text}>3</Text>
                     </View>
+                    <View style={styles.treasure}>
+                        <Image style={styles.image} source={require("../../assets/MenuPage/MenuButtons/Coin.png")}></Image>
+                        <Text style={styles.text}>2000</Text>
+                    </View>
+                    <View style={styles.treasure}>
+                        <Text style={styles.XP}>XP</Text>
+                        <Text style={styles.text}>3000</Text>
+                    </View>
+                </View>
             </ScrollView>
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MainPage")}></MenuBtn>
@@ -46,6 +46,28 @@ const Chest = () => {
     )
 };
 const styles = StyleSheet.create({
+    image: {
+        width: 20,
+        height: 20,
+    },
+    treasureCont: {
+        alignItems: "center",
+    },
+    XP: {
+        fontSize: 20,
+        color: "#fff",
+    },
+    treasure: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "30%",
+
+    },
+    text: {
+        fontSize: 18,
+        color: "#fff",
+    },
     chest: {
         alignSelf: "center",
         marginTop: "10%",
