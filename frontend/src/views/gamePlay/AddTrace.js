@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
+import InputField from "../../components/Inputs/InputField";
 
 const AddTrace = () => {
     <View style={styles.AddTracePage}>
@@ -19,6 +20,9 @@ const AddTrace = () => {
             <IconTypeDisplay src={require("../../assets/TraceTypes/cameraIcon.png")} />
             <IconTypeDisplay src={require("../../assets/TraceTypes/videoIcon.png")} />
             <IconTypeDisplay src={require("../../assets/TraceTypes/musicIcon.png")} />
+        </View>
+        <View style={styles.textInputFields}>
+
         </View>
     </View>
 };
