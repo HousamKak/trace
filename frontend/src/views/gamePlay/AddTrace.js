@@ -24,8 +24,8 @@ const AddTrace = () => {
             <IconTypeDisplay src={require("../../assets/TraceTypes/musicIcon.png")} />
         </View>
         <View style={styles.textInputFields}>
-            <InputField placeholder="Title" />
-            <TextInput style={styles.multiline} multiline={true} maxLength={280} />
+            <InputField placeholder="Add Title" />
+            <TextInput placeholder="Write Something" style={styles.multiline} multiline={true} maxLength={280} />
             <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="SIGN IN" cwidth={styles.sign} />
         </View>
         <View style={styles.footer}>
