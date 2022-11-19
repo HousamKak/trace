@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+    Icon: {
+        width: 60,
+        height: 60,
+    }
 
 })
 
