@@ -3,7 +3,7 @@ import {
     Text,
     StyleSheet,
     View,
-    ScrollView, RefreshControl
+    ScrollView, RefreshControl, TextInput
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
@@ -22,6 +22,8 @@ const AddTrace = () => {
             <IconTypeDisplay src={require("../../assets/TraceTypes/musicIcon.png")} />
         </View>
         <View style={styles.textInputFields}>
+            <InputField placeholder="Title" />
+            <TextInput multiline={true}  maxLength={280} />
 
         </View>
     </View>
