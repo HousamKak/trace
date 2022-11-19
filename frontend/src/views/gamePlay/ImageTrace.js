@@ -25,13 +25,13 @@ const ImageTrace = () => {
                         </View>
                     </View>
                     <View style={styles.lowerheader}>
-                        <Text style={styles.title}>Check my tree</Text>
+                        <Text style={styles.title}>Check my Cat</Text>
                         <Text style={styles.description}>This is some random text and the likes are
                             whatever you think they are.</Text>
                     </View>
                 </View>
                 <View style={styles.ImageTrace}>
-                    <Image source={""} style={styles.Image}></Image>
+                    <Image source={require("../../assets/MenuPage/StrongCat.jpg")} style={styles.Image}></Image>
                 </View>
             </ScrollView>
             <View style={styles.footer}>
@@ -42,6 +42,18 @@ const ImageTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    Image: {
+        resizeMethod: "scale",
+        resizeMode: "stretch",
+        width: "100%",
+        borderRadius: 20,
+    },
+    ImageTrace: {
+        backgroundColor: "#302b4f",
+        borderRadius: 20,
+        alignItems: "center",
+        padding: 20,
+    },
     lowerheader: {
         paddingHorizontal: 6,
     },
@@ -74,6 +86,7 @@ const styles = StyleSheet.create({
         paddingRight: "3%",
         paddingLeft: "5%",
         borderRadius: 20,
+        marginBottom: 20,
     },
     title: {
         color: "#ffffff",
@@ -107,9 +120,7 @@ const styles = StyleSheet.create({
     closeColor: {
         backgroundColor: "#fb7785",
     },
-    ImageTrace: {
-        backgroundColor: "#302b4f",
-    }
+
 
 });
 
