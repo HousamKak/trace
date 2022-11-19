@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#302b4f",
     },
     Icon: {
         width: 60,
