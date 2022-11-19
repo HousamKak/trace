@@ -7,7 +7,6 @@ import {
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
-import InputField from "../../components/Inputs/InputField";
 import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 
@@ -52,7 +51,7 @@ const AddTrace = () => {
 const styles = StyleSheet.create({
     field: {
         height: 55,
-        width: 331,
+        width: "100%",
         borderRadius: 12,
         backgroundColor: "#fff",
         paddingHorizontal: 8,
@@ -73,7 +72,7 @@ const styles = StyleSheet.create({
     },
     multiline: {
         height: 110,
-        width: 331,
+        width: "100%",
         borderRadius: 12,
         backgroundColor: "#fff",
         paddingHorizontal: 8,
