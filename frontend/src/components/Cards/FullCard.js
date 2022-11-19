@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
         height: 65,
         flexDirection: 'row',
         alignItems: 'center',
+        paddingLeft: 10,
+        paddingRight: 10,
         marginBottom: 8,
         justifyContent: 'space-between'
     },
@@ -52,8 +54,8 @@ const styles = StyleSheet.create({
         marginLeft: 15
     },
     profileSize: {
-        height: 70,
-        width: 70,
+        height: 60,
+        width: 60,
 
     },
     delete: {
