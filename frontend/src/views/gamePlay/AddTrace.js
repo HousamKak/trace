@@ -14,7 +14,7 @@ import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 const AddTrace = () => {
     const navigation = useNavigation();
     return (
-        <View style={styles.AddTracePage}>
+        <ScrollView style={styles.AddTracePage}>
             <Image
                 style={styles.logoIcon}
                 resizeMode="cover"
@@ -26,25 +26,27 @@ const AddTrace = () => {
                 <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} />
             </View>
             <View style={styles.textInputFields}>
-                <TextInput
-                    style={styles.field}
-                    placeholder={"Add Title"}
-                    mode="flat"
-                    placeholderTextColor="#818181"
-                    onChangeText={(e) => handleTitleChnage(e)}
-                />
-                <TextInput
-                    placeholder="Write Something" mode="flat"
-                    placeholderTextColor="#818181"
-                    style={styles.multiline}
-                    multiline={true}
-                    maxLength={280} />
+                <View style={styles.textInputContainer}>
+                    <TextInput
+                        style={styles.field}
+                        placeholder={"Add Title"}
+                        mode="flat"
+                        placeholderTextColor="#818181"
+                        onChangeText={(e) => handleTitleChnage(e)}
+                    />
+                    <TextInput
+                        placeholder="Write Something" mode="flat"
+                        placeholderTextColor="#818181"
+                        style={styles.multiline}
+                        multiline={true}
+                        maxLength={280} />
+                </View>
                 <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="SIGN IN" cwidth={styles.sign} />
             </View>
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
             </View>
-        </View>)
+        </ScrollView>)
 };
 
 const styles = StyleSheet.create({
@@ -54,6 +56,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         backgroundColor: "#fff",
         paddingHorizontal: 8,
+        marginBottom: 22,
     },
     logoIcon: {
         alignSelf: "center",
@@ -69,11 +72,14 @@ const styles = StyleSheet.create({
         backgroundColor: "#fb7785",
     },
     multiline: {
-        height: 55,
+        height: 110,
         width: 331,
         borderRadius: 12,
         backgroundColor: "#fff",
         paddingHorizontal: 8,
+        textAlignVertical: "top",
+        paddingVertical: 10,
+        marginBottom: 22,
     },
     AddTracePage: {
         backgroundColor: "#1e193b",
@@ -88,10 +94,17 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         paddingHorizontal: "5%",
+        marginBottom: "10%",
     },
     textInputFields: {
         backgroundColor: "#302b4f",
+        borderRadius: 20,
+        padding: "5%",
+    },
+    textInputContainer: {
+        alignItems: "center",
     }
+
 });
 
 export default AddTrace;
