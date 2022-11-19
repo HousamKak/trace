@@ -39,6 +39,15 @@ const ImageTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    title: {
+        color: "#ffffff",
+    },
+    description: {
+        color: "#ffffff",
+    },
+    name: {
+        color: "#ffffff",
+    },
     ImageTracePage: {
         backgroundColor: "#1e193b",
         flex: 1,
