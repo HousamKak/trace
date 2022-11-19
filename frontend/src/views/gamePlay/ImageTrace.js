@@ -39,6 +39,16 @@ const ImageTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    rightheader: {
+        flexDirection: "row",
+    },
+    leftheader: {
+        flexDirection: "row",
+    },
+    upperheader: {
+        backgroundColor: "#302b4f",
+        flexDirection: "row",
+    },
     title: {
         color: "#ffffff",
     },
@@ -66,7 +76,7 @@ const styles = StyleSheet.create({
     ImageTrace: {
         backgroundColor: "#302b4f",
     }
-    
+
 });
 
 export default ImageTrace;
