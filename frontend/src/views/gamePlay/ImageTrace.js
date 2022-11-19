@@ -38,6 +38,14 @@ const ImageTrace = () => {
     )
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    ImageTracePage: {
+        backgroundColor: "#1e193b",
+        flex: 1,
+        width: "100%",
+        height: 800,
+        overflow: "hidden",
+    },
+});
 
 export default ImageTrace;
