@@ -30,8 +30,6 @@ const styles = StyleSheet.create({
         height: 65,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingRight: 15,
-        paddingLeft: 15,
         marginBottom: 8,
         justifyContent: 'space-between'
     },
@@ -54,9 +52,14 @@ const styles = StyleSheet.create({
         marginLeft: 15
     },
     profileSize: {
-
+        height: 70,
+        width: 70,
 
     },
+    delete: {
+        width: 40,
+        height: 40,
+    }
 })
 
 export default FullCard;
