@@ -12,7 +12,7 @@ const Chest = () => {
     return (
         <View style={styles.ChestPage}>
             <ScrollView style={styles.ScrollView}>
-                <Image source={""} style={styles.chest}></Image>
+                <Image source={require("../../assets/MenuPage/MenuButtons/chest.png")} style={styles.chest}></Image>
                 <DataDisplay />
                 <View>
                     {/* {scripts} */}
