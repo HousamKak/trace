@@ -19,6 +19,7 @@ import MainPage from "././views/gamePlay/MainPage";
 import Profile from "././views/gamePlay/Profile";
 import AddTrace from "./views/gamePlay/AddTrace";
 import ImageTrace from "./views/gamePlay/ImageTrace";
+import Chest from "./views/gamePlay/Chest";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
