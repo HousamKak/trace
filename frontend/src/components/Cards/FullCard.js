@@ -46,6 +46,11 @@ const styles = StyleSheet.create({
     iconSize: {
         marginRight: 15
     },
+    text: {
+        fontSize: 15,
+        color: "#fff",
+        marginLeft: 15
+    },
 })
 
 export default FullCard;
