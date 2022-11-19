@@ -46,6 +46,14 @@ const styles = StyleSheet.create({
         height: 800,
         overflow: "hidden",
     },
+    footer: {
+        alignItems: "center",
+        width: "100%",
+        paddingVertical: "10%",
+    },
+    closeColor: {
+        backgroundColor: "#fb7785",
+    },
 });
 
 export default ImageTrace;
