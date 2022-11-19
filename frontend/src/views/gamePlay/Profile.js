@@ -31,7 +31,7 @@ const Profile = () => {
                     onRefresh={onRefresh}
                 />
             }>
-                <Image style={styles.profileImage} source={require("../../assets/MenuPage/ellipse-3.png")} />
+                <Image style={styles.profileImage} source={require("../../assets/MenuPage/trialprofile.png")} />
                 <Text style={styles.name}>Housam Kak</Text>
                 <View style={styles.statusContShape}>
                     <Text style={styles.status}>ADVENTURER</Text>
