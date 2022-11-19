@@ -34,6 +34,15 @@ const AddTrace = () => {
     </View>
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    footer: {
+        alignItems: "center",
+        width: "100%",
+        paddingVertical: "10%",
+    },
+    closeColor: {
+        backgroundColor: "#fb7785",
+    },
+});
 
 export default AddTrace;
