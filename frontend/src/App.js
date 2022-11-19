@@ -112,6 +112,11 @@ const App = () => {
                     component={AddTrace}
                     options={{ headerShown: false }}
                   />
+                  <Stack.Screen
+                    name="ImageTrace"
+                    component={ImageTrace}
+                    options={{ headerShown: false }}
+                  />
                 </>
               ) : (
                 <>
