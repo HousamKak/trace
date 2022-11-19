@@ -7,13 +7,13 @@ import {
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
-import DataDisplay from "../../components/Displayers/DataDisplay";
+
 const Chest = () => {
     return (
         <View style={styles.ChestPage}>
             <ScrollView style={styles.ScrollView}>
                 <Image source={require("../../assets/MenuPage/MenuButtons/chest.png")} style={styles.chest}></Image>
-                <DataDisplay />
+                <DataDisplay src={} />
                 <View>
                     {/* {scripts} */}
                 </View>
@@ -45,6 +45,11 @@ const Chest = () => {
     )
 };
 const styles = StyleSheet.create({
+    chest:{
+        alignSelf:"center",
+        marginTop: "10%",
+        marginBottom: 20,
+    },
     ChestPage: {
         backgroundColor: "#1e193b",
         flex: 1,
