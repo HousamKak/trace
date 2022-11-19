@@ -7,7 +7,22 @@ import {
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 
-const AddTrace = () => { };
+const AddTrace = () => { 
+    <View>
+        <Image/>
+        <View>
+            <View>
+
+            </View>
+            <View>
+                
+            </View>
+            <View>
+                
+            </View>
+        </View>
+    </View>
+};
 
 const styles = StyleSheet.create({});
 
