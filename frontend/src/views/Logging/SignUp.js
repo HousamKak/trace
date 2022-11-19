@@ -54,24 +54,26 @@ const SignUp = () => {
             }
         }
 
-        return (
-            <ScrollView style={styles.signUpView}>
-                <Image
-                    style={styles.logoIcon}
-                    resizeMode="cover"
-                    source={require("../../assets/LogInPage/logo.png")}
-                />
-                <View style={styles.rectangleView}>
-                    <InputField placeholder="Username" onChange={setUsername}></InputField>
-                    <InputField placeholder="Email" onChange={setEmail}></InputField>
-                    {(errorEmail !== "") ? <Text style={styles.error_message}>{errorEmail}</Text> : ""}
-                    <InputField placeholder="Password" onChange={setPassword}></InputField>
-                    {(errorPassword !== "") ? <Text style={styles.error_message}>{errorPassword}</Text> : ""}
-                    <SignBtn onPress={handleClick} text="SIGN UP" cwidth={styles.sign} />
-                </View>
-            </ScrollView>
-        );
+
     };
+
+    return (
+        <ScrollView style={styles.signUpView}>
+            <Image
+                style={styles.logoIcon}
+                resizeMode="cover"
+                source={require("../../assets/LogInPage/logo.png")}
+            />
+            <View style={styles.rectangleView}>
+                <InputField placeholder="Username" onChange={setUsername}></InputField>
+                <InputField placeholder="Email" onChange={setEmail}></InputField>
+                {(errorEmail !== "") ? <Text style={styles.error_message}>{errorEmail}</Text> : ""}
+                <InputField placeholder="Password" onChange={setPassword}></InputField>
+                {(errorPassword !== "") ? <Text style={styles.error_message}>{errorPassword}</Text> : ""}
+                <SignBtn onPress={handleClick} text="SIGN UP" cwidth={styles.sign} />
+            </View>
+        </ScrollView>
+    );
 }
 
 const styles = StyleSheet.create({
