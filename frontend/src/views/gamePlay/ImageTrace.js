@@ -24,8 +24,9 @@ const ImageTrace = () => {
                     </View>
                 </View>
                 <View style={styles.lowerheader}>
-                    <Text style={styles.title}>Random random reando</Text>
-                    <Text style={styles.description}> random I am</Text>
+                    <Text style={styles.title}>Check my tree</Text>
+                    <Text style={styles.description}>This is some random text and the likes are
+                        whatever you think they are.</Text>
                 </View>
             </View>
             <View style={styles.ImageTrace}>
@@ -39,6 +40,9 @@ const ImageTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    lowerheader: {
+        paddingHorizontal: 6,
+    },
     profilePicture: {
         height: 50,
         width: 50,
@@ -59,6 +63,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         marginTop: 25,
+        marginBottom: 13,
     },
     header: {
         backgroundColor: "#302b4f",
@@ -70,12 +75,19 @@ const styles = StyleSheet.create({
     },
     title: {
         color: "#ffffff",
+        fontSize: 16,
+        fontWeight: "bold",
+        marginBottom: 5,
     },
     description: {
         color: "#ffffff",
+        fontSize: 14,
+        marginBottom: 30,
     },
     name: {
         color: "#ffffff",
+        fontWeight: "bold",
+        fontSize: 14,
     },
     ImageTracePage: {
         backgroundColor: "#1e193b",
