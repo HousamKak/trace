@@ -105,6 +105,11 @@ const App = () => {
                     component={MyTraces}
                     options={{ headerShown: false }}
                   />
+                  <Stack.Screen
+                    name="AddTrace"
+                    component={AddTrace}
+                    options={{ headerShown: false }}
+                  />
                 </>
               ) : (
                 <>
