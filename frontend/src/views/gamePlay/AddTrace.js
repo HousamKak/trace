@@ -26,7 +26,13 @@ const AddTrace = () => {
                 <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} />
             </View>
             <View style={styles.textInputFields}>
-                <InputField placeholder="Add Title" />
+                <TextInput
+                    style={styles.field}
+                    placeholder={"Add Title"}
+                    mode="flat"
+                    placeholderTextColor="#818181"
+                    onChangeText={(e) => handleTitleChnage(e)}
+                />
                 <TextInput placeholder="Write Something" style={styles.multiline} multiline={true} maxLength={280} />
                 <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="SIGN IN" cwidth={styles.sign} />
             </View>
@@ -37,6 +43,13 @@ const AddTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    field: {
+        height: 55,
+        width: 331,
+        borderRadius: 12,
+        backgroundColor: "#fff",
+        paddingHorizontal: 8,
+    },
     logoIcon: {
         alignSelf: "center",
         marginTop: "12%",
@@ -66,7 +79,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         paddingHorizontal: "5%",
-    }
+    },
+    textInputFields: {}
 });
 
 export default AddTrace;
