@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 800,
         overflow: "hidden",
+        paddingHorizontal: 20,
     },
     footer: {
         alignItems: "center",
@@ -59,6 +60,12 @@ const styles = StyleSheet.create({
     },
     closeColor: {
         backgroundColor: "#fb7785",
+    },
+    ScrollView: {
+        backgroundColor: "#302b4f",
+        borderRadius: 15,
+        overflow: "hidden",
+        marginTop: "10%",
     },
 });
 
