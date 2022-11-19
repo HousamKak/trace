@@ -27,7 +27,9 @@ const AddTrace = () => {
             <InputField placeholder="Title" />
             <TextInput multiline={true} maxLength={280} />
             <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="SIGN IN" cwidth={styles.sign} />
-
+        </View>
+        <View style={styles.footer}>
+            <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
         </View>
     </View>
 };
