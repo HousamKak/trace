@@ -6,7 +6,7 @@ import {
     ScrollView, RefreshControl
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
-
+import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 const Chest = () => {
     return (
         <View>
