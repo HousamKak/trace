@@ -11,6 +11,7 @@ import InputField from "../../components/Inputs/InputField";
 import SignBtn from "../../components/ButtonsLogging/SignBtn";
 
 const AddTrace = () => {
+    const navigation = useNavigation();
     <View style={styles.AddTracePage}>
         <Image
             style={styles.logoIcon}
@@ -25,7 +26,7 @@ const AddTrace = () => {
         <View style={styles.textInputFields}>
             <InputField placeholder="Title" />
             <TextInput multiline={true} maxLength={280} />
-            <SignBtn onPress={() => { navigation.navigate("SignIn") }} text="SIGN IN" cwidth={styles.sign} />
+            <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="SIGN IN" cwidth={styles.sign} />
 
         </View>
     </View>
