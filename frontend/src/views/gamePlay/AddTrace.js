@@ -59,14 +59,12 @@ const AddTrace = () => {
     const handleClick = async () => {
         const user_prime = await AsyncStorage.getItem("user")
         const user = JSON.parse(user_prime)
+        let base64_image = ""
         if (image) {
             setFiletype(1)
             console.log(image)
-            const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
-            console.log(base64_Image)
-        }
-        else {
-            base64_Image = ""
+            base64_image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
+            console.log(base64_image)
         }
         if (location) {
             let x_position = location.coords.latitude
@@ -77,7 +75,7 @@ const AddTrace = () => {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                 },
-                data: { user_id: user.user_id, filetype, title, desription: body, file: base64_Image, x_position, y_position }
+                data: { user_id: user.user_id, filetype, title, desription: body, file: base64_image, x_position, y_position }
             }
             try {
                 const response = await axios(configurationObject)
