@@ -31,8 +31,6 @@ const Items = () => {
             const LoadedItems = await item("items", 4, itemImages);
             setMyItems(LoadedItems)
         })()
-
-
     }, [refreshing])
 
     return (
