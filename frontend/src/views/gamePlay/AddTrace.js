@@ -38,6 +38,8 @@ const AddTrace = () => {
 
     const handleClick = async () => {
         const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
+        const user_prime = await AsyncStorage.getItem("user")
+        const user = JSON.parse(user_prime)
         const configurationObject = {
             method: "POST",
             url: base_url + "/trace",
