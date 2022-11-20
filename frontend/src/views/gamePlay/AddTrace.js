@@ -12,6 +12,23 @@ import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 
 const AddTrace = () => {
     const navigation = useNavigation();
+
+    const pickImage = async () => {
+       
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+        });
+
+        console.log(result);
+
+        if (!result.canceled) {
+            setImage(result.assets[0].uri);
+        }
+    };
+    
     return (
         <View style={styles.AddTracePage}>
             <ScrollView >
@@ -21,7 +38,7 @@ const AddTrace = () => {
                     source={require("../../assets/MenuPage/AddTrace/BigHand.png")}
                 />
                 <View style={styles.IconTypeContainer}>
-                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/cameraIcon.png")} />
+                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/cameraIcon.png")} onPress={""} />
                     <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/videoIcon.png")} />
                     <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} />
                 </View>
