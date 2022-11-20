@@ -10,24 +10,27 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const item = async (itemStorageKey, dividor, images) => {
     const items = await AsyncStorage.getItem(itemStorageKey)
     const itemsList = JSON.parse(items)
+    console.log(itemsList, "first step")
     if (itemsList) {
         const rapperArray = []
+        console.log(itemsList.length, "second step")
         if (Math.floor(itemsList.length / dividor) > 0) {
             for (var i = 0; i < Math.floor(itemsList.length / dividor); i++) {
-                const savedItem = itemsList.slice(dividor * i, dividor * (i + 1)).map((it) => {
-                    <Image key={it.item_id} source={GetImage(it.title, images)} style={styles.item} />
-                })
+                let savedItem = itemsList.slice(dividor * i, dividor * (i + 1)).map((it) => <Image key={it.id.toString()} source={GetImage(it.title, images)} style={styles.item} />)
+                console.log(savedItem, "third step")
                 const rapper = <View style={styles.row}>{savedItem}</View>
                 rapperArray.push(rapper)
+
             }
-            const remainingItems = itemsList.slice(4 * (i + 1)).map((it) => <Image key={it.item_id} source={GetImage(it.title, images)} style={styles.item} />)
+            const remainingItems = itemsList.slice(dividor * (i + 1)).map((it) => <Image key={it.id.toString()} source={GetImage(it.title, images)} style={styles.item} />)
             const rapper = <View style={styles.lastRow}>{remainingItems}</View>
             rapperArray.push(rapper)
             const savedItems = rapperArray.map((rap) => rap)
+            console.log(savedItems, "fourth step")
             return savedItems
         }
         else {
-            const savedItem = itemsList.map((it) => <Image key={it.item_id} source={GetImage(it.title, images)} style={styles.aloneitem} />)
+            const savedItem = itemsList.map((it) => <Image key={it.id.toString()} source={GetImage(it.title, images)} style={styles.aloneitem} />)
             const rapper = <View style={styles.lastRow}>{savedItem}</View>
             rapperArray.push(rapper)
             const savedItems = rapperArray.map((rap) => rap)
@@ -41,8 +44,8 @@ const item = async (itemStorageKey, dividor, images) => {
 }
 
 const GetImage = (title, images) => {
-    console.log(images)
     const found = images.default.find(e => e.title === title);
+    console.log(found, "I am from get image")
     return found ? found.url : null;
 };
 
