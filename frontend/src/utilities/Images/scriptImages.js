@@ -12,8 +12,8 @@ export default scriptImages = [
         'url': require("../../assets/MenuPage/Scripts/noResults.png")
     },
     {
-        'title': 'PalastinianFlag',
-        'url': require("../../assets/MenuPage/Scripts/PalastinianFlag.png")
+        'title': 'PalestinianFlag',
+        'url': require("../../assets/MenuPage/Scripts/PalestinianFlag.png")
     },
     {
 
@@ -29,8 +29,8 @@ export default scriptImages = [
         'url': require("../../assets/MenuPage/Scripts/skull.png")
     },
     {
-        'title': 'sword',
-        'url': require("../../assets/MenuPage/Scripts/sword.png")
+        'title': 'Sword',
+        'url': require("../../assets/MenuPage/Scripts/Sword.png")
     },
     {
         'title': 'ToriiGate',
