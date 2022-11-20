@@ -44,9 +44,44 @@ const addTrace = (req, res) => {
     const { user_id, file_type, file, title, description, x_position, y_position } = req.body;
 
     const folderName = "../media/" + user_id;
+
     try {
         if (!fs.existsSync(folderName)) {
             fs.mkdirSync(folderName);
+            let subFolderName;
+            switch (file_type) {
+
+                case 1:
+                    subFolderName = folderName + "/images";
+                    try {
+                        if (!fs.existsSync(subFolderName)) {
+                            fs.mkdirSync(subFolderName)
+                            fs.writeFileSync("")
+                        }
+                    }
+                    catch (err) { }
+                case 2:
+                    subFolderName = folderName + "/videos";
+                    try {
+                        if (!fs.existsSync(subFolderName)) {
+                            fs.mkdirSync(subFolderName)
+                            fs.writeFileSync("")
+                        }
+                    }
+                    catch (err) { }
+                case 3:
+                    subFolderName = folderName + "/audio";
+                    try {
+                        if (!fs.existsSync(subFolderName)) {
+                            fs.mkdirSync(subFolderName)
+                            fs.writeFileSync("")
+                        }
+                    }
+                    catch (err) { }
+            }
+            const buf = Buffer.from(file, 'base64');
+            const fileDir = folderName + "/" + title + "." + file_type;
+            fs.writeFile('image.png', buf, /* callback will go here */);
         }
     } catch (err) {
         console.error(err);
