@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
-import ordering from "../../utilities/ordering";
+import { item } from "../../utilities/ordering";
 
 
 const Items = () => {
