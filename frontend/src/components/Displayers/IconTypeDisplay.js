@@ -3,7 +3,7 @@ import { StyleSheet, Image, TouchableOpacity } from "react-native";
 
 const IconTypeDisplay = (props) => {
     return (
-        <TouchableOpacity activeOpacity={0.2} style={styles.ContDisplay}>
+        <TouchableOpacity activeOpacity={0.2} style={styles.ContDisplay} onPress={() => props.onPress()}>
             <Image style={styles.Icon} source={props.src} />
         </TouchableOpacity>)
 }
