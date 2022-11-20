@@ -3,7 +3,8 @@ import {
     Image,
     StyleSheet,
     View,
-    ScrollView, RefreshControl, TextInput
+    ScrollView,
+    TextInput
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
@@ -48,7 +49,7 @@ const AddTrace = () => {
             headers: {
                 "Access-Control-Allow-Origin": "*",
             },
-            data: { email, password }
+            data: { user_id: user.user_id, filetype, title, desription: body, file: base64_Image, x_position, y_position }
         }
         // await axios(configurationObject).then((e) => {
         //     if (e.data.message == "Login Successful") {
