@@ -53,6 +53,7 @@ const AddTrace = () => {
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
         })();
+
     }, []);
 
 
@@ -65,7 +66,6 @@ const AddTrace = () => {
             console.log(base64_Image)
         }
         if (location) {
-            console.log(JSON.stringify(location))
             let x_position = location.coords.latitude
             let y_position = location.coords.longitude
         }
@@ -113,14 +113,15 @@ const AddTrace = () => {
                             placeholder={"Add Title"}
                             mode="flat"
                             placeholderTextColor="#818181"
-                            onChangeText={(e) => handleTitleChnage(e)}
+                            onChangeText={(e) => setTitle(e)}
                         />
                         <TextInput
                             placeholder="Write Something" mode="flat"
                             placeholderTextColor="#818181"
                             style={styles.multiline}
                             multiline={true}
-                            maxLength={280} />
+                            maxLength={280}
+                            onChangeText={(e) => setBody(e)} />
                     </View>
                     <SignBtn onPress={handleClick} text="DROP ON MAP" cwidth={styles.sign} />
                 </View>
