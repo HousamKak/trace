@@ -12,6 +12,7 @@ import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
+import * as Location from 'expo-location';
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
 const base_url = "http://192.168.1.102:8000"
@@ -43,7 +44,7 @@ const AddTrace = () => {
         const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
         const user_prime = await AsyncStorage.getItem("user")
         const user = JSON.parse(user_prime)
-       
+
         // const configurationObject = {
         //     method: "POST",
         //     url: base_url + "/trace",
