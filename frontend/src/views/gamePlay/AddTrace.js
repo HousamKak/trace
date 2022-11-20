@@ -15,6 +15,8 @@ import * as FileSystem from 'expo-file-system';
 const AddTrace = () => {
     const navigation = useNavigation();
     const [image, setImage] = React.useState(null);
+    const [title, setTitle] = React.useState("");
+    const [body, setBody] = React.useState("");
 
     const pickImage = async () => {
 
@@ -34,7 +36,27 @@ const AddTrace = () => {
 
     const handleClick = async () => {
         const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
+        // const configurationObject = {
+        //     method: "POST",
+        //     url: base_url + "/auth/login",
+        //     headers: {
+        //         "Access-Control-Allow-Origin": "*",
+        //     },
+        //     data: { email, password }
+        // }
+        // await axios(configurationObject).then((e) => {
+        //     if (e.data.message == "Login Successful") {
+        //         AsyncStorage.setItem("token", JSON.stringify("Bearer " + e.data.token))
+        //         setError("")
+        //         setLoading(true)
+        //         DevSettings.reload()
+        //     }
+        //     else {
+        //         setError(e.data.message)
+        //     }
+        // })
         navigation.navigate("MainPage")
+
     }
 
     return (
