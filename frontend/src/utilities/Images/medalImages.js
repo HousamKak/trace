@@ -1,43 +1,43 @@
 export default scriptImages = [
     {
-        'title': 'JapaneseStoneLantern',
-        'url': require("../../assets/MenuPage/Scripts/JapaneseStoneLantern.png")
+        'title': 'cheapMedal',
+        'url': require("../../assets/MenuPage/Scripts/cheapMedal.png")
     },
     {
-        'title': 'JapaneseTemple',
-        'url': require("../../assets/MenuPage/Scripts/JapaneseTemple.png")
+        'title': 'cupMedal',
+        'url': require("../../assets/MenuPage/Scripts/cupMedal.png")
     },
     {
-        'title': 'noResults',
-        'url': require("../../assets/MenuPage/Scripts/noResults.png")
+        'title': 'dollarMedal',
+        'url': require("../../assets/MenuPage/Scripts/dollarMedal.png")
     },
     {
-        'title': 'PalastinianFlag',
-        'url': require("../../assets/MenuPage/Scripts/PalastinianFlag.png")
+        'title': 'githubMedal',
+        'url': require("../../assets/MenuPage/Scripts/githubMedal.png")
     },
     {
 
-        'title': 'pumpkin',
-        'url': require("../../assets/MenuPage/Scripts/pumpkin.png")
+        'title': 'honorMedal',
+        'url': require("../../assets/MenuPage/Scripts/honorMedal.png")
     },
     {
-        'title': 'sandcastle',
-        'url': require("../../assets/MenuPage/Scripts/sandcastle.png")
+        'title': 'javaMedal',
+        'url': require("../../assets/MenuPage/Scripts/javaMedal.png")
     },
     {
-        'title': 'skull',
-        'url': require("../../assets/MenuPage/Scripts/skull.png")
+        'title': 'shieldMedal',
+        'url': require("../../assets/MenuPage/Scripts/shieldMedal.png")
     },
     {
-        'title': 'sword',
-        'url': require("../../assets/MenuPage/Scripts/sword.png")
+        'title': 'starMedal',
+        'url': require("../../assets/MenuPage/Scripts/starMedal.png")
     },
     {
-        'title': 'ToriiGate',
-        'url': require("../../assets/MenuPage/Scripts/ToriiGate.png")
+        'title': 'worldCupMedal',
+        'url': require("../../assets/MenuPage/Scripts/worldCupMedal.png")
     },
     {
-        'title': 'Water',
-        'url': require("../../assets/MenuPage/Scripts/Water.png")
+        'title': 'sphereMedal',
+        'url': require("../../assets/MenuPage/Scripts/sphereMedal.png")
     }
 ]
