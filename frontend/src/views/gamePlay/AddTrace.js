@@ -32,6 +32,10 @@ const AddTrace = () => {
 
     const doNothing = () => { }
 
+    const handleClick = async () => {
+        const base64 = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
+    }
+
     return (
         <View style={styles.AddTracePage}>
             <ScrollView >
