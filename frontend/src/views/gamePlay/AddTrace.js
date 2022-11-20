@@ -23,8 +23,8 @@ const AddTrace = () => {
     const [title, setTitle] = React.useState("");
     const [body, setBody] = React.useState("");
     const [filetype, setFiletype] = React.useState(0);
-    const [location, setLocation] = useState(null);
-    const [errorMsg, setErrorMsg] = useState(null);
+    const [location, setLocation] = React.useState(null);
+    const [errorMsg, setErrorMsg] = React.useState(null);
 
     const pickImage = async () => {
 
@@ -49,7 +49,6 @@ const AddTrace = () => {
                 setErrorMsg('Permission to access location was denied');
                 return;
             }
-
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
         })();
@@ -60,6 +59,7 @@ const AddTrace = () => {
         const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
         const user_prime = await AsyncStorage.getItem("user")
         const user = JSON.parse(user_prime)
+        console.log(location)
         let x_position = location.coords.latitude
         let y_position = location.coords.longitude
         // const configurationObject = {
