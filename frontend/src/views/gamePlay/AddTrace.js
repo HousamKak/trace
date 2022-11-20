@@ -17,6 +17,7 @@ const AddTrace = () => {
     const [image, setImage] = React.useState(null);
     const [title, setTitle] = React.useState("");
     const [body, setBody] = React.useState("");
+    const [filetype, setFiletype] = React.useState("");
 
     const pickImage = async () => {
 
