@@ -30,6 +30,8 @@ const AddTrace = () => {
         }
     };
 
+    const doNothing = () => { }
+
     return (
         <View style={styles.AddTracePage}>
             <ScrollView >
@@ -39,9 +41,9 @@ const AddTrace = () => {
                     source={require("../../assets/MenuPage/AddTrace/BigHand.png")}
                 />
                 <View style={styles.IconTypeContainer}>
-                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/cameraIcon.png")} onPress={""} />
-                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/videoIcon.png")} />
-                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} />
+                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/cameraIcon.png")} onPress={pickImage} />
+                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/videoIcon.png")} onPress={doNothing} />
+                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} onPress={doNothing} />
                 </View>
                 <View style={styles.textInputFields}>
                     <View style={styles.textInputContainer}>
