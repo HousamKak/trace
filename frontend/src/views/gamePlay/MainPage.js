@@ -14,7 +14,7 @@ const MainPage = () => {
     return (
         <View style={styles.middleButtonView}>
             <View style={styles.footer}>
-                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("Profile")}></MenuBtn>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("Chest")}></MenuBtn>
             </View>
         </View>)
 }
