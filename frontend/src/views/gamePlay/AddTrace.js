@@ -9,6 +9,7 @@ import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
 import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
 const base_url = "http://192.168.1.102:8000"
