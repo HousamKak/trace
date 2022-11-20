@@ -1,10 +1,9 @@
 import * as React from "react";
 import {
     Text,
-    StyleSheet,
     View,
-    ScrollView, RefreshControl,
-    Image
+    Image,
+    StyleSheet
 } from "react-native";
 
 const item = async (itemStorageKey, dividor, typePath) => {
@@ -15,7 +14,7 @@ const item = async (itemStorageKey, dividor, typePath) => {
         if (Math.floor(itemsList.length / dividor) > 0) {
             for (var i = 0; i < Math.floor(itemsList.length / dividor); i++) {
                 const savedItem = itemsList.slice(dividor * i, dividor * (i + 1)).map((it) => {
-                    < Image key={it.item_id} source={require("../../assets/MenuPage" + typePath + it.title + ".png")} style={styles.item} />
+                    < Image key={it.item_id} source={require("../../assets/MenuPage" + typePath + it.title + ".png")} />
                 })
                 const rapper = <View style={styles.row}>{savedItem}</View>
                 rapperArray.push(rapper)
@@ -39,5 +38,8 @@ const item = async (itemStorageKey, dividor, typePath) => {
         setSaves(savedItems)
     }
 }
+const styles = StyleSheet.create({
+    
+})
 
 export default { item }
