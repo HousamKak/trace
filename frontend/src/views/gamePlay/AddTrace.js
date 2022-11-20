@@ -49,6 +49,7 @@ const AddTrace = () => {
                 setErrorMsg('Permission to access location was denied');
                 return;
             }
+            console.log(status)
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
         })();
@@ -56,12 +57,21 @@ const AddTrace = () => {
 
 
     const handleClick = async () => {
-        const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
         const user_prime = await AsyncStorage.getItem("user")
         const user = JSON.parse(user_prime)
-        console.log(location)
-        let x_position = location.coords.latitude
-        let y_position = location.coords.longitude
+        if (image) {
+            console.log(image)
+            const permissions = await StorageAccessFramework.requestDirectoryPermissionsAsync();
+            
+            const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
+            console.log(base64_Image)
+        }
+        if (location) {
+            console.log(JSON.stringify(location))
+            let x_position = location.coords.latitude
+            let y_position = location.coords.longitude
+        }
+
         // const configurationObject = {
         //     method: "POST",
         //     url: base_url + "/trace",
