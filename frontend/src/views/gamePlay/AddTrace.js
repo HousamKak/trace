@@ -37,14 +37,14 @@ const AddTrace = () => {
 
     const handleClick = async () => {
         const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
-        // const configurationObject = {
-        //     method: "POST",
-        //     url: base_url + "/auth/login",
-        //     headers: {
-        //         "Access-Control-Allow-Origin": "*",
-        //     },
-        //     data: { email, password }
-        // }
+        const configurationObject = {
+            method: "POST",
+            url: base_url + "/auth/login",
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            },
+            data: { email, password }
+        }
         // await axios(configurationObject).then((e) => {
         //     if (e.data.message == "Login Successful") {
         //         AsyncStorage.setItem("token", JSON.stringify("Bearer " + e.data.token))
