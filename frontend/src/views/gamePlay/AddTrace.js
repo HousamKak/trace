@@ -42,11 +42,26 @@ const AddTrace = () => {
 
     const doNothing = () => { }
 
+    React.useEffect(() => {
+        (async () => {
+            let { status } = await Location.requestForegroundPermissionsAsync();
+            if (status !== 'granted') {
+                setErrorMsg('Permission to access location was denied');
+                return;
+            }
+
+            let location = await Location.getCurrentPositionAsync({});
+            setLocation(location);
+        })();
+    }, []);
+
+
     const handleClick = async () => {
         const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
         const user_prime = await AsyncStorage.getItem("user")
         const user = JSON.parse(user_prime)
-
+        let x_position = location.coords.latitude
+        let y_position = location.coords.longitude
         // const configurationObject = {
         //     method: "POST",
         //     url: base_url + "/trace",
