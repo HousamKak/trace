@@ -4,7 +4,8 @@ import {
     StyleSheet,
     View,
     ScrollView,
-    TextInput
+    TextInput,
+    Platform
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
@@ -34,7 +35,6 @@ const AddTrace = () => {
             aspect: [4, 3],
             quality: 1,
         });
-        console.log(result);
         if (!result.cancelled) {
             setImage(result.uri);
         }
@@ -61,8 +61,6 @@ const AddTrace = () => {
         const user = JSON.parse(user_prime)
         if (image) {
             console.log(image)
-            const permissions = await StorageAccessFramework.requestDirectoryPermissionsAsync();
-            
             const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
             console.log(base64_Image)
         }
