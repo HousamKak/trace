@@ -28,7 +28,6 @@ const AddTrace = () => {
     const [errorMsg, setErrorMsg] = React.useState(null);
 
     const pickImage = async () => {
-
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.All,
             allowsEditing: true,
@@ -80,22 +79,16 @@ const AddTrace = () => {
                 },
                 data: { user_id: user.user_id, filetype, title, desription: body, file: base64_Image, x_position, y_position }
             }
+            try {
+                const response = await axios(configurationObject)
+                if (response.status === 200) {
+                    navigation.navigate("MainPage")
+                } else {
+                    setErrorMsg("Something went wrong. Try again later.")
+                }
+            } catch (e) { console.log(e.message) }
+
         }
-
-
-        // await axios(configurationObject).then((e) => {
-        //     if (e.data.message == "Login Successful") {
-        //         AsyncStorage.setItem("token", JSON.stringify("Bearer " + e.data.token))
-        //         setError("")
-        //         setLoading(true)
-        //         DevSettings.reload()
-        //     }
-        //     else {
-        //         setError(e.data.message)
-        //     }
-        // })
-        navigation.navigate("MainPage")
-
     }
 
     return (
