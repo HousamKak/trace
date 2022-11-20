@@ -12,9 +12,10 @@ import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 
 const AddTrace = () => {
     const navigation = useNavigation();
+    const [image, setImage] = React.useState(null);
 
     const pickImage = async () => {
-       
+
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.All,
             allowsEditing: true,
@@ -28,7 +29,7 @@ const AddTrace = () => {
             setImage(result.assets[0].uri);
         }
     };
-    
+
     return (
         <View style={styles.AddTracePage}>
             <ScrollView >
