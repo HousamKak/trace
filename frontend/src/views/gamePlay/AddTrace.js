@@ -12,6 +12,7 @@ import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
+import Geolocation from '@react-native-community/geolocation';
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
 const base_url = "http://192.168.1.102:8000"
@@ -21,7 +22,7 @@ const AddTrace = () => {
     const [image, setImage] = React.useState(null);
     const [title, setTitle] = React.useState("");
     const [body, setBody] = React.useState("");
-    const [filetype, setFiletype] = React.useState("");
+    const [filetype, setFiletype] = React.useState(0);
 
     const pickImage = async () => {
 
