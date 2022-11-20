@@ -9,6 +9,7 @@ import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
 import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
+import * as ImagePicker from 'expo-image-picker';
 
 const AddTrace = () => {
     const navigation = useNavigation();
