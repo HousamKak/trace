@@ -39,7 +39,19 @@ const item = async (itemStorageKey, dividor, typePath) => {
     }
 }
 const styles = StyleSheet.create({
-    
+    row: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginBottom: 10,
+        marginTop: 10,
+        paddingHorizontal: 10,
+    },
+    lastRow: {
+        flexDirection: "row",
+        marginVertical: 10,
+        paddingHorizontal: 10,
+        marginRight: "20%",
+    },
 })
 
 export default { item }
