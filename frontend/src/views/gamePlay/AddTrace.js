@@ -11,6 +11,7 @@ import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
+const base_url = "http://192.168.1.102:8000"
 
 const AddTrace = () => {
     const navigation = useNavigation();
