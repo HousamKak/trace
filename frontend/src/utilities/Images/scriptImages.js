@@ -1,43 +1,43 @@
-export default itemImages = [
+export default scriptImages = [
     {
-        'title': 'phone',
-        'url': require("../../assets/MenuPage/Items/phone.png")
+        'title': 'JapaneseStoneLantern',
+        'url': require("../../assets/MenuPage/Scripts/JapaneseStoneLantern.png")
     },
     {
-        'title': 'pin',
-        'url': require("../../assets/MenuPage/Items/pin.png")
+        'title': 'JapaneseTemple',
+        'url': require("../../assets/MenuPage/Scripts/JapaneseTemple.png")
     },
     {
-        'title': 'safe',
-        'url': require("../../assets/MenuPage/Items/safe.png")
+        'title': 'noResults',
+        'url': require("../../assets/MenuPage/Scripts/noResults.png")
     },
     {
-        'title': 'weights',
-        'url': require("../../assets/MenuPage/Items/weights.png")
+        'title': 'PalastinianFlag',
+        'url': require("../../assets/MenuPage/Scripts/PalastinianFlag.png")
     },
     {
 
-        'title': 'ax',
-        'url': require("../../assets/MenuPage/Items/ax.png")
+        'title': 'pumpkin',
+        'url': require("../../assets/MenuPage/Scripts/pumpkin.png")
     },
     {
-        'title': 'book',
-        'url': require("../../assets/MenuPage/Items/book.png")
+        'title': 'sandcastle',
+        'url': require("../../assets/MenuPage/Scripts/sandcastle.png")
     },
     {
-        'title': 'creditCard',
-        'url': require("../../assets/MenuPage/Items/creditCard.png")
+        'title': 'skull',
+        'url': require("../../assets/MenuPage/Scripts/skull.png")
     },
     {
-        'title': 'direction',
-        'url': require("../../assets/MenuPage/Items/direction.png")
+        'title': 'sword',
+        'url': require("../../assets/MenuPage/Scripts/sword.png")
     },
     {
-        'title': 'headphones',
-        'url': require("../../assets/MenuPage/Items/headphones.png")
+        'title': 'ToriiGate',
+        'url': require("../../assets/MenuPage/Scripts/ToriiGate.png")
     },
     {
-        'title': 'key',
-        'url': require("../../assets/MenuPage/Items/key.png")
+        'title': 'Water',
+        'url': require("../../assets/MenuPage/Scripts/Water.png")
     }
 ]
