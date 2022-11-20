@@ -10,6 +10,7 @@ import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
 import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import * as ImagePicker from 'expo-image-picker';
+import * as FileSystem from 'expo-file-system';
 
 const AddTrace = () => {
     const navigation = useNavigation();
