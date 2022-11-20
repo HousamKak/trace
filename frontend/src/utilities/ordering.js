@@ -7,18 +7,20 @@ import {
     Image
 } from "react-native";
 
-const item = async (itemKey,dividor) => {
-    const items = await AsyncStorage.getItem(itemKey)
+const item = async (itemStorageKey, dividor, typePath) => {
+    const items = await AsyncStorage.getItem(itemStorageKey)
     const itemsList = JSON.parse(items)
     if (itemsList) {
         const rapperArray = []
         if (Math.floor(itemsList.length / dividor) > 0) {
             for (var i = 0; i < Math.floor(itemsList.length / dividor); i++) {
-                const savedItem = itemsList.slice(dividor* i, dividor* (i + 1)).map((it) => <Image key={it.item_id} source={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} style={styles.item} />)
+                const savedItem = itemsList.slice(dividor * i, dividor * (i + 1)).map((it) => {
+                    < Image key={it.item_id} source={require("../../assets/MenuPage" + typePath + it.title + ".png")} style={styles.item} />
+                })
                 const rapper = <View style={styles.row}>{savedItem}</View>
                 rapperArray.push(rapper)
             }
-            const remainingItems = itemsList.slice(4 * (i + 1)).map((it) => <Image key={it.item_id} source={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} style={styles.item} />)
+            const remainingItems = itemsList.slice(dividor * (i + 1)).map((it) => <Image key={it.item_id} source={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} style={styles.item} />)
             const rapper = <View style={styles.lastRow}>{remainingItems}</View>
             rapperArray.push(rapper)
             const savedItems = rapperArray.map((rap) => rap)
@@ -38,3 +40,4 @@ const item = async (itemKey,dividor) => {
     }
 }
 
+export default { item }

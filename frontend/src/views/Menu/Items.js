@@ -31,7 +31,10 @@ const Items = () => {
             const rapperArray = []
             if (Math.floor(itemsList.length / 4) > 0) {
                 for (var i = 0; i < Math.floor(itemsList.length / 4); i++) {
-                    const savedItem = itemsList.slice(4 * i, 4 * (i + 1)).map((it) => <Image key={it.item_id} source={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} style={styles.item} />)
+                    const savedItem = itemsList.slice(4 * i, 4 * (i + 1)).map((it) => {
+                        itemName = it.title;
+                        <Image key={it.item_id} source={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} style={styles.item} />
+                    })
                     const rapper = <View style={styles.row}>{savedItem}</View>
                     rapperArray.push(rapper)
                 }
