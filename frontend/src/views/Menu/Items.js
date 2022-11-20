@@ -9,7 +9,8 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
-import { item } from "../../utilities/ordering";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+// import { item } from "../../utilities/ordering";
 
 
 const Items = () => {
@@ -25,42 +26,48 @@ const Items = () => {
         wait(500).then(() => setRefreshing(false));
     }, []);
 
-    // const item = async () => {
-    //     const items = await AsyncStorage.getItem("items")
-    //     const itemsList = JSON.parse(items)
-    //     if (itemsList) {
-    //         const rapperArray = []
-    //         if (Math.floor(itemsList.length / 4) > 0) {
-    //             for (var i = 0; i < Math.floor(itemsList.length / 4); i++) {
-    //                 const savedItem = itemsList.slice(4 * i, 4 * (i + 1)).map((it) => {
-    //                     itemName = it.title;
-    //                     <Image key={it.item_id} source={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} style={styles.item} />
-    //                 })
-    //                 const rapper = <View style={styles.row}>{savedItem}</View>
-    //                 rapperArray.push(rapper)
-    //             }
-    //             const remainingItems = itemsList.slice(4 * (i + 1)).map((it) => <Image key={it.item_id} source={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} style={styles.item} />)
-    //             const rapper = <View style={styles.lastRow}>{remainingItems}</View>
-    //             rapperArray.push(rapper)
-    //             const savedItems = rapperArray.map((rap) => rap)
-    //             setMyItems(savedItems)
-    //         }
-    //         else {
-    //             const savedItem = itemsList.map((it) => <Image key={it.item_id} source={require("../../assets/MenuPage/MenuButtons/friendsIcon.png")} style={styles.aloneitem} />)
-    //             const rapper = <View style={styles.lastRow}>{savedItem}</View>
-    //             rapperArray.push(rapper)
-    //             const savedItems = rapperArray.map((rap) => rap)
-    //             setMyItems(savedItems)
-    //         }
-    //     }
-    //     else {
-    //         const savedItems = <Text style={styles.noContent}>No Saved Items</Text>
-    //         setSaves(savedItems)
-    //     }
-    // }
+    const item = async (itemStorageKey, dividor, typePath) => {
+        const items = await AsyncStorage.getItem(itemStorageKey)
+        const itemsList = JSON.parse(items)
+        itemsList.map((item) => {
+            item.url = "../../assets/MenuPage" + typePath + "closeIcon" + ".png"
+        })
+
+        console.log(itemsList)
+        if (itemsList) {
+            const rapperArray = []
+            console.log(itemsList)
+            if (Math.floor(itemsList.length / 4) > 0) {
+                for (var i = 0; i < Math.floor(itemsList.length / 4); i++) {
+                    const savedItem = itemsList.slice(4 * i, 4 * (i + 1)).map((it) => {
+                        <Image key={it.item_id} source={{ uri: it.url }} style={styles.item} />
+                    })
+                    const rapper = <View style={styles.row}>{savedItem}</View>
+                    rapperArray.push(rapper)
+                }
+                const remainingItems = itemsList.slice(4 * (i + 1)).map((it) => <Image key={it.item_id} source={{ uri: it.url }} style={styles.item} />)
+                const rapper = <View style={styles.lastRow}>{remainingItems}</View>
+                rapperArray.push(rapper)
+                const savedItems = rapperArray.map((rap) => rap)
+                setMyItems(savedItems)
+            }
+            else {
+                const savedItem = itemsList.map((it) => <Image key={it.item_id} source={{ uri: it.url }} style={styles.aloneitem} />)
+                const rapper = <View style={styles.lastRow}>{savedItem}</View>
+                rapperArray.push(rapper)
+                const savedItems = rapperArray.map((rap) => rap)
+                setMyItems(savedItems)
+            }
+            console.log(rapperArray)
+        }
+        else {
+            const savedItems = <Text style={styles.noContent}>No Saved Items</Text>
+            setSaves(savedItems)
+        }
+    }
 
     React.useEffect(() => {
-        item()
+        item("items", 4, "/MenuButtons/")
     }, [refreshing])
 
     return (
