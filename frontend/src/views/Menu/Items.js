@@ -10,13 +10,13 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { item } from "../../utilities/ordering";
-
+const item = require("../../utilities/ordering.js")
+const itemImages = require("../../utilities/Images/itemImages.js");
 
 const Items = () => {
     const [myitems, setMyItems] = React.useState([])
     const navigation = useNavigation();
-   
+
     const [refreshing, setRefreshing] = React.useState(false);
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
@@ -26,44 +26,14 @@ const Items = () => {
         wait(500).then(() => setRefreshing(false));
     }, []);
 
-    const item = async (itemStorageKey, dividor, typePath) => {
-        const items = await AsyncStorage.getItem(itemStorageKey)
-        const itemsList = JSON.parse(items)
-        console.log(itemsList)
-        if (itemsList) {
-            const rapperArray = []
-            console.log(itemsList)
-            if (Math.floor(itemsList.length / 4) > 0) {
-                for (var i = 0; i < Math.floor(itemsList.length / 4); i++) {
-                    const savedItem = itemsList.slice(4 * i, 4 * (i + 1)).map((it) => {
-                        <Image key={it.item_id} source={GetImage(it.title)} style={styles.item} />
-                    })
-                    const rapper = <View style={styles.row}>{savedItem}</View>
-                    rapperArray.push(rapper)
-                }
-                const remainingItems = itemsList.slice(4 * (i + 1)).map((it) => <Image key={it.item_id} source={GetImage(it.title)} style={styles.item} />)
-                const rapper = <View style={styles.lastRow}>{remainingItems}</View>
-                rapperArray.push(rapper)
-                const savedItems = rapperArray.map((rap) => rap)
-                setMyItems(savedItems)
-            }
-            else {
-                const savedItem = itemsList.map((it) => <Image key={it.item_id} source={GetImage(it.title)} style={styles.aloneitem} />)
-                const rapper = <View style={styles.lastRow}>{savedItem}</View>
-                rapperArray.push(rapper)
-                const savedItems = rapperArray.map((rap) => rap)
-                setMyItems(savedItems)
-            }
-            console.log(rapperArray)
-        }
-        else {
-            const savedItems = <Text style={styles.noContent}>No Saved Items</Text>
-            setSaves(savedItems)
-        }
-    }
 
     React.useEffect(() => {
-        item("items", 4, "/MenuButtons/")
+        (async () => {
+            const LoadedItems = await item("items", 4, itemImages);
+            setMyItems(LoadedItems)
+        })()
+
+
     }, [refreshing])
 
     return (
@@ -137,6 +107,6 @@ const styles = StyleSheet.create({
         marginRight: "20%",
     },
 
-})
+});
 
 export default Items;

@@ -1,4 +1,4 @@
-const IMAGES = [
+export default itemImages = [
     {
         'title': 'phone',
         'url': require("../../assets/MenuPage/Items/phone.png")
@@ -41,5 +41,3 @@ const IMAGES = [
         'url': require("../../assets/MenuPage/Items/key.png")
     }
 ]
-
-export default IMAGES
