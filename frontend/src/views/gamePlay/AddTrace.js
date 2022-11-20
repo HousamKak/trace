@@ -61,23 +61,28 @@ const AddTrace = () => {
         const user_prime = await AsyncStorage.getItem("user")
         const user = JSON.parse(user_prime)
         if (image) {
+            setFiletype(1)
             console.log(image)
             const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
             console.log(base64_Image)
         }
+        else {
+            base64_Image = ""
+        }
         if (location) {
             let x_position = location.coords.latitude
             let y_position = location.coords.longitude
+            const configurationObject = {
+                method: "POST",
+                url: base_url + "/trace",
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                },
+                data: { user_id: user.user_id, filetype, title, desription: body, file: base64_Image, x_position, y_position }
+            }
         }
 
-        // const configurationObject = {
-        //     method: "POST",
-        //     url: base_url + "/trace",
-        //     headers: {
-        //         "Access-Control-Allow-Origin": "*",
-        //     },
-        //     data: { user_id: user.user_id, filetype, title, desription: body, file: base64_Image, x_position, y_position }
-        // }
+
         // await axios(configurationObject).then((e) => {
         //     if (e.data.message == "Login Successful") {
         //         AsyncStorage.setItem("token", JSON.stringify("Bearer " + e.data.token))
