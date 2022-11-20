@@ -16,6 +16,16 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const Items = () => {
     const [myitems, setMyItems] = React.useState([])
     const navigation = useNavigation();
+    const IMAGES = [
+        {
+            'title': 'ax',
+            'url': require("../../assets/MenuPage/Items/ax.png")
+        }, {}, {}, {}, {}, {}, {}, {}, {}, {}
+    ]
+    const GetImage = (title) => {
+        const found = IMAGES.find(e => e.title === title);
+        return found ? found.url : null;
+    };
 
     const [refreshing, setRefreshing] = React.useState(false);
     const wait = (timeout) => {
@@ -40,19 +50,19 @@ const Items = () => {
             if (Math.floor(itemsList.length / 4) > 0) {
                 for (var i = 0; i < Math.floor(itemsList.length / 4); i++) {
                     const savedItem = itemsList.slice(4 * i, 4 * (i + 1)).map((it) => {
-                        <Image key={it.item_id} source={{ uri: it.url }} style={styles.item} />
+                        <Image key={it.item_id} source={IMAGES[it.title]} style={styles.item} />
                     })
                     const rapper = <View style={styles.row}>{savedItem}</View>
                     rapperArray.push(rapper)
                 }
-                const remainingItems = itemsList.slice(4 * (i + 1)).map((it) => <Image key={it.item_id} source={{ uri: it.url }} style={styles.item} />)
+                const remainingItems = itemsList.slice(4 * (i + 1)).map((it) => <Image key={it.item_id} source={IMAGES[it.title]} style={styles.item} />)
                 const rapper = <View style={styles.lastRow}>{remainingItems}</View>
                 rapperArray.push(rapper)
                 const savedItems = rapperArray.map((rap) => rap)
                 setMyItems(savedItems)
             }
             else {
-                const savedItem = itemsList.map((it) => <Image key={it.item_id} source={{ uri: it.url }} style={styles.aloneitem} />)
+                const savedItem = itemsList.map((it) => <Image key={it.item_id} source={IMAGES[it.title]} style={styles.aloneitem} />)
                 const rapper = <View style={styles.lastRow}>{savedItem}</View>
                 rapperArray.push(rapper)
                 const savedItems = rapperArray.map((rap) => rap)
