@@ -9,6 +9,7 @@ import { useNavigation, } from "@react-navigation/native";
 import FullCard from "../../components/Cards/FullCard";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+const scriptImages = require("../../utilities/Images/scriptImages.js");
 
 const Scripts = () => {
     const navigation = useNavigation();
@@ -23,11 +24,17 @@ const Scripts = () => {
         wait(500).then(() => setRefreshing(false));
     }, []);
 
+    const GetImage = (title, images) => {
+        const found = images.default.find(e => e.title === title);
+        return found ? found.url : null;
+    };
+
     const script = async () => {
         const scripts = await AsyncStorage.getItem("scripts")
         const scriptsList = JSON.parse(scripts)
+        console.log(scriptsList)
         if (scriptsList) {
-            const scriptItems = scriptsList.map((script) => <FullCard key={script.script_id} text={script.title} profile={require("../../assets/MenuPage/MenuButtons/scriptsIcon.png")} icon={""} noType={0} textOnly={0} nodelete={1} />)
+            const scriptItems = scriptsList.map((script) => <FullCard key={script.id} text={script.title} profile={GetImage(script.name, scriptImages)} icon={""} noType={0} textOnly={0} nodelete={1} />)
             setMyScripts(scriptItems)
         }
         else {
