@@ -40,7 +40,7 @@ const AddTrace = () => {
         const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
         const configurationObject = {
             method: "POST",
-            url: base_url + "/auth/login",
+            url: base_url + "/trace",
             headers: {
                 "Access-Control-Allow-Origin": "*",
             },
