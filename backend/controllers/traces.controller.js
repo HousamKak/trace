@@ -42,6 +42,15 @@ const getTrace = (req, res) => {
 
 const addTrace = (req, res) => {
     const { user_id, file_type, file, title, description, x_position, y_position } = req.body;
+
+    const folderName = "../media/" + user_id;
+    try {
+        if (!fs.existsSync(folderName)) {
+            fs.mkdirSync(folderName);
+        }
+    } catch (err) {
+        console.error(err);
+    }
     db.query(
         "INSERT INTO traces (user_id,file_type,file,title,description,x_position,y_position) VALUES (?,?,?,?,?,?,?)",
         [user_id, file_type, file, title, description, x_position, y_position],
