@@ -33,7 +33,8 @@ const AddTrace = () => {
     const doNothing = () => { }
 
     const handleClick = async () => {
-        const base64 = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
+        const base64_Image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
+        navigation.navigate("MainPage")
     }
 
     return (
@@ -65,7 +66,7 @@ const AddTrace = () => {
                             multiline={true}
                             maxLength={280} />
                     </View>
-                    <SignBtn onPress={() => { navigation.navigate("MainPage") }} text="DROP ON MAP" cwidth={styles.sign} />
+                    <SignBtn onPress={handleClick} text="DROP ON MAP" cwidth={styles.sign} />
                 </View>
             </ScrollView>
             <View style={styles.footer}>
