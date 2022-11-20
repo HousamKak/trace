@@ -3,7 +3,7 @@ import { StyleSheet, Image, TouchableOpacity } from "react-native";
 
 const IconTypeDisplay = (props) => {
     return (
-        <TouchableOpacity style={styles.ContDisplay}>
+        <TouchableOpacity activeOpacity={0.2} style={styles.ContDisplay}>
             <Image style={styles.Icon} source={props.src} />
         </TouchableOpacity>)
 }
@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#302b4f",
     },
     Icon: {
-        // resizeMode: "center",
         width: 100,
         height: 100,
     }
