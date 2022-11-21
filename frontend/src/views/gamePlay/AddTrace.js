@@ -71,7 +71,7 @@ const AddTrace = () => {
             let y_position = location.coords.longitude
             const configurationObject = {
                 method: "POST",
-                url: base_url + "/trace",
+                url: base_url + "/traces",
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                 },
