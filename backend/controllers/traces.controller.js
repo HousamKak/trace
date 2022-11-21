@@ -1,4 +1,5 @@
 const db = require("../config/db.config");
+const fs = require('fs');
 
 const getAllUserTraces = (req, res) => {
     const { user_id } = req.params;
