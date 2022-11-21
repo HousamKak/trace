@@ -50,13 +50,16 @@ const addTrace = (req, res) => {
             fs.mkdirSync(folderName);
             let subFolderName;
             switch (file_type) {
-
                 case 1:
                     subFolderName = folderName + "/images";
                     try {
                         if (!fs.existsSync(subFolderName)) {
                             fs.mkdirSync(subFolderName)
-                            fs.writeFileSync("")
+                            const buf = Buffer.from(file, 'base64');
+                            const fileDir = subFolderName + "/" + title + ".png";
+                            fs.writeFile(fileDir, buf, (err) => {
+                                if (err) console.log(err);
+                            });
                         }
                     }
                     catch (err) { }
@@ -79,16 +82,14 @@ const addTrace = (req, res) => {
                     }
                     catch (err) { }
             }
-            const buf = Buffer.from(file, 'base64');
-            const fileDir = folderName + "/" + title + "." + file_type;
-            fs.writeFile('image.png', buf, /* callback will go here */);
+
         }
     } catch (err) {
         console.error(err);
     }
     db.query(
         "INSERT INTO traces (user_id,file_type,file,title,description,x_position,y_position) VALUES (?,?,?,?,?,?,?)",
-        [user_id, file_type, file, title, description, x_position, y_position],
+        [user_id, file_type, fileDir, title, description, x_position, y_position],
         (err, rows) => {
             if (err) console.log(err);
             res.status(200).json({ message: "Trace added" });
