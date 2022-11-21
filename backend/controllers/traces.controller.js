@@ -43,49 +43,57 @@ const getTrace = (req, res) => {
 
 const addTrace = (req, res) => {
     const { user_id, file_type, file, title, description, x_position, y_position } = req.body;
-
+    console.log(req.body)
     const folderName = "../media/" + user_id;
-
     try {
-        if (!fs.existsSync(folderName)) {
-            fs.mkdirSync(folderName);
-            let subFolderName;
-            switch (file_type) {
-                case 1:
-                    subFolderName = folderName + "/images";
-                    try {
-                        if (!fs.existsSync(subFolderName)) {
-                            fs.mkdirSync(subFolderName)
-                            const buf = Buffer.from(file, 'base64');
-                            const fileDir = subFolderName + "/" + title + ".png";
-                            fs.writeFile(fileDir, buf, (err) => {
-                                if (err) console.log(err);
-                            });
-                        }
-                    }
-                    catch (err) { }
-                case 2:
-                    subFolderName = folderName + "/videos";
-                    try {
-                        if (!fs.existsSync(subFolderName)) {
-                            fs.mkdirSync(subFolderName)
-                            fs.writeFileSync("")
-                        }
-                    }
-                    catch (err) { }
-                case 3:
-                    subFolderName = folderName + "/audio";
-                    try {
-                        if (!fs.existsSync(subFolderName)) {
-                            fs.mkdirSync(subFolderName)
-                            fs.writeFileSync("")
-                        }
-                    }
-                    catch (err) { }
+        fs.access(folderName, (err) => {
+            if (err) {
+                console.log("Folder does not exist. Creating folder...");
+                fs.mkdirSync(folderName);
             }
-
         }
-    } catch (err) {
+        );
+        let subFolderName;
+        switch (file_type) {
+            case 1:
+                subFolderName = folderName + "/images";
+                console.log(subFolderName)
+                try {
+                    fs.access(subFolderName, (err) => {
+                        if (err) {
+                            fs.mkdir(subFolderName);
+                        }
+                        const buf = Buffer.from(file, 'base64');
+                        var fileDir = subFolderName + "/" + title + ".png";
+                        fs.writeFile(fileDir, buf, (err) => {
+                            if (err) console.log(err);
+                        });
+                    })
+                }
+                catch (err) { console.log(err) }
+
+            case 2:
+                subFolderName = folderName + "/videos";
+                try {
+                    if (!fs.existsSync(subFolderName)) {
+                        fs.mkdirSync(subFolderName)
+                        fs.writeFileSync("")
+                    }
+                }
+                catch (err) { }
+            case 3:
+                subFolderName = folderName + "/audio";
+                try {
+                    if (!fs.existsSync(subFolderName)) {
+                        fs.mkdirSync(subFolderName)
+                        fs.writeFileSync("")
+                    }
+                }
+                catch (err) { }
+        }
+
+    }
+    catch (err) {
         console.error(err);
     }
     db.query(
