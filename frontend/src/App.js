@@ -56,7 +56,6 @@ const App = () => {
       } else {
         setIsLogged(false)
       }
-
     })()
   }, []);
 
