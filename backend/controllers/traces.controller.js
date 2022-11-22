@@ -43,40 +43,40 @@ const getTrace = (req, res) => {
 
 const addTrace = (req, res) => {
     const { user_id, file_type, file, title, description, x_position, y_position } = req.body;
-    console.log(req.body)
-    const folderName = "../media/" + user_id;
+    console.log(req.body);
+    const folderName = "./media/" + user_id;
     try {
         fs.access(folderName, (err) => {
             if (err) {
                 console.log("Folder does not exist. Creating folder...");
-                fs.mkdirSync(folderName);
+                fs.mkdirSync(folderName)
+                console.log("Folder created.");
             }
-        }
-        );
+        })
         let subFolderName;
         switch (file_type) {
             case 1:
                 subFolderName = folderName + "/images";
-                console.log(subFolderName)
                 try {
                     fs.access(subFolderName, (err) => {
                         if (err) {
-                            fs.mkdir(subFolderName);
+                            console.log("Folder does not exist. Creating folder...");
+                            fs.mkdirSync(subFolderName)
+                            console.log("Folder created.");
+                            // const buf = Buffer.from(file, 'base64');
+                            // let fileDir = subFolderName + "/" + title + ".png";
+                            // fs.writeFile(fileDir, buf, (err) => {
+                            //     if (err) console.log(err);
+                            // });
                         }
-                        const buf = Buffer.from(file, 'base64');
-                        var fileDir = subFolderName + "/" + title + ".png";
-                        fs.writeFile(fileDir, buf, (err) => {
-                            if (err) console.log(err);
-                        });
-                    })
-                }
-                catch (err) { console.log(err) }
+                    });
+                } catch (err) { console.log(err) }
 
             case 2:
                 subFolderName = folderName + "/videos";
                 try {
                     if (!fs.existsSync(subFolderName)) {
-                        fs.mkdirSync(subFolderName)
+                        fs.mkdirSync(subFolderName, (err) => { });
                         fs.writeFileSync("")
                     }
                 }
@@ -90,22 +90,23 @@ const addTrace = (req, res) => {
                     }
                 }
                 catch (err) { }
-        }
 
-    }
-    catch (err) {
+        }
+        // db.query(
+        //     "INSERT INTO traces (user_id,file_type,file,title,description,x_position,y_position) VALUES (?,?,?,?,?,?,?)",
+        //     [user_id, file_type, fileDir, title, description, x_position, y_position],
+        //     (err, rows) => {
+        //         if (err) console.log(err);
+        //         res.status(200).json({ message: "Trace added" });
+        //     }
+        // )
+
+
+
+    } catch (err) {
         console.error(err);
     }
-    db.query(
-        "INSERT INTO traces (user_id,file_type,file,title,description,x_position,y_position) VALUES (?,?,?,?,?,?,?)",
-        [user_id, file_type, fileDir, title, description, x_position, y_position],
-        (err, rows) => {
-            if (err) console.log(err);
-            res.status(200).json({ message: "Trace added" });
-        }
-    );
 }
-
 // Optimization Note:
 // The code here can be optimized by dividing the traces in the database into areas 
 // and then only getting the traces in the area where the user is centrally located.
