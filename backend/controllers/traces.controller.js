@@ -65,9 +65,9 @@ const addTrace = (req, res) => {
                             console.log("Folder created.");
                         }
                     });
-                    const buf = Buffer.from(file, 'base64');
+                    // const buf = Buffer.from(file, 'base64');
                     let fileDir = subFolderName + "/" + title + ".png";
-                    fs.writeFile(fileDir, buf, (err) => {
+                    fs.writeFile(fileDir, file, 'base64', (err) => {
                         if (err) console.log(err);
                     });
                 } catch (err) { console.log(err) }
