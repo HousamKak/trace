@@ -58,6 +58,7 @@ const addTrace = async (req, res) => {
         })
         let subFolderName;
         switch (filetype) {
+
             case 1:
                 console.log("you reached here")
                 subFolderName = folderName + "/images";
@@ -70,7 +71,7 @@ const addTrace = async (req, res) => {
                         }
                     });
                     const response = await db.promise().query("SELECT COUNT(*) FROM traces WHERE user_id = ?", [user_id])
-                    const traceNumber = response[0][0]["COUNT(*)"]
+                    const traceNumber = response[0][0]["COUNT(*)"] + 1;
                     const buf = Buffer.from(file, 'base64');
                     const writtenName = "/" + title + "." + traceNumber + ".png"
                     const fileDir = subFolderName + writtenName;
@@ -82,24 +83,25 @@ const addTrace = async (req, res) => {
                     // }
                 } catch (err) { console.log(err) }
 
-            // case 2:
-            //     subFolderName = folderName + "/videos";
-            // try {
-            //     if (!fs.existsSync(subFolderName)) {
-            //         fs.mkdirSync(subFolderName, (err) => { });
-            //         fs.writeFileSync("")
-            //     }
-            // }
-            // catch (err) { }
-            // case 3:
-            //     subFolderName = folderName + "/audio";
-            // try {
-            // if (!fs.existsSync(subFolderName)) {
-            //     fs.mkdirSync(subFolderName)
-            //     fs.writeFileSync("")
-            // }
-            // }
-            // catch (err) { console.log(err) }
+            case 2:
+                subFolderName = folderName + "/videos";
+                try {
+                    if (!fs.existsSync(subFolderName)) {
+                        fs.mkdirSync(subFolderName, (err) => { });
+                        fs.writeFileSync("")
+                    }
+                }
+                catch (err) { }
+            case 3:
+                subFolderName = folderName + "/audio";
+                try {
+                    if (!fs.existsSync(subFolderName)) {
+                        fs.mkdirSync(subFolderName)
+                        fs.writeFileSync("")
+                    }
+                } catch (err) { console.log(err) }
+            default:
+                subFolderName = folderName + "/text";
 
         }
         // db.query(
