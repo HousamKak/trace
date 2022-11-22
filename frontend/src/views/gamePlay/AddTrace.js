@@ -16,6 +16,7 @@ import axios from "axios";
 import * as Location from 'expo-location';
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
+import ImageManipulator from 'expo-image-manipulator';
 const base_url = "http://192.168.1.102:8000"
 
 const AddTrace = () => {
@@ -28,22 +29,27 @@ const AddTrace = () => {
     const [errorMsg, setErrorMsg] = React.useState(null);
 
     const pickImage = async () => {
-        // let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        // if (permissionResult.granted === false) {
-        //     alert("Permission to access camera roll is required!");
-        //     return;
-        // } else {
-        let result = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ImagePicker.MediaTypeOptions.All,
-            allowsEditing: true,
-            aspect: [4, 3],
-            quality: 1,
-        });
-        if (!result.cancelled) {
-            setImage(result.uri);
+        let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (permissionResult.granted === false) {
+            alert("Permission to access camera roll is required!");
+            return;
+        } else {
+            let result = await ImagePicker.launchImageLibraryAsync({
+                mediaTypes: ImagePicker.MediaTypeOptions.All,
+                allowsEditing: true,
+                aspect: [4, 3],
+                quality: 1,
+            });
+            if (!result.cancelled) {
+                const manipResult = await ImageManipulator.manipulateAsync(
+                    result.localUri || result.uri,
+                    [{ resize: { height: 500, width: 500 } }],
+                    { compress: 1, format: ImageManipulator.SaveFormat.PNG },
+                );
+                setImage(manipResult);
+            }
+            console.log(image);
         }
-        console.log(image);
-        // }
     }
 
     const doNothing = () => { }
