@@ -48,7 +48,6 @@ const AddTrace = () => {
                 setErrorMsg('Permission to access location was denied');
                 return;
             }
-            console.log(status)
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
         })();
@@ -62,30 +61,30 @@ const AddTrace = () => {
         let base64_image = ""
         if (image) {
             setFiletype(1)
-            console.log(image)
             base64_image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
-            console.log(base64_image)
         }
         if (location) {
             let x_position = location.coords.latitude
             let y_position = location.coords.longitude
-            const configurationObject = {
-                method: "POST",
-                url: base_url + "/traces",
-                headers: {
-                    "Access-Control-Allow-Origin": "*",
-                },
-                data: { user_id: user.user_id, filetype, title, desription: body, file: base64_image, x_position, y_position }
-            }
-            try {
-                const response = await axios(configurationObject)
-                if (response.status === 200) {
-                    navigation.navigate("MainPage")
-                } else {
-                    setErrorMsg("Something went wrong. Try again later.")
+            if (!image && !title && !body) { setErrorMsg("Something went wrong. Try again later.") } else {
+                const configurationObject = {
+                    method: "POST",
+                    url: base_url + "/traces",
+                    headers: {
+                        "Access-Control-Allow-Origin": "*",
+                    },
+                    data: { user_id: user.user_id, filetype, title, desription: body, file: base64_image, x_position, y_position }
                 }
-            } catch (e) { console.log(e.message) }
+                try {
+                    const response = await axios(configurationObject)
+                    if (response.status === 200) {
+                        navigation.navigate("MainPage")
+                    } else {
+                        setErrorMsg("Something went wrong. Try again later.")
+                    }
+                } catch (e) { console.log(e.message) }
 
+            }
         }
     }
 
