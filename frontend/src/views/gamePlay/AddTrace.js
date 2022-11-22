@@ -28,6 +28,11 @@ const AddTrace = () => {
     const [errorMsg, setErrorMsg] = React.useState(null);
 
     const pickImage = async () => {
+        // let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        // if (permissionResult.granted === false) {
+        //     alert("Permission to access camera roll is required!");
+        //     return;
+        // } else {
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.All,
             allowsEditing: true,
@@ -37,7 +42,9 @@ const AddTrace = () => {
         if (!result.cancelled) {
             setImage(result.uri);
         }
-    };
+        console.log(image);
+        // }
+    }
 
     const doNothing = () => { }
 
