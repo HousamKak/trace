@@ -41,14 +41,10 @@ const getTrace = (req, res) => {
     }
 }
 
-const getPostNumber = (user_id) => {
-    db.query("SELECT COUNT(*) FROM traces WHERE user_id = ?", [user_id], (err, rows) => {
-        if (err) console.log(err);
-        const traceNumber = rows[0]["COUNT(*)"];
-        return traceNumber
-    });
+const getPostNumber = (user_id, req) => {
+
 }
-const addTrace = (req, res) => {
+const addTrace = async (req, res) => {
     const { user_id, filetype, file, title, description, x_position, y_position } = req.body;
     console.log(req.body);
     const folderName = "./media/" + user_id;
@@ -73,13 +69,17 @@ const addTrace = (req, res) => {
                             console.log("Folder created.");
                         }
                     });
-                    const traceNumber = getPostNumber(user_id);
-                    // const buf = Buffer.from(file, 'base64');
+                    const response = await db.promise().query("SELECT COUNT(*) FROM traces WHERE user_id = ?", [user_id])
+                    const traceNumber = response[0][0]["COUNT(*)"]
+                    const buf = Buffer.from(file, 'base64');
                     const writtenName = "/" + title + "." + traceNumber + ".png"
                     const fileDir = subFolderName + writtenName;
-                    if (!fs.existsSync(title + "." + traceNumber + ".png")) {
-                        fs.writeFileSync(writtenName, file, 'base64')
-                    }
+                    // if (!fs.existsSync(title + "." + traceNumber + ".png")) {
+                    fs.writeFile(fileDir, buf, 'base64', (err) => {
+                        if (err) console.log(err);
+                        console.log("File written");
+                    })
+                    // }
                 } catch (err) { console.log(err) }
 
             // case 2:
