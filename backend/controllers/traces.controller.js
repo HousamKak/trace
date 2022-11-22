@@ -45,8 +45,6 @@ const addTrace = async (req, res) => {
     const { user_id, filetype, file, title, description, x_position, y_position } = req.body;
     if (user_id && x_position && y_position) {
         if (!file && !title && !description) { res.json({ message: "No Data" }); return; }
-
-        console.log(req.body);
         const folderName = "./media/" + user_id;
         fs.access(folderName, (err) => {
             if (err) {
