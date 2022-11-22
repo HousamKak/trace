@@ -63,12 +63,12 @@ const addTrace = (req, res) => {
                             console.log("Folder does not exist. Creating folder...");
                             fs.mkdirSync(subFolderName)
                             console.log("Folder created.");
-                            // const buf = Buffer.from(file, 'base64');
-                            // let fileDir = subFolderName + "/" + title + ".png";
-                            // fs.writeFile(fileDir, buf, (err) => {
-                            //     if (err) console.log(err);
-                            // });
                         }
+                    });
+                    const buf = Buffer.from(file, 'base64');
+                    let fileDir = subFolderName + "/" + title + ".png";
+                    fs.writeFile(fileDir, buf, (err) => {
+                        if (err) console.log(err);
                     });
                 } catch (err) { console.log(err) }
 
