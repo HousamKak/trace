@@ -80,7 +80,7 @@ const addTrace = async (req, res) => {
                     })
                     db.query(
                         "INSERT INTO traces (user_id,file_type,file,title,description,x_position,y_position) VALUES (?,?,?,?,?,?,?)",
-                        [user_id, file_type, fileDir, title, description, x_position, y_position],
+                        [user_id, filetype, fileDir, title, description, x_position, y_position],
                         (err, rows) => {
                             if (err) console.log(err);
                             res.status(200).json({ message: "Trace added" });
