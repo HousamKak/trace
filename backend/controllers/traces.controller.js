@@ -67,9 +67,7 @@ const addTrace = (req, res) => {
                     });
                     // const buf = Buffer.from(file, 'base64');
                     let fileDir = subFolderName + "/" + title + ".png";
-                    fs.writeFile(fileDir, file, 'base64', (err) => {
-                        if (err) console.log(err);
-                    });
+                    fs.writeFileSync(fileDir, file, 'base64')
                 } catch (err) { console.log(err) }
 
             case 2:
@@ -92,14 +90,14 @@ const addTrace = (req, res) => {
                 catch (err) { }
 
         }
-        // db.query(
-        //     "INSERT INTO traces (user_id,file_type,file,title,description,x_position,y_position) VALUES (?,?,?,?,?,?,?)",
-        //     [user_id, file_type, fileDir, title, description, x_position, y_position],
-        //     (err, rows) => {
-        //         if (err) console.log(err);
-        //         res.status(200).json({ message: "Trace added" });
-        //     }
-        // )
+        db.query(
+            "INSERT INTO traces (user_id,file_type,file,title,description,x_position,y_position) VALUES (?,?,?,?,?,?,?)",
+            [user_id, file_type, fileDir, title, description, x_position, y_position],
+            (err, rows) => {
+                if (err) console.log(err);
+                res.status(200).json({ message: "Trace added" });
+            }
+        )
 
 
 
