@@ -41,73 +41,72 @@ const getTrace = (req, res) => {
     }
 }
 
-const getPostNumber = (user_id, req) => {
-
-}
 const addTrace = async (req, res) => {
     const { user_id, filetype, file, title, description, x_position, y_position } = req.body;
-    console.log(req.body);
-    const folderName = "./media/" + user_id;
-    fs.access(folderName, (err) => {
-        if (err) {
-            console.log("Folder does not exist. Creating folder...");
-            fs.mkdirSync(folderName)
-            console.log("Folder created.");
-        }
-    })
-    let subFolderName;
-    let fileDir = null;
-    switch (filetype) {
-        case 1:
-            subFolderName = folderName + "/images";
-            fs.access(subFolderName, (err) => {
-                if (err) {
-                    console.log("Folder does not exist. Creating folder...");
-                    fs.mkdirSync(subFolderName)
-                    console.log("Folder created.");
-                }
-            });
-            const response = await db.promise().query("SELECT COUNT(*) FROM traces WHERE user_id = ?", [user_id])
-            const traceNumber = response[0][0]["COUNT(*)"] + 1;
-            const buf = Buffer.from(file, 'base64');
-            let writtenName;
-            if (title) { writtenName = "/" + title + "." + traceNumber + ".png" }
-            else { writtenName = "/notitle" + "." + traceNumber + ".png" }
+    if (user_id) {
 
-            fileDir = subFolderName + writtenName;
-            fs.writeFile(fileDir, buf, 'base64', (err) => {
+        console.log(req.body);
+        const folderName = "./media/" + user_id;
+        fs.access(folderName, (err) => {
+            if (err) {
+                console.log("Folder does not exist. Creating folder...");
+                fs.mkdirSync(folderName)
+                console.log("Folder created.");
+            }
+        })
+        let subFolderName;
+        let fileDir = null;
+        switch (filetype) {
+            case 1:
+                subFolderName = folderName + "/images";
+                fs.access(subFolderName, (err) => {
+                    if (err) {
+                        console.log("Folder does not exist. Creating folder...");
+                        fs.mkdirSync(subFolderName)
+                        console.log("Folder created.");
+                    }
+                });
+                const response = await db.promise().query("SELECT COUNT(*) FROM traces WHERE user_id = ?", [user_id])
+                const traceNumber = response[0][0]["COUNT(*)"] + 1;
+                const buf = Buffer.from(file, 'base64');
+                let writtenName;
+                if (title) { writtenName = "/" + title + "." + traceNumber + ".png" }
+                else { writtenName = "/notitle" + "." + traceNumber + ".png" }
+
+                fileDir = subFolderName + writtenName;
+                fs.writeFile(fileDir, buf, 'base64', (err) => {
+                    if (err) console.log(err);
+                    console.log("File written");
+                })
+
+            case 2:
+                subFolderName = folderName + "/videos";
+            // try {
+            //     if (!fs.existsSync(subFolderName)) {
+            //         fs.mkdirSync(subFolderName, (err) => { });
+            //         fs.writeFileSync("")
+            //     }
+            // }
+            // catch (err) { }
+            case 3:
+                subFolderName = folderName + "/audio";
+            // try {
+            //     if (!fs.existsSync(subFolderName)) {
+            //         fs.mkdirSync(subFolderName)
+            //         fs.writeFileSync("")
+            //     }
+            // } catch (err) { console.log(err) }
+
+        }
+        db.query(
+            "INSERT INTO traces (user_id,file_type,file,title,description,x_position,y_position) VALUES (?,?,?,?,?,?,?)",
+            [user_id, filetype, fileDir, title, description, x_position, y_position],
+            (err, rows) => {
                 if (err) console.log(err);
-                console.log("File written");
-            })
-
-        case 2:
-            subFolderName = folderName + "/videos";
-        // try {
-        //     if (!fs.existsSync(subFolderName)) {
-        //         fs.mkdirSync(subFolderName, (err) => { });
-        //         fs.writeFileSync("")
-        //     }
-        // }
-        // catch (err) { }
-        case 3:
-            subFolderName = folderName + "/audio";
-        // try {
-        //     if (!fs.existsSync(subFolderName)) {
-        //         fs.mkdirSync(subFolderName)
-        //         fs.writeFileSync("")
-        //     }
-        // } catch (err) { console.log(err) }
-
-        default:
+                res.status(200).json({ message: "Trace added" });
+            }
+        )
     }
-    db.query(
-        "INSERT INTO traces (user_id,file_type,file,title,description,x_position,y_position) VALUES (?,?,?,?,?,?,?)",
-        [user_id, filetype, fileDir, title, description, x_position, y_position],
-        (err, rows) => {
-            if (err) console.log(err);
-            res.status(200).json({ message: "Trace added" });
-        }
-    )
 }
 // Optimization Note:
 // The code here can be optimized by dividing the traces in the database into areas 
