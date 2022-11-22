@@ -33,13 +33,14 @@ const AddTrace = () => {
             alert("Permission to access camera roll is required!");
             return;
         } else {
+            let result = await ImagePicker.launchImageLibraryAsync({
+                mediaTypes: ImagePicker.MediaTypeOptions.All,
+                allowsEditing: true,
+                aspect: [4, 3],
+                quality: 1,
+            });
             if (!result.cancelled) {
-                const manipResult = await ImageManipulator.manipulateAsync(
-                    result.localUri || result.uri,
-                    [{ resize: { height: 500, width: 500 } }],
-                    { compress: 1, format: ImageManipulator.SaveFormat.PNG },
-                );
-                setImage(manipResult);
+                setImage(result.uri);
             }
             console.log(image);
         }
