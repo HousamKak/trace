@@ -41,6 +41,13 @@ const getTrace = (req, res) => {
     }
 }
 
+const getPostNumber = (user_id) => {
+    db.query("SELECT COUNT(*) FROM traces WHERE user_id = ?", [user_id], (err, rows) => {
+        if (err) console.log(err);
+        const traceNumber = rows[0]["COUNT(*)"];
+        return traceNumber
+    });
+}
 const addTrace = (req, res) => {
     const { user_id, filetype, file, title, description, x_position, y_position } = req.body;
     console.log(req.body);
@@ -66,18 +73,13 @@ const addTrace = (req, res) => {
                             console.log("Folder created.");
                         }
                     });
-                    db.query("SELECT COUNT(*) FROM traces WHERE user_id = ?", [user_id], (err, rows) => {
-                        // Get the number of traces the user has
-                        if (err) console.log(err);
-                        const traceNumber = rows[0]["COUNT(*)"];
-                    });
+                    const traceNumber = getPostNumber(user_id);
                     // const buf = Buffer.from(file, 'base64');
                     const writtenName = "/" + title + "." + traceNumber + ".png"
                     const fileDir = subFolderName + writtenName;
                     if (!fs.existsSync(title + "." + traceNumber + ".png")) {
                         fs.writeFileSync(writtenName, file, 'base64')
                     }
-
                 } catch (err) { console.log(err) }
 
             // case 2:
