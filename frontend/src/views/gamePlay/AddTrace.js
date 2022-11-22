@@ -66,7 +66,7 @@ const AddTrace = () => {
         if (location) {
             let x_position = location.coords.latitude
             let y_position = location.coords.longitude
-            if (!image && !title && !body) { setErrorMsg("Something went wrong. Try again later.") } else {
+            if (!image && !title && !body) { setErrorMsg("The post is empty.") } else {
                 const configurationObject = {
                     method: "POST",
                     url: base_url + "/traces",
