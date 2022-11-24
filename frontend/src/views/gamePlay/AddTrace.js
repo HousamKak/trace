@@ -45,6 +45,7 @@ const AddTrace = () => {
             });
             if (!result.cancelled) {
                 setImage(result.base64);
+                setPreview(result.uri);
                 setFiletype(1)
             }
         }
@@ -106,7 +107,7 @@ const AddTrace = () => {
                     <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/videoIcon.png")} onPress={doNothing} />
                     <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} onPress={doNothing} />
                 </View>
-                {image ? <View style={styles.ImageTrace}>
+                {preview ? <View style={styles.ImageTrace}>
                     <Image source={{ uri: preview }} style={styles.Image}></Image>
                 </View> : ""}
                 <View style={styles.textInputFields}>
