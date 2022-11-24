@@ -51,7 +51,10 @@ const AddTrace = () => {
             }
         }
     }
-
+    const buttonPress = async () => {
+        setPreview(null);
+        setImage(null);
+    }
     const doNothing = () => { }
 
     React.useEffect(() => {
@@ -111,7 +114,7 @@ const AddTrace = () => {
                 {preview ?
                     (
                         <View style={styles.ImageTrace}>
-                            <Button title="Remove" color={"#fff"} />
+                            <Button title="Remove" color={"#fff"} onPress={buttonPress} />
                             <Image source={{ uri: preview }} style={styles.Image}></Image>
                         </View>
                     ) : ""}
