@@ -12,7 +12,7 @@ const getUser = (req, res) => {
 }
 
 const updateUser = async (req, res) => {
-    const { user_id, name, email, password } = req.body;
+    const { user_id, name, email, password, profile } = req.body;
     if (user_id) {
         if (name) {
             db.query('UPDATE users SET username = ? WHERE user_id = ?', [name, user_id])
@@ -23,6 +23,9 @@ const updateUser = async (req, res) => {
         if (password) {
             hashed_password = await bcrypt.hash(password, 10);
             db.query('UPDATE users SET password = ? WHERE user_id = ?', [hashed_password, user_id])
+        }
+        if (profile) {
+            db.query('UPDATE users SET profile = ? WHERE user_id = ?', [profile, user_id])
         }
         res.status(200).json({ message: "User updated" });
     }
