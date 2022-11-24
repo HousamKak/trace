@@ -28,7 +28,7 @@ const Profile = () => {
     React.useEffect(() => {
         (async () => {
             const LoadedMedals = await item("medals", 6, itemImages);
-            setMyItems(LoadedItems)
+            setMyMedals(LoadedItems)
         })()
     }, [refreshing])
 
@@ -82,7 +82,7 @@ const Profile = () => {
                     <Text>Medals</Text>
                 </View>
                 <View>
-                    {/* {medals} */}
+                    {mymedals}
                 </View>
             </ScrollView>
             <View style={styles.footer}>
