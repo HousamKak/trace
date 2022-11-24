@@ -134,6 +134,12 @@ const AddTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    Image: {
+        resizeMethod: "scale",
+        resizeMode: "stretch",
+        width: "100%",
+        borderRadius: 20,
+    },
     ImageTrace: {
         backgroundColor: "#302b4f",
         borderRadius: 20,
