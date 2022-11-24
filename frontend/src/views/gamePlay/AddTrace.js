@@ -46,7 +46,6 @@ const AddTrace = () => {
                 base64: true
             });
             if (!result.cancelled) {
-                console.log(result);
                 setImage(result.base64);
                 setPreview(result.uri);
                 setFiletype(1)
@@ -102,7 +101,7 @@ const AddTrace = () => {
                     headers: {
                         "Access-Control-Allow-Origin": "*",
                     },
-                    data: { user_id: user.user_id, filetype, title, desription: body, file: image, x_position, y_position }
+                    data: { user_id: user.user_id, filetype, title, description: body, file: image, x_position, y_position }
                 }
                 try {
                     const response = await axios(configurationObject)
