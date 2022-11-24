@@ -14,7 +14,6 @@ const item = require("../../utilities/ordering.js")
 const medalImages = require("../../utilities/Images/medalImages.js");
 import { getData } from "../../utilities/axios/getData.js"
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 
 const Profile = () => {
     const navigation = useNavigation();
@@ -97,6 +96,7 @@ const Profile = () => {
                     onRefresh={onRefresh}
                 />
             }>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => ""}></MenuBtn>
                 <Image style={styles.profileImage} source={require("../../assets/MenuPage/trialprofile.png")} />
                 <Text style={styles.name}>{userData.username}</Text>
                 <View style={styles.statusContShape}>
