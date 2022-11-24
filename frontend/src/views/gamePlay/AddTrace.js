@@ -179,7 +179,8 @@ const styles = StyleSheet.create({
     modalstyle: {
         justifyContent: "center",
         alignItems: "center",
-        height: "60%",
+        height: "100%",
+        backgroundColor: "#000000aa",
     },
     errorText: {
         color: "#fff",
