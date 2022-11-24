@@ -6,7 +6,8 @@ import {
     ScrollView,
     TextInput,
     TouchableOpacity,
-    Text
+    Text,
+    Modal
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
@@ -28,6 +29,7 @@ const AddTrace = () => {
     const [filetype, setFiletype] = React.useState(0);
     const [location, setLocation] = React.useState(null);
     const [preview, setPreview] = React.useState(null);
+    const [modalVisible, setModalVisible] = useState(false);
     const [errorMsg, setErrorMsg] = React.useState(null);
 
 
