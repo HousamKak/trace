@@ -16,6 +16,7 @@ const medalImages = require("../../utilities/Images/medalImages.js");
 import { getData } from "../../utilities/axios/getData.js"
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import SignBtn from "../../components/ButtonsLogging/SignBtn";
+import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 
 const Profile = () => {
