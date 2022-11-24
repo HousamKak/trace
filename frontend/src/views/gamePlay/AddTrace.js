@@ -39,6 +39,7 @@ const AddTrace = () => {
                 allowsEditing: true,
                 aspect: [4, 3],
                 quality: 1,
+                base64: true
             });
             if (!result.cancelled) {
 
@@ -66,7 +67,6 @@ const AddTrace = () => {
         const data = new FormData();
 
         data.append("photo", {
-            name: photo.name,
             type: photo.type,
             uri: Platform.OS === "ios" ? photo.uri.replace("file://", "") : photo.uri,
         });
@@ -86,11 +86,11 @@ const AddTrace = () => {
 
         if (image) {
             setFiletype(1)
-            const photo = {
-                type: "image/jpg",
-                uri: image,
-            };
-            const data = createFormData(photo);
+            // const photo = {
+            //     type: "image/jpg",
+            //     uri: image,
+            // };
+            // const data = createFormData(photo);
 
             // const base64_image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
         }
