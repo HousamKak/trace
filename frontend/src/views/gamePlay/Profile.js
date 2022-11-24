@@ -21,6 +21,7 @@ const Profile = () => {
     const [refreshing, setRefreshing] = React.useState(false);
     const [userData, setUserData] = React.useState("")
     const [chestCount, setChestCount] = React.useState(0)
+    const [peofile, setProfile] = React.useState(null)
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
     }
@@ -28,6 +29,25 @@ const Profile = () => {
         setRefreshing(true);
         wait(500).then(() => setRefreshing(false));
     }, []);
+
+    const pickImage = async () => {
+        let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (permissionResult.granted === false) {
+            alert("Permission to access camera roll is required!");
+            return;
+        } else {
+            let result = await ImagePicker.launchImageLibraryAsync({
+                mediaTypes: ImagePicker.MediaTypeOptions.All,
+                allowsEditing: true,
+                aspect: [4, 3],
+                quality: 1,
+                base64: true
+            });
+            if (!result.cancelled) {
+                setProfile(result.base64);
+            }
+        }
+    }
 
     React.useEffect(() => {
         (async () => {
@@ -43,6 +63,26 @@ const Profile = () => {
         })()
 
     }, [refreshing])
+
+    const changeProfile = async () => {
+        const configurationObject = {
+            method: "POST",
+            url: base_url + "/traces",
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            },
+            data: { user_id: user.user_id, filetype, title, description: body, file: image, x_position, y_position }
+        }
+        try {
+            const response = await axios(configurationObject)
+            if (response.status === 200) {
+                navigation.navigate("MainPage")
+            } else {
+                setErrorMsg("Something went wrong. Try again later.")
+                toClose();
+            }
+        } catch (e) { console.log(e.message) }
+    }
 
     return (
         <View style={styles.screenView}>
