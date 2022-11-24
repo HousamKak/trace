@@ -5,7 +5,7 @@ import {
     View,
     ScrollView,
     TextInput,
-    Platform
+    Button
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
@@ -108,9 +108,13 @@ const AddTrace = () => {
                     <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/videoIcon.png")} onPress={doNothing} />
                     <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} onPress={doNothing} />
                 </View>
-                {preview ? <View style={styles.ImageTrace}>
-                    <Image source={{ uri: preview }} style={styles.Image}></Image>
-                </View> : ""}
+                {preview ?
+                    (
+                        <View style={styles.ImageTrace}>
+                            <Button title="Remove" color={"#fff"} />
+                            <Image source={{ uri: preview }} style={styles.Image}></Image>
+                        </View>
+                    ) : ""}
                 <View style={styles.textInputFields}>
                     <View style={styles.textInputContainer}>
                         <TextInput
