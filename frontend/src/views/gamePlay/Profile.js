@@ -178,7 +178,6 @@ const styles = StyleSheet.create({
         marginLeft: 15,
     },
     levelIndicatorSection: {
-        width: "100%",
         marginTop: 16,
         paddingLeft: 5,
         paddingRight: 20,
