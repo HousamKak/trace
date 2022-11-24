@@ -44,4 +44,4 @@ const getUserChests = (req, res) => {
     }
 }
 
-module.exports = { getChest, getCloseChests, getUserChestsCount };
+module.exports = { getChest, getCloseChests, getUserChests };
