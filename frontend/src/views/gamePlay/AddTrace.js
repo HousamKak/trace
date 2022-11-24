@@ -44,6 +44,7 @@ const AddTrace = () => {
                 base64: true
             });
             if (!result.cancelled) {
+                console.log(result);
                 setImage(result.base64);
                 setPreview(result.uri);
                 setFiletype(1)
@@ -142,7 +143,7 @@ const styles = StyleSheet.create({
         resizeMode: "stretch",
         width: "100%",
         borderRadius: 20,
-        height: 200,
+        height: 400,
     },
     ImageTrace: {
         backgroundColor: "#302b4f",
