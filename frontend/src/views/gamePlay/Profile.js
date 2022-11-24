@@ -62,7 +62,7 @@ const Profile = () => {
                             <View style={styles.black} />
                         </View>
                     </View>
-                    <Text style={styles.XP}>number/total</Text>
+                    {/* <Text style={styles.XP}>number/total</Text> */}
                 </View>
                 <SectionBar text={"TOTAL ACTIVITY"} />
                 <View style={styles.userDataCont}>
