@@ -1,5 +1,6 @@
 const db = require('../config/db.config');
 const bcrypt = require("bcrypt");
+const fs = require('fs');
 
 const getUser = (req, res) => {
     const { user_id } = req.user;
