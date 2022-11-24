@@ -145,6 +145,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignItems: "center",
         padding: 20,
+        margin: 20,
     },
     field: {
         height: 55,
