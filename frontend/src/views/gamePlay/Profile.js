@@ -86,12 +86,12 @@ const Profile = () => {
         }
         try {
             const response = await axios(configurationObject)
-            if (response.status === 200) {
-                navigation.navigate("MainPage")
-            } else {
+            if (response.status !== 200) {
                 setErrorMsg("Something went wrong. Try again later.")
             }
-        } catch (e) { console.log(e.message) }
+        }
+        catch (e) { console.log(e.message) }
+
     }
 
     return (
@@ -105,7 +105,7 @@ const Profile = () => {
                 <View style={styles.gear}>
                     <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                 </View>
-                <Image style={styles.profileImage} source={require("../../assets/MenuPage/trialprofile.png")} />
+                <Image style={styles.profileImage} source={{ uri: profile }} />
                 <Text style={styles.name}>{userData.username}</Text>
                 <View style={styles.statusContShape}>
                     <Text style={styles.status}>ADVENTURER</Text>
