@@ -13,11 +13,13 @@ import DataDisplay from "../../components/Displayers/DataDisplay";
 const item = require("../../utilities/ordering.js")
 const medalImages = require("../../utilities/Images/medalImages.js");
 import { getData } from "../../utilities/axios/getData.js"
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Profile = () => {
     const navigation = useNavigation();
     const [mymedals, setMyMedals] = React.useState([])
     const [refreshing, setRefreshing] = React.useState(false);
+    const [myData, setMyData] = React.useState({})
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
     }
@@ -28,6 +30,7 @@ const Profile = () => {
 
     React.useEffect(() => {
         (async () => {
+            const user = await AsyncStorage("user")
             getData("/user/medals/", "medals")
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
@@ -80,7 +83,7 @@ const Profile = () => {
                     </Text>
                 </View>
                 <SectionBar text={"MEDALS"} />
-                <View>
+                <View style={{ marginBottom: 40 }}>
                     {mymedals}
                 </View>
             </ScrollView>
