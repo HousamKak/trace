@@ -31,6 +31,7 @@ const Profile = () => {
     const [username, setUsername] = React.useState("")
     const [errorMsg, setErrorMsg] = React.useState(null);
     const [modalVisible, setModalVisible] = React.useState(false);
+    const [usernameModalVisible, setUsernameModalVisible] = React.useState(false);
 
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
@@ -147,6 +148,24 @@ const Profile = () => {
                     {mymedals}
                 </View>
             </ScrollView >
+            <View style={styles.centeredView}>
+                <Modal
+                    animationType="fade"
+                    transparent={true}
+                    visible={modalVisible}
+                    onRequestClose={() => { setModalVisible(!modalVisible); }}
+                >
+                    <View style={styles.modalstyle}>
+                        <View style={styles.closeView}>
+                            <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
+                        </View>
+                        <View style={styles.updateProfileBtn}>
+                            <SignBtn text={"Update Profile Image"} onPress={() => pickImage()} />
+                        </View>
+                        <SignBtn text={"Update Username"} onPress={() => { }} />
+                    </View>
+                </Modal>
+            </View>
             <View style={styles.centeredView}>
                 <Modal
                     animationType="fade"
