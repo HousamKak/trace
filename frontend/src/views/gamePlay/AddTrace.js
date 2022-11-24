@@ -104,6 +104,9 @@ const AddTrace = () => {
                     <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/videoIcon.png")} onPress={doNothing} />
                     <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} onPress={doNothing} />
                 </View>
+                {image ? <View style={styles.ImageTrace}>
+                    <Image source={require("../../assets/MenuPage/StrongCat.jpg")} style={styles.Image}></Image>
+                </View> : ""}
                 <View style={styles.textInputFields}>
                     <View style={styles.textInputContainer}>
                         <TextInput
