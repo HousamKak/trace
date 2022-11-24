@@ -26,7 +26,9 @@ const AddTrace = () => {
     const [body, setBody] = React.useState("");
     const [filetype, setFiletype] = React.useState(0);
     const [location, setLocation] = React.useState(null);
+    const [preview, setPreview] = React.useState(null);
     const [errorMsg, setErrorMsg] = React.useState(null);
+
 
     const pickImage = async () => {
         let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
