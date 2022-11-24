@@ -14,6 +14,7 @@ const item = require("../../utilities/ordering.js")
 const medalImages = require("../../utilities/Images/medalImages.js");
 import { getData } from "../../utilities/axios/getData.js"
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 
 const Profile = () => {
     const navigation = useNavigation();
