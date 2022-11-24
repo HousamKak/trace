@@ -19,6 +19,8 @@ import SignBtn from "../../components/ButtonsLogging/SignBtn";
 import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 
+const base_url = "http://192.168.1.102:8000"
+
 const Profile = () => {
     const navigation = useNavigation();
     const [mymedals, setMyMedals] = React.useState([])
@@ -105,7 +107,7 @@ const Profile = () => {
                 <View style={styles.gear}>
                     <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                 </View>
-                <Image style={styles.profileImage} source={{ uri: profile }} />
+                <Image style={styles.profileImage} source={{ uri: userData.profile }} />
                 <Text style={styles.name}>{userData.username}</Text>
                 <View style={styles.statusContShape}>
                     <Text style={styles.status}>ADVENTURER</Text>
