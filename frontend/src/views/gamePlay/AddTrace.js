@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
         resizeMode: "stretch",
         width: "100%",
         borderRadius: 20,
+        height: 200,
     },
     ImageTrace: {
         backgroundColor: "#302b4f",
