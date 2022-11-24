@@ -13,7 +13,6 @@ import DataDisplay from "../../components/Displayers/DataDisplay";
 const item = require("../../utilities/ordering.js")
 const medalImages = require("../../utilities/Images/medalImages.js");
 import { getData } from "../../utilities/axios/getData.js"
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Profile = () => {
     const navigation = useNavigation();
@@ -35,7 +34,6 @@ const Profile = () => {
         })()
 
     }, [refreshing])
-
 
     return (
         <View style={styles.screenView}>
