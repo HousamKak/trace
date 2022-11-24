@@ -34,8 +34,12 @@ const updateUser = async (req, res) => {
                 }
             })
             const buf = Buffer.from(profile, 'base64');
-            fileDir = folderName + "/" + user_id + ".profilePicture.png";
-            db.query('UPDATE users SET profile = ? WHERE user_id = ?', [profile, user_id])
+            const fileDir = folderName + "/" + user_id + ".profilePicture.png";
+            fs.writeFile(fileDir, buf, 'base64', (err) => {
+                if (err) console.log(err);
+                console.log("File written");
+            })
+            db.query('UPDATE users SET profile = ? WHERE user_id = ?', [fileDir, user_id])
         }
         res.status(200).json({ message: "User updated" });
     }
