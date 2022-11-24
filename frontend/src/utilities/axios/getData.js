@@ -1,4 +1,5 @@
 import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const getData = async (route, key) => {
     const user_prime = await AsyncStorage.getItem("user")
