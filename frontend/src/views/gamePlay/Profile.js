@@ -12,6 +12,7 @@ import SectionBar from "../../components/Breakers/SectionBar";
 import DataDisplay from "../../components/Displayers/DataDisplay";
 const item = require("../../utilities/ordering.js")
 const medalImages = require("../../utilities/Images/medalImages.js");
+import { getData } from "../../utilities/axios/getData.js"
 
 const Profile = () => {
     const navigation = useNavigation();
