@@ -62,6 +62,11 @@ const AddTrace = () => {
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
     }
+    const toClose = () => {
+        setModalVisible(true);
+        wait(100).then(() => setModalVisible(false));
+    }
+
     const doNothing = () => { }
 
 
