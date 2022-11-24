@@ -25,6 +25,7 @@ const Profile = () => {
     const [email, setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
     const [username, setUsername] = React.useState("")
+    const [errorMsg, setErrorMsg] = React.useState(null);
 
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
@@ -68,14 +69,14 @@ const Profile = () => {
 
     }, [refreshing])
 
-    const changeProfile = async () => {
+    const updateProfile = async () => {
         const configurationObject = {
             method: "PUT",
             url: base_url + "/user",
             headers: {
                 "Access-Control-Allow-Origin": "*",
             },
-            data: { user_id: userData.user_id, profile: profile, email, password, username }
+            data: { user_id: userData.user_id, profile, email, password, username }
         }
         try {
             const response = await axios(configurationObject)
@@ -83,7 +84,6 @@ const Profile = () => {
                 navigation.navigate("MainPage")
             } else {
                 setErrorMsg("Something went wrong. Try again later.")
-                toClose();
             }
         } catch (e) { console.log(e.message) }
     }
