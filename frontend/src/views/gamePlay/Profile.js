@@ -27,6 +27,7 @@ const Profile = () => {
     const [password, setPassword] = React.useState("")
     const [username, setUsername] = React.useState("")
     const [errorMsg, setErrorMsg] = React.useState(null);
+    const [modalVisible, setModalVisible] = React.useState(false);
 
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
