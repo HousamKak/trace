@@ -161,8 +161,12 @@ const Profile = () => {
                         </View>
                         <View style={styles.updateProfileBtn}>
                             <SignBtn text={"Update Profile Image"} onPress={() => {
-                                pickImage()
-                                updateProfile()
+                                (async () => {
+                                    await pickImage()
+                                    await updateProfile()
+                                    setModalVisible(!modalVisible)
+                                    onRefresh()
+                                })();
                             }} />
                         </View>
                         <SignBtn text={"Update Username"} onPress={() => {
@@ -176,7 +180,7 @@ const Profile = () => {
                 <Modal
                     animationType="fade"
                     transparent={true}
-                    visible={modalVisible}
+                    visible={usernameModalVisible}
                     onRequestClose={() => { setUsernameModalVisible(!usernameModalVisible) }}
                 >
                     <View style={styles.modalstyle}>
