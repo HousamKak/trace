@@ -35,7 +35,6 @@ const Profile = () => {
             getData("/user/medals/", "medals")
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
-            console.log(userData)
         })()
 
     }, [refreshing])
@@ -67,11 +66,11 @@ const Profile = () => {
                 <SectionBar text={"TOTAL ACTIVITY"} />
                 <View style={styles.userDataCont}>
                     <View>
-                        <Text>Distance Walked:</Text>
+                        <Text>Distance Walked: </Text>
                         <Text></Text>
                     </View>
                     <View>
-                        <Text>Total XP: </Text>
+                        <Text>Total XP: {userData.XP}</Text>
                         <Text></Text>
                     </View>
                     <DataDisplay cheat={styles.cheat} src={require("../../assets/MenuPage/MenuButtons/chestLock.png")} data={"Chests Found:"} info={"info"} />
@@ -89,9 +88,9 @@ const Profile = () => {
                     {mymedals}
                 </View>
             </ScrollView >
-    <View style={styles.footer}>
-        <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
-    </View>
+            <View style={styles.footer}>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
+            </View>
         </View >
     )
 }
