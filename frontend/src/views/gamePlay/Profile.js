@@ -15,6 +15,7 @@ const medalImages = require("../../utilities/Images/medalImages.js");
 
 const Profile = () => {
     const navigation = useNavigation();
+    const [mymedals, setMyMedals] = React.useState([])
     const [refreshing, setRefreshing] = React.useState(false);
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
