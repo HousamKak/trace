@@ -67,7 +67,7 @@ const AddTrace = () => {
         wait(500).then(() => setModalVisible(false));
     }
 
-    const doNothing = () => { }
+    const comingSoon = () => { setErrorMsg("Coming soon...") }
 
 
     React.useEffect(() => {
@@ -124,8 +124,8 @@ const AddTrace = () => {
                 />
                 <View style={styles.IconTypeContainer}>
                     <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/cameraIcon.png")} onPress={pickImage} />
-                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/videoIcon.png")} onPress={doNothing} />
-                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} onPress={doNothing} />
+                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/videoIcon.png")} onPress={comingSoon} />
+                    <IconTypeDisplay src={require("../../assets/MenuPage/TraceTypes/musicIcon.png")} onPress={comingSoon} />
                 </View>
                 {preview ?
                     (
