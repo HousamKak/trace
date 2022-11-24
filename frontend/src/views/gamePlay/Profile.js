@@ -19,7 +19,7 @@ const Profile = () => {
     const navigation = useNavigation();
     const [mymedals, setMyMedals] = React.useState([])
     const [refreshing, setRefreshing] = React.useState(false);
-    const [myData, setMyData] = React.useState({})
+    const [userData, setUserData] = React.useState({})
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
     }
