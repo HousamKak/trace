@@ -134,6 +134,12 @@ const AddTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    ImageTrace: {
+        backgroundColor: "#302b4f",
+        borderRadius: 20,
+        alignItems: "center",
+        padding: 20,
+    },
     field: {
         height: 55,
         width: "100%",
