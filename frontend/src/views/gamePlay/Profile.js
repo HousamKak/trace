@@ -4,7 +4,8 @@ import {
     StyleSheet,
     View,
     ScrollView, RefreshControl,
-    Image
+    Image,
+    Modal
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
@@ -96,7 +97,9 @@ const Profile = () => {
                     onRefresh={onRefresh}
                 />
             }>
-                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => ""}></MenuBtn>
+                <View style={styles.gear}>
+                    <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => ""}></MenuBtn>
+                </View>
                 <Image style={styles.profileImage} source={require("../../assets/MenuPage/trialprofile.png")} />
                 <Text style={styles.name}>{userData.username}</Text>
                 <View style={styles.statusContShape}>
@@ -140,6 +143,20 @@ const Profile = () => {
                     {mymedals}
                 </View>
             </ScrollView >
+            <View style={styles.centeredView}>
+                <Modal
+                    animationType="fade"
+                    transparent={true}
+                    visible={modalVisible}
+                    onShow={toClose}
+                >
+                    <View style={styles.modalstyle}>
+                        <Text style={styles.errorText}>
+                            {errorMsg}
+                        </Text>
+                    </View>
+                </Modal>
+            </View>
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
             </View>
@@ -148,6 +165,9 @@ const Profile = () => {
 }
 
 const styles = StyleSheet.create({
+    gear: {
+        alignSelf: "flex-end",
+    },
     distanceWalked: {
         flexDirection: "row",
         width: "100%",
