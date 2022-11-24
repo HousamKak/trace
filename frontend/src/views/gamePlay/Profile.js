@@ -21,7 +21,11 @@ const Profile = () => {
     const [refreshing, setRefreshing] = React.useState(false);
     const [userData, setUserData] = React.useState("")
     const [chestCount, setChestCount] = React.useState(0)
-    const [peofile, setProfile] = React.useState(null)
+    const [profile, setProfile] = React.useState(null)
+    const [email, setEmail] = React.useState("")
+    const [password, setPassword] = React.useState("")
+    const [username, setUsername] = React.useState("")
+    
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
     }
@@ -71,7 +75,7 @@ const Profile = () => {
             headers: {
                 "Access-Control-Allow-Origin": "*",
             },
-            data: { user_id: user.user_id, filetype, title, description: body, file: image, x_position, y_position }
+            data: { user_id: userData.user_id, profile: profile, email, password }
         }
         try {
             const response = await axios(configurationObject)
