@@ -64,7 +64,7 @@ const AddTrace = () => {
     }
     const toClose = () => {
         setModalVisible(true);
-        wait(100).then(() => setModalVisible(false));
+        wait(500).then(() => setModalVisible(false));
     }
 
     const doNothing = () => { }
@@ -161,9 +161,8 @@ const AddTrace = () => {
                     animationType="fade"
                     transparent={true}
                     visible={modalVisible}
-                    onRequestClose={() => {
-                        setModalVisible(!modalVisible);
-                    }}>
+                    onShow={toClose}
+                >
                     <Text>
                         {errorMsg}
                     </Text>
