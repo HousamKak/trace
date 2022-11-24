@@ -175,8 +175,12 @@ const AddTrace = () => {
 };
 
 const styles = StyleSheet.create({
-    modalstyle: {},
-    errorText: {},
+    modalstyle: {
+        
+    },
+    errorText: {
+        color: "#fff",
+    },
     removebtn: {
         color: "#fff",
         fontSize: 15,
