@@ -11,6 +11,7 @@ import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import SectionBar from "../../components/Breakers/SectionBar";
 import DataDisplay from "../../components/Displayers/DataDisplay";
 const item = require("../../utilities/ordering.js")
+const medalImages = require("../../utilities/Images/medalImages.js");
 
 const Profile = () => {
     const navigation = useNavigation();
