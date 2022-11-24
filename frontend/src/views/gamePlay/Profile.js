@@ -98,16 +98,26 @@ const Profile = () => {
 }
 
 const styles = StyleSheet.create({
+    distanceWalked: {
+        flexDirection: "row",
+        width: "100%",
+        width: "29%",
+        alignSelf: "center",
+        justifyContent: "space-between",
+        marginBottom: 8,
+        marginTop: 20,
+    },
     Text: {
         color: "#fff",
         fontSize: 12,
     },
     xpCont: {
         flexDirection: "row",
-        width: "100%",
-        justifyContent: "space-around",
-        paddingHorizontal: "9.5%",
-        marginBottom: 8,
+        width: "29%",
+        alignSelf: "center",
+        justifyContent: "space-between",
+        marginBottom: 30,
+
     },
 
     weeklyProgressText: {
