@@ -163,7 +163,7 @@ const AddTrace = () => {
                     visible={modalVisible}
                     onShow={toClose}
                 >
-                    <Text>
+                    <Text style={styles.errorText}>
                         {errorMsg}
                     </Text>
                 </Modal>
@@ -175,6 +175,8 @@ const AddTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    modalstyle: {},
+    errorText: {},
     removebtn: {
         color: "#fff",
         fontSize: 15,
