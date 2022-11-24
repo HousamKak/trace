@@ -12,16 +12,16 @@ const getUser = (req, res) => {
 }
 
 const updateUser = async (req, res) => {
-    const { user_id, name, email, password, profile } = req.body;
+    const { user_id, username, email, password, profile } = req.body;
     if (user_id) {
-        if (name) {
-            db.query('UPDATE users SET username = ? WHERE user_id = ?', [name, user_id])
+        if (username) {
+            db.query('UPDATE users SET username = ? WHERE user_id = ?', [username, user_id])
         }
         if (email) {
             db.query('UPDATE users SET email = ? WHERE user_id = ?', [email, user_id])
         }
         if (password) {
-            hashed_password = await bcrypt.hash(password, 10);
+            const hashed_password = await bcrypt.hash(password, 10);
             db.query('UPDATE users SET password = ? WHERE user_id = ?', [hashed_password, user_id])
         }
         if (profile) {
