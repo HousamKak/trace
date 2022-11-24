@@ -25,6 +25,14 @@ const updateUser = async (req, res) => {
             db.query('UPDATE users SET password = ? WHERE user_id = ?', [hashed_password, user_id])
         }
         if (profile) {
+            const folderName = "./media/" + user_id + "/profile";
+            fs.access(folderName, (err) => {
+                if (err) {
+                    console.log("Folder does not exist. Creating folder...");
+                    fs.mkdirSync(folderName)
+                    console.log("Folder created.");
+                }
+            })
             db.query('UPDATE users SET profile = ? WHERE user_id = ?', [profile, user_id])
         }
         res.status(200).json({ message: "User updated" });
