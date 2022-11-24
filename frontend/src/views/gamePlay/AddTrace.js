@@ -158,12 +158,11 @@ const AddTrace = () => {
             </ScrollView>
             <View style={styles.modalstyle}>
                 <Modal
-                    animationType="slide"
+                    animationType="fade"
                     transparent={true}
                     visible={modalVisible}
                     onRequestClose={() => {
                         setModalVisible(!modalVisible);
-
                     }}>
                     <Text>
                         {errorMsg}
