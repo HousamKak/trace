@@ -28,6 +28,7 @@ const Profile = () => {
     const [userData, setUserData] = React.useState("")
     const [chestCount, setChestCount] = React.useState(0)
     const [profile, setProfile] = React.useState(null)
+    const [profileSource, setProfileSource] = React.useState(null)
     const [email, setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
     const [username, setUsername] = React.useState("")
@@ -52,7 +53,7 @@ const Profile = () => {
             let result = await ImagePicker.launchImageLibraryAsync({
                 mediaTypes: ImagePicker.MediaTypeOptions.All,
                 allowsEditing: true,
-                aspect: [4, 3],
+                aspect: [4, 4],
                 quality: 1,
                 base64: true
             });
@@ -87,6 +88,7 @@ const Profile = () => {
                     console.log(e.message)
                 }
             }
+
             getData("/user/medals/", "medals")
             getData("/chests/user/", "userChests")
             const userChests = await AsyncStorage.getItem("userChests")
@@ -94,6 +96,9 @@ const Profile = () => {
             setChestCount(Object.keys(userChestsData).length)
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
+            const profiledata = userData.profile
+            const profileImage = base_url + profiledata.slice(1)
+            setProfileSource(profileImage)
         })()
 
     }, [refreshing])
@@ -128,7 +133,7 @@ const Profile = () => {
                 <View style={styles.gear}>
                     <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                 </View>
-                <Image style={styles.profileImage} source={{ uri: userData.profile }} />
+                <Image style={styles.profileImage} source={{ uri: profileSource }} />
                 <Text style={styles.name}>{userData.username}</Text>
                 <View style={styles.statusContShape}>
                     <Text style={styles.status}>ADVENTURER</Text>
@@ -343,6 +348,7 @@ const styles = StyleSheet.create({
         height: 150,
         alignSelf: "center",
         marginTop: 35,
+        borderRadius: 100,
     },
     statusContShape: {
         backgroundColor: "#e86e6e",
