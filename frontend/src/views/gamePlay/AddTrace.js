@@ -41,11 +41,7 @@ const AddTrace = () => {
                 quality: 1,
             });
             if (!result.cancelled) {
-                const photo = {
-                    name: new Date().getTime().toString(),
-                    type: "image/jpg",
-                    uri: result.uri,
-                };
+
                 setImage(result.uri);
             }
         }
@@ -66,21 +62,21 @@ const AddTrace = () => {
 
     }, []);
 
-    // export const createFormData = (photo, body = {}) => {
-    //     const data = new FormData();
+    const createFormData = (photo, body = {}) => {
+        const data = new FormData();
 
-    //     data.append("photo", {
-    //       name: photo.name,
-    //       type: photo.type,
-    //       uri: Platform.OS === "ios" ? photo.uri.replace("file://", "") : photo.uri,
-    //     });
+        data.append("photo", {
+            name: photo.name,
+            type: photo.type,
+            uri: Platform.OS === "ios" ? photo.uri.replace("file://", "") : photo.uri,
+        });
 
-    //     Object.keys(body).forEach((key) => {
-    //       data.append(key, body[key]);
-    //     });
+        Object.keys(body).forEach((key) => {
+            data.append(key, body[key]);
+        });
 
-    //     return data;
-    //   };
+        return data;
+    };
 
     const handleClick = async () => {
         const user_prime = await AsyncStorage.getItem("user")
@@ -89,16 +85,14 @@ const AddTrace = () => {
 
 
         if (image) {
-            // setFiletype(1)
-            // console.log("------------------------------------------------------")
-            // console.log(image)
-            console.log("------------------------------------------------------")
-            const base64_image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
+            setFiletype(1)
+            const photo = {
+                type: "image/jpg",
+                uri: image,
+            };
+            const data = createFormData(photo);
 
-            // console.log(trial)
-            console.log(base64_image)
-
-            console.log("------------------------------------------------------")
+            // const base64_image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
         }
         if (location) {
             let x_position = location.coords.latitude
