@@ -41,6 +41,11 @@ const AddTrace = () => {
                 quality: 1,
             });
             if (!result.cancelled) {
+                const photo = {
+                    name: new Date().getTime().toString(),
+                    type: "image/jpg",
+                    uri: result.uri,
+                };
                 setImage(result.uri);
             }
         }
@@ -63,17 +68,17 @@ const AddTrace = () => {
 
     // export const createFormData = (photo, body = {}) => {
     //     const data = new FormData();
-      
+
     //     data.append("photo", {
     //       name: photo.name,
     //       type: photo.type,
     //       uri: Platform.OS === "ios" ? photo.uri.replace("file://", "") : photo.uri,
     //     });
-      
+
     //     Object.keys(body).forEach((key) => {
     //       data.append(key, body[key]);
     //     });
-      
+
     //     return data;
     //   };
 
