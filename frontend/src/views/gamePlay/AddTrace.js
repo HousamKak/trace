@@ -58,8 +58,11 @@ const AddTrace = () => {
         setPreview(null);
         setImage(null);
     }
-    const doNothing = () => { }
 
+    const wait = (timeout) => {
+        return new Promise(resolve => setTimeout(resolve, timeout));
+    }
+    const doNothing = () => { }
 
 
     React.useEffect(() => {
