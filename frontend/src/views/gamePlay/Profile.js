@@ -65,7 +65,7 @@ const Profile = () => {
                 </View>
                 <SectionBar text={"TOTAL ACTIVITY"} />
                 <View style={styles.userDataCont}>
-                    <View style={styles.infoSection}>
+                    <View>
                         <View style={styles.distanceWalked}>
                             <Text style={styles.Text}>Distance Walked: </Text>
                             <Text style={styles.Text}></Text>
@@ -106,12 +106,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         width: "100%",
         justifyContent: "space-around",
-        paddingHorizontal: "10%",
+        paddingHorizontal: "9.5%",
+        marginBottom: 8,
     },
-    infoSection: {
 
-
-    },
     weeklyProgressText: {
         color: "#fff",
         fontSize: 15,
