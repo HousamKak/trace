@@ -25,7 +25,7 @@ const Profile = () => {
     const [email, setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
     const [username, setUsername] = React.useState("")
-    
+
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
     }
@@ -75,7 +75,7 @@ const Profile = () => {
             headers: {
                 "Access-Control-Allow-Origin": "*",
             },
-            data: { user_id: userData.user_id, profile: profile, email, password }
+            data: { user_id: userData.user_id, profile: profile, email, password, username }
         }
         try {
             const response = await axios(configurationObject)
