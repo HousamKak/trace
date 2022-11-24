@@ -29,7 +29,7 @@ const AddTrace = () => {
     const [filetype, setFiletype] = React.useState(0);
     const [location, setLocation] = React.useState(null);
     const [preview, setPreview] = React.useState(null);
-    const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible, setModalVisible] = React.useState(false);
     const [errorMsg, setErrorMsg] = React.useState(null);
 
 
@@ -60,6 +60,8 @@ const AddTrace = () => {
     }
     const doNothing = () => { }
 
+
+
     React.useEffect(() => {
         (async () => {
             let { status } = await Location.requestForegroundPermissionsAsync();
@@ -79,7 +81,10 @@ const AddTrace = () => {
         if (location) {
             let x_position = location.coords.latitude
             let y_position = location.coords.longitude
-            if (!image && !title && !body) { setErrorMsg("The post is empty.") } else {
+            if (!image && !title && !body) {
+                setErrorMsg("The post is empty.")
+                setModalVisible(true)
+            } else {
                 const configurationObject = {
                     method: "POST",
                     url: base_url + "/traces",
@@ -143,6 +148,20 @@ const AddTrace = () => {
                     <SignBtn onPress={handleClick} text="DROP ON MAP" cwidth={styles.sign} />
                 </View>
             </ScrollView>
+            <View style={styles.modalstyle}>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+                    onRequestClose={() => {
+                        setModalVisible(!modalVisible);
+
+                    }}>
+                    <Text>
+                        {errorMsg}
+                    </Text>
+                </Modal>
+            </View>
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
             </View>
