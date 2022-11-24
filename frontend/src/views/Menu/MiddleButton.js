@@ -11,6 +11,7 @@ import MenuBtnText from "../../components/ButtonsMenu/MenuBtnText";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
+import { getData } from "../../utilities/axios/getData";
 const base_url = "http://192.168.1.102:8000"
 
 
