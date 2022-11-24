@@ -15,6 +15,7 @@ const item = require("../../utilities/ordering.js")
 const medalImages = require("../../utilities/Images/medalImages.js");
 import { getData } from "../../utilities/axios/getData.js"
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import MenuBtnText from "../../components/ButtonsMenu/MenuBtnText";
 
 const Profile = () => {
     const navigation = useNavigation();
@@ -149,7 +150,7 @@ const Profile = () => {
                     animationType="fade"
                     transparent={true}
                     visible={modalVisible}
-                    onShow={toClose}
+                    onRequestClose={() => { }}
                 >
                     <View style={styles.modalstyle}>
                         <Text style={styles.errorText}>
