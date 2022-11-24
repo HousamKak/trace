@@ -71,13 +71,7 @@ const AddTrace = () => {
 
         if (image) {
             setFiletype(1)
-            // const photo = {
-            //     type: "image/jpg",
-            //     uri: image,
-            // };
-            // const data = createFormData(photo);
-
-            // const base64_image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
+            base64_image = image
         }
         if (location) {
             let x_position = location.coords.latitude
