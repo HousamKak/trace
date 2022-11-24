@@ -42,8 +42,8 @@ const AddTrace = () => {
                 base64: true
             });
             if (!result.cancelled) {
-
-                setImage(result.uri);
+                console.log(result);
+                setImage(result.base64);
             }
         }
     }
@@ -63,20 +63,20 @@ const AddTrace = () => {
 
     }, []);
 
-    const createFormData = (photo, body = {}) => {
-        const data = new FormData();
+    // const createFormData = (photo, body = {}) => {
+    //     const data = new FormData();
 
-        data.append("photo", {
-            type: photo.type,
-            uri: Platform.OS === "ios" ? photo.uri.replace("file://", "") : photo.uri,
-        });
+    //     data.append("photo", {
+    //         type: photo.type,
+    //         uri: Platform.OS === "ios" ? photo.uri.replace("file://", "") : photo.uri,
+    //     });
 
-        Object.keys(body).forEach((key) => {
-            data.append(key, body[key]);
-        });
+    //     Object.keys(body).forEach((key) => {
+    //         data.append(key, body[key]);
+    //     });
 
-        return data;
-    };
+    //     return data;
+    // };
 
     const handleClick = async () => {
         const user_prime = await AsyncStorage.getItem("user")
