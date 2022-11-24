@@ -67,7 +67,10 @@ const AddTrace = () => {
         wait(500).then(() => setModalVisible(false));
     }
 
-    const comingSoon = () => { setErrorMsg("Coming soon...") }
+    const comingSoon = () => {
+        setErrorMsg("COMING SOON")
+        toClose();
+    }
 
 
     React.useEffect(() => {
@@ -75,6 +78,7 @@ const AddTrace = () => {
             let { status } = await Location.requestForegroundPermissionsAsync();
             if (status !== 'granted') {
                 setErrorMsg('Permission to access location was denied');
+                toClose();
                 return;
             }
             let location = await Location.getCurrentPositionAsync({});
@@ -91,7 +95,7 @@ const AddTrace = () => {
             let y_position = location.coords.longitude
             if (!image && !title && !body) {
                 setErrorMsg("The post is empty.")
-                setModalVisible(true)
+                toClose();
             } else {
                 const configurationObject = {
                     method: "POST",
@@ -107,6 +111,7 @@ const AddTrace = () => {
                         navigation.navigate("MainPage")
                     } else {
                         setErrorMsg("Something went wrong. Try again later.")
+                        toClose();
                     }
                 } catch (e) { console.log(e.message) }
 
