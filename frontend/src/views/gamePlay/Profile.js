@@ -160,7 +160,10 @@ const Profile = () => {
                             <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                         </View>
                         <View style={styles.updateProfileBtn}>
-                            <SignBtn text={"Update Profile Image"} onPress={() => pickImage()} />
+                            <SignBtn text={"Update Profile Image"} onPress={() => {
+                                pickImage()
+                                updateProfile()
+                            }} />
                         </View>
                         <SignBtn text={"Update Username"} onPress={() => {
                             setModalVisible(!modalVisible)
@@ -174,14 +177,14 @@ const Profile = () => {
                     animationType="fade"
                     transparent={true}
                     visible={modalVisible}
-                    onRequestClose={() => { setModalVisible(!modalVisible); }}
+                    onRequestClose={() => { setUsernameModalVisible(!usernameModalVisible) }}
                 >
                     <View style={styles.modalstyle}>
                         <View style={styles.closeView}>
-                            <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
+                            <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => setUsernameModalVisible(!usernameModalVisible)}></MenuBtn>
                         </View>
                         <View style={styles.updateProfileBtn}>
-                            <SignBtn text={"Confirm Change"} onPress={() => pickImage()} />
+                            <SignBtn text={"Confirm Change"} onPress={() => updateProfile()} />
                         </View>
                     </View>
                 </Modal>
