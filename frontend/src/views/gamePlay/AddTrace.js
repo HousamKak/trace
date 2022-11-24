@@ -16,7 +16,7 @@ import axios from "axios";
 import * as Location from 'expo-location';
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
-import ImgToBase64 from 'react-native-image-base64';
+
 const base_url = "http://192.168.1.102:8000"
 
 const AddTrace = () => {
@@ -61,25 +61,38 @@ const AddTrace = () => {
 
     }, []);
 
+    // export const createFormData = (photo, body = {}) => {
+    //     const data = new FormData();
+      
+    //     data.append("photo", {
+    //       name: photo.name,
+    //       type: photo.type,
+    //       uri: Platform.OS === "ios" ? photo.uri.replace("file://", "") : photo.uri,
+    //     });
+      
+    //     Object.keys(body).forEach((key) => {
+    //       data.append(key, body[key]);
+    //     });
+      
+    //     return data;
+    //   };
 
     const handleClick = async () => {
         const user_prime = await AsyncStorage.getItem("user")
         const user = JSON.parse(user_prime)
         let base64_image = ""
-        if (image) {
-            setFiletype(1)
-            console.log("------------------------------------------------------")
-            console.log(image)
-            console.log("------------------------------------------------------")
-            try {
-                const base64_image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
-            } catch (e) { console.log(e) }
-            try {
-                const base64_image2 = await FileSystem.getInfoAsync(image, { encoding: 'base64' })
-            } catch (e) { console.log(e) }
 
+
+        if (image) {
+            // setFiletype(1)
+            // console.log("------------------------------------------------------")
+            // console.log(image)
             console.log("------------------------------------------------------")
+            const base64_image = await FileSystem.readAsStringAsync(image, { encoding: 'base64' })
+
+            // console.log(trial)
             console.log(base64_image)
+
             console.log("------------------------------------------------------")
         }
         if (location) {
