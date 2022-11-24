@@ -74,8 +74,8 @@ const Profile = () => {
                         <Text></Text>
                     </View>
                     <DataDisplay cheat={styles.cheat} src={require("../../assets/MenuPage/MenuButtons/chestLock.png")} data={"Chests Found:"} info={"info"} />
-                    <DataDisplay src={require("../../assets/MenuPage/MenuButtons/Coin.png")} data={"Coins:"} info={"info"} />
-                    <DataDisplay src={require("../../assets/MenuPage/MenuButtons/Gem.png")} data={"Gems:"} info={"info"} />
+                    <DataDisplay src={require("../../assets/MenuPage/MenuButtons/Coin.png")} data={"Coins:"} info={userData.Coins} />
+                    <DataDisplay src={require("../../assets/MenuPage/MenuButtons/Gem.png")} data={"Gems:"} info={userData.gems} />
                 </View>
                 <SectionBar text={"WEEKLY PROGRESS "} />
                 <View style={styles.weeklyProgressCont}>
