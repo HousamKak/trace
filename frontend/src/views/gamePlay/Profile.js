@@ -56,7 +56,7 @@ const Profile = () => {
 
                 <View style={styles.levelIndicatorSection}>
                     <View style={styles.levelAndMeter}>
-                        <Text style={styles.level}>Level 60</Text>
+                        <Text style={styles.level}>level {userData.level}</Text>
                         <View style={styles.levelBarCont}>
                             <View style={styles.yellow} />
                             <View style={styles.black} />
@@ -88,11 +88,11 @@ const Profile = () => {
                 <View style={{ marginBottom: 40 }}>
                     {mymedals}
                 </View>
-            </ScrollView>
-            <View style={styles.footer}>
-                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
-            </View>
-        </View>
+            </ScrollView >
+    <View style={styles.footer}>
+        <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
+    </View>
+        </View >
     )
 }
 
