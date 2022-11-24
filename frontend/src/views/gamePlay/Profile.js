@@ -27,8 +27,8 @@ const Profile = () => {
 
     React.useEffect(() => {
         (async () => {
-            const LoadedMedals = await item("medals", 6, itemImages);
-            setMyMedals(LoadedItems)
+            const LoadedMedals = await item("medals", 6, medalImages);
+            setMyMedals(LoadedMedals)
         })()
     }, [refreshing])
 
