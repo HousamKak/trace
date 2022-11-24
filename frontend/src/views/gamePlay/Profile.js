@@ -65,14 +65,14 @@ const Profile = () => {
                 </View>
                 <SectionBar text={"TOTAL ACTIVITY"} />
                 <View style={styles.userDataCont}>
-                    <View>
+                    <View style={styles.infoSection}>
                         <View style={styles.distanceWalked}>
                             <Text>Distance Walked: </Text>
                             <Text></Text>
                         </View>
-                        <View>
-                            <Text>Total XP: {userData.XP}</Text>
-                            <Text></Text>
+                        <View style={styles.xpCont}>
+                            <Text>Total XP: </Text>
+                            <Text>{userData.XP}</Text>
                         </View>
                     </View>
                     <DataDisplay cheat={styles.cheat} src={require("../../assets/MenuPage/MenuButtons/chestLock.png")} data={"Chests Found:"} info={"info"} />
@@ -98,6 +98,16 @@ const Profile = () => {
 }
 
 const styles = StyleSheet.create({
+    xpCont: {
+        flexDirection: "row",
+        width: "100%",
+        justifyContent: "space-around",
+        paddingHorizontal: "10%",
+    },
+    infoSection: {
+
+
+    },
     weeklyProgressText: {
         color: "#fff",
         fontSize: 15,
