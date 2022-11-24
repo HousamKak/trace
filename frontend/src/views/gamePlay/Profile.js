@@ -19,7 +19,7 @@ const Profile = () => {
     const navigation = useNavigation();
     const [mymedals, setMyMedals] = React.useState([])
     const [refreshing, setRefreshing] = React.useState(false);
-    const [userData, setUserData] = React.useState({})
+    const [userData, setUserData] = React.useState("")
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
     }
@@ -31,7 +31,7 @@ const Profile = () => {
     React.useEffect(() => {
         (async () => {
             const user = await AsyncStorage.getItem("user")
-            setUserData(user)
+            setUserData(JSON.parse(user))
             getData("/user/medals/", "medals")
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
@@ -49,7 +49,7 @@ const Profile = () => {
                 />
             }>
                 <Image style={styles.profileImage} source={require("../../assets/MenuPage/trialprofile.png")} />
-                <Text style={styles.name}>Housam Kak</Text>
+                <Text style={styles.name}>{userData.username}</Text>
                 <View style={styles.statusContShape}>
                     <Text style={styles.status}>ADVENTURER</Text>
                 </View>
