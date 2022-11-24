@@ -66,12 +66,14 @@ const Profile = () => {
                 <SectionBar text={"TOTAL ACTIVITY"} />
                 <View style={styles.userDataCont}>
                     <View>
-                        <Text>Distance Walked: </Text>
-                        <Text></Text>
-                    </View>
-                    <View>
-                        <Text>Total XP: {userData.XP}</Text>
-                        <Text></Text>
+                        <View style={styles.distanceWalked}>
+                            <Text>Distance Walked: </Text>
+                            <Text></Text>
+                        </View>
+                        <View>
+                            <Text>Total XP: {userData.XP}</Text>
+                            <Text></Text>
+                        </View>
                     </View>
                     <DataDisplay cheat={styles.cheat} src={require("../../assets/MenuPage/MenuButtons/chestLock.png")} data={"Chests Found:"} info={"info"} />
                     <DataDisplay src={require("../../assets/MenuPage/MenuButtons/Coin.png")} data={"Coins:"} info={userData.Coins} />
