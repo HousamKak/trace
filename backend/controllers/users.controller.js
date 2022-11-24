@@ -33,6 +33,8 @@ const updateUser = async (req, res) => {
                     console.log("Folder created.");
                 }
             })
+            const buf = Buffer.from(profile, 'base64');
+            fileDir = folderName + "/" + user_id + ".profilePicture.png";
             db.query('UPDATE users SET profile = ? WHERE user_id = ?', [profile, user_id])
         }
         res.status(200).json({ message: "User updated" });
