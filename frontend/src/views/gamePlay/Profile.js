@@ -81,9 +81,6 @@ const Profile = () => {
                 </View>
                 <SectionBar text={"MEDALS"} />
                 <View>
-                    <Text>Medals</Text>
-                </View>
-                <View>
                     {mymedals}
                 </View>
             </ScrollView>
