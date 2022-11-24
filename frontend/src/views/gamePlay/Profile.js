@@ -101,7 +101,7 @@ const Profile = () => {
                 />
             }>
                 <View style={styles.gear}>
-                    <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => ""}></MenuBtn>
+                    <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                 </View>
                 <Image style={styles.profileImage} source={require("../../assets/MenuPage/trialprofile.png")} />
                 <Text style={styles.name}>{userData.username}</Text>
@@ -154,6 +154,7 @@ const Profile = () => {
                     onRequestClose={() => { setModalVisible(!modalVisible); }}
                 >
                     <View style={styles.modalstyle}>
+                        <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                         <SignBtn text={"Update Profile Image"} onPress={() => pickImage()} />
                         <SignBtn text={"Update Username"} onPress={() => { }} />
                     </View>
