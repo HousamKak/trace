@@ -20,6 +20,7 @@ const Profile = () => {
     const [mymedals, setMyMedals] = React.useState([])
     const [refreshing, setRefreshing] = React.useState(false);
     const [userData, setUserData] = React.useState("")
+    const [chestCount, setChestCount] = React.useState(0)
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
     }
@@ -33,6 +34,10 @@ const Profile = () => {
             const user = await AsyncStorage.getItem("user")
             setUserData(JSON.parse(user))
             getData("/user/medals/", "medals")
+            getData("/chests/user/", "userChests")
+            const userChests = await AsyncStorage.getItem("userChests")
+            const userChestsData = JSON.parse(userChests)
+            setChestCount(Object.keys(userChestsData).length)
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
         })()
@@ -75,7 +80,7 @@ const Profile = () => {
                             <Text style={styles.Text}>{userData.XP}</Text>
                         </View>
                     </View>
-                    <DataDisplay cheat={styles.cheat} src={require("../../assets/MenuPage/MenuButtons/chestLock.png")} data={"Chests Found:"} info={"info"} />
+                    <DataDisplay cheat={styles.cheat} src={require("../../assets/MenuPage/MenuButtons/chestLock.png")} data={"Chests Found:"} info={chestCount} />
                     <DataDisplay src={require("../../assets/MenuPage/MenuButtons/Coin.png")} data={"Coins:"} info={userData.Coins} />
                     <DataDisplay src={require("../../assets/MenuPage/MenuButtons/Gem.png")} data={"Gems:"} info={userData.gems} />
                 </View>
