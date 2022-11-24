@@ -23,6 +23,14 @@ const Profile = () => {
         wait(500).then(() => setRefreshing(false));
     }, []);
 
+    React.useEffect(() => {
+        (async () => {
+            const LoadedMedals = await item("medals", 6, itemImages);
+            setMyItems(LoadedItems)
+        })()
+    }, [refreshing])
+
+
     return (
         <View style={styles.screenView}>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.ScrollView} refreshControl={
