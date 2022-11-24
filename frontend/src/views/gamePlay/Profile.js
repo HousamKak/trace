@@ -67,12 +67,12 @@ const Profile = () => {
                 <View style={styles.userDataCont}>
                     <View style={styles.infoSection}>
                         <View style={styles.distanceWalked}>
-                            <Text>Distance Walked: </Text>
-                            <Text></Text>
+                            <Text style={styles.Text}>Distance Walked: </Text>
+                            <Text style={styles.Text}></Text>
                         </View>
                         <View style={styles.xpCont}>
-                            <Text>Total XP: </Text>
-                            <Text>{userData.XP}</Text>
+                            <Text style={styles.Text}>Total XP: </Text>
+                            <Text style={styles.Text}>{userData.XP}</Text>
                         </View>
                     </View>
                     <DataDisplay cheat={styles.cheat} src={require("../../assets/MenuPage/MenuButtons/chestLock.png")} data={"Chests Found:"} info={"info"} />
@@ -98,6 +98,10 @@ const Profile = () => {
 }
 
 const styles = StyleSheet.create({
+    Text: {
+        color: "#fff",
+        fontSize: 12,
+    },
     xpCont: {
         flexDirection: "row",
         width: "100%",
