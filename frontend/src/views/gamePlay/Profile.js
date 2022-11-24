@@ -30,10 +30,12 @@ const Profile = () => {
 
     React.useEffect(() => {
         (async () => {
-            const user = await AsyncStorage("user")
+            const user = await AsyncStorage.getItem("user")
+            setUserData(user)
             getData("/user/medals/", "medals")
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
+            console.log(userData)
         })()
 
     }, [refreshing])
