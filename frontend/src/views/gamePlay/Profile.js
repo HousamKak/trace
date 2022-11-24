@@ -162,7 +162,10 @@ const Profile = () => {
                         <View style={styles.updateProfileBtn}>
                             <SignBtn text={"Update Profile Image"} onPress={() => pickImage()} />
                         </View>
-                        <SignBtn text={"Update Username"} onPress={() => { }} />
+                        <SignBtn text={"Update Username"} onPress={() => {
+                            setModalVisible(!modalVisible)
+                            setUsernameModalVisible(!usernameModalVisible)
+                        }} />
                     </View>
                 </Modal>
             </View>
@@ -178,9 +181,8 @@ const Profile = () => {
                             <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                         </View>
                         <View style={styles.updateProfileBtn}>
-                            <SignBtn text={"Update Profile Image"} onPress={() => pickImage()} />
+                            <SignBtn text={"Confirm Change"} onPress={() => pickImage()} />
                         </View>
-                        <SignBtn text={"Update Username"} onPress={() => { }} />
                     </View>
                 </Modal>
             </View>
