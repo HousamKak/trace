@@ -154,7 +154,9 @@ const Profile = () => {
                     onRequestClose={() => { setModalVisible(!modalVisible); }}
                 >
                     <View style={styles.modalstyle}>
-                        <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
+                        <View style={styles.closeView}>
+                            <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
+                        </View>
                         <SignBtn text={"Update Profile Image"} onPress={() => pickImage()} />
                         <SignBtn text={"Update Username"} onPress={() => { }} />
                     </View>
@@ -168,6 +170,16 @@ const Profile = () => {
 }
 
 const styles = StyleSheet.create({
+    closeView: {
+        alignSelf: "flex-end",
+        marginBottom: 10,
+    },
+    modalstyle: {
+        paddingHorizontal: "10%",
+        backgroundColor: "#3",
+        height: "100%",
+        justifyContent: "center",
+    },
     gear: {
         alignSelf: "flex-end",
     },
