@@ -5,7 +5,8 @@ import {
     View,
     ScrollView,
     TextInput,
-    Button
+    TouchableOpacity,
+    Text
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import IconTypeDisplay from "../../components/Displayers/IconTypeDisplay";
@@ -114,7 +115,9 @@ const AddTrace = () => {
                 {preview ?
                     (
                         <View style={styles.ImageTrace}>
-                            <Button title="Remove" color={"#fff"} onPress={buttonPress} />
+                            <TouchableOpacity activeOpacity={0.2} onPress={buttonPress}>
+                                <Text style={styles.removebtn}>Remove</Text>
+                            </TouchableOpacity>
                             <Image source={{ uri: preview }} style={styles.Image}></Image>
                         </View>
                     ) : ""}
@@ -145,6 +148,11 @@ const AddTrace = () => {
 };
 
 const styles = StyleSheet.create({
+    removebtn: {
+        color: "#fff",
+        fontSize: 15,
+        marginBottom: 5
+    },
     Image: {
         resizeMethod: "scale",
         resizeMode: "stretch",
@@ -156,6 +164,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#302b4f",
         borderRadius: 20,
         alignItems: "center",
+        paddingTop: 10,
         padding: 20,
         margin: 20,
     },
