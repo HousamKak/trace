@@ -66,8 +66,8 @@ const Profile = () => {
 
     const changeProfile = async () => {
         const configurationObject = {
-            method: "POST",
-            url: base_url + "/traces",
+            method: "PUT",
+            url: base_url + "/user",
             headers: {
                 "Access-Control-Allow-Origin": "*",
             },
