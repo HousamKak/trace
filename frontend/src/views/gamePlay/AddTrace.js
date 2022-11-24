@@ -63,21 +63,6 @@ const AddTrace = () => {
 
     }, []);
 
-    // const createFormData = (photo, body = {}) => {
-    //     const data = new FormData();
-
-    //     data.append("photo", {
-    //         type: photo.type,
-    //         uri: Platform.OS === "ios" ? photo.uri.replace("file://", "") : photo.uri,
-    //     });
-
-    //     Object.keys(body).forEach((key) => {
-    //         data.append(key, body[key]);
-    //     });
-
-    //     return data;
-    // };
-
     const handleClick = async () => {
         const user_prime = await AsyncStorage.getItem("user")
         const user = JSON.parse(user_prime)
