@@ -155,19 +155,20 @@ const AddTrace = () => {
                     </View>
                     <SignBtn onPress={handleClick} text="DROP ON MAP" cwidth={styles.sign} />
                 </View>
-            </ScrollView>
-            <View style={styles.modalstyle}>
                 <Modal
                     animationType="fade"
                     transparent={true}
                     visible={modalVisible}
                     onShow={toClose}
                 >
-                    <Text style={styles.errorText}>
-                        {errorMsg}
-                    </Text>
+                    <View style={styles.modalstyle}>
+                        <Text style={styles.errorText}>
+                            {errorMsg}
+                        </Text>
+                    </View>
                 </Modal>
-            </View>
+            </ScrollView>
+
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
             </View>
@@ -176,7 +177,9 @@ const AddTrace = () => {
 
 const styles = StyleSheet.create({
     modalstyle: {
-        
+        justifyContent: "center",
+        alignItems: "center",
+        height: "60%",
     },
     errorText: {
         color: "#fff",
