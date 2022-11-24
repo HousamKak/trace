@@ -63,9 +63,30 @@ const Profile = () => {
     }
 
     React.useEffect(() => {
+
         (async () => {
-            const user = await AsyncStorage.getItem("user")
-            setUserData(JSON.parse(user))
+            const token = await AsyncStorage.getItem("token")
+            const parsedToken = JSON.parse(token)
+            if (parsedToken) {
+                const configurationObject = {
+                    method: "get",
+                    headers: {
+                        'Authorization': parsedToken,
+                    },
+                    body: {},
+                    url: base_url + "/user",
+                }
+                try {
+                    const response = await axios(configurationObject)
+                    if (response.status === 200) {
+                        AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
+                        setUserData(response.data[0])
+                    }
+                }
+                catch (e) {
+                    console.log(e.message)
+                }
+            }
             getData("/user/medals/", "medals")
             getData("/chests/user/", "userChests")
             const userChests = await AsyncStorage.getItem("userChests")
