@@ -151,12 +151,11 @@ const Profile = () => {
                     animationType="fade"
                     transparent={true}
                     visible={modalVisible}
-                    onRequestClose={() => { }}
+                    onRequestClose={() => { setModalVisible(!modalVisible); }}
                 >
                     <View style={styles.modalstyle}>
-                        <Text style={styles.errorText}>
-                            {errorMsg}
-                        </Text>
+                        <SignBtn text={"Update Profile Image"} onPress={() => pickImage()} />
+                        <SignBtn text={"Update Username"} onPress={() => { }} />
                     </View>
                 </Modal>
             </View>
