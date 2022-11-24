@@ -36,9 +36,20 @@ const updateUser = async (req, res) => {
             })
             const buf = Buffer.from(profile, 'base64');
             const fileDir = folderName + "/" + user_id + ".profilePicture.png";
-            fs.writeFile(fileDir, buf, 'base64', (err) => {
-                if (err) console.log(err);
-                console.log("File written");
+
+            fs.stat(fileDir, (err, stats) => {
+                if (stats) {
+                    fs.unlinkSync(fileDir);
+                    fs.writeFile(fileDir, buf, 'base64', (err) => {
+                        if (err) console.log(err);
+                        console.log("File written");
+                    })
+                } else {
+                    fs.writeFile(fileDir, buf, 'base64', (err) => {
+                        if (err) console.log(err);
+                        console.log("File written");
+                    })
+                }
             })
             db.query('UPDATE users SET profile = ? WHERE user_id = ?', [fileDir, user_id])
         }
