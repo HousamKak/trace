@@ -63,6 +63,10 @@ const Profile = () => {
             }
         }
     }
+    const forceStateUpdate = () => {
+        const [forceState, setForceState] = React.useState(0);
+        return () => setForceState(forceState + 1);
+    }
 
     React.useEffect(() => {
 
@@ -98,6 +102,7 @@ const Profile = () => {
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
             if (userData.profile) {
+                setIsEmptyProfile(false)
                 const profiledata = userData.profile
                 const profileImage = base_url + profiledata.slice(1)
                 setProfileSource(profileImage)
@@ -140,7 +145,7 @@ const Profile = () => {
                 <View style={styles.gear}>
                     <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                 </View>
-                {profile ? <Image style={styles.profileImage} source={{ uri: profileSource }} /> : <Image style={styles.profileImage} source={profileSource} />}
+                {!isEmptyProfile ? <Image style={styles.profileImage} source={{ uri: profileSource }} /> : <Image style={styles.profileImage} source={profileSource} />}
                 <Text style={styles.name}>{userData.username}</Text>
                 <View style={styles.statusContShape}>
                     <Text style={styles.status}>ADVENTURER</Text>
