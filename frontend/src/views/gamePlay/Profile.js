@@ -29,6 +29,7 @@ const Profile = () => {
     const [chestCount, setChestCount] = React.useState(0)
     const [profile, setProfile] = React.useState(null)
     const [profileSource, setProfileSource] = React.useState(null)
+    const [isEmptyProfile, setIsEmptyProfile] = React.useState(true)
     const [email, setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
     const [username, setUsername] = React.useState("")
