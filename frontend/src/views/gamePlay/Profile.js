@@ -74,13 +74,13 @@ const Profile = () => {
                     headers: {
                         'Authorization': parsedToken,
                     },
-                    body: {},
                     url: base_url + "/user",
                 }
                 try {
                     const response = await axios(configurationObject)
                     if (response.status === 200) {
                         AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
+                        console.log(response.data[0])
                         setUserData(response.data[0])
                     }
                 }
@@ -96,9 +96,12 @@ const Profile = () => {
             setChestCount(Object.keys(userChestsData).length)
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
-            const profiledata = userData.profile
-            const profileImage = base_url + profiledata.slice(1)
-            setProfileSource(profileImage)
+            if (userData.profile) {
+                const profiledata = userData.profile
+                const profileImage = base_url + profiledata.slice(1)
+                setProfileSource(profileImage)
+                console.log(profileImage)
+            }
         })()
 
     }, [refreshing])
