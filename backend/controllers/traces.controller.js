@@ -58,13 +58,15 @@ const addTrace = async (req, res) => {
         switch (filetype) {
             case 1:
                 subFolderName = folderName + "/images";
-                fs.access(subFolderName, (err) => {
-                    if (err) {
-                        console.log("Folder does not exist. Creating folder...");
-                        fs.mkdirSync(subFolderName)
-                        console.log("Folder created.");
-                    }
-                });
+                const fileExists = fs.existsSync(subFolderName)
+                if (!fileExists) {
+                    console.log("Folder does not exist. Creating folder...");
+                    fs.mkdirSync(subFolderName)
+                    console.log("Folder created.");
+                }
+                else {
+                    console.log("Folder exists. Proceeding...");
+                }
                 const response = await db.promise().query("SELECT COUNT(*) FROM traces WHERE user_id = ?", [user_id])
                 const traceNumber = response[0][0]["COUNT(*)"] + 1;
                 const buf = Buffer.from(file, 'base64');
