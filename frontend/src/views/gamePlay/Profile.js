@@ -102,6 +102,9 @@ const Profile = () => {
                 setProfileSource(profileImage)
                 console.log(profileImage)
             }
+            else{
+                setProfileSource(require("../../assets/MenuPage/dummyProfile.png"))
+            }
         })()
 
     }, [refreshing])
