@@ -33,10 +33,14 @@ const updateUser = async (req, res) => {
                 fs.mkdirSync(folderName)
                 console.log("Folder created.");
             }
-            console.log("you are here before there");
+            else {
+                console.log("Folder exists. Proceeding...");
+            }
+            console.log("Counting Number of files in folder...");
             const numberOfFiles = fs.readdirSync(folderName).length;
             const buf = Buffer.from(profile, 'base64');
             const fileDir = folderName + "/" + user_id + ".profilePicture" + numberOfFiles + ".png";
+            console.log("Writing file...");
             fs.writeFileSync(fileDir, buf, 'base64', (err) => {
                 if (err) console.log(err);
                 console.log("File written");
