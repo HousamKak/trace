@@ -102,7 +102,7 @@ const Profile = () => {
                 setProfileSource(profileImage)
                 console.log(profileImage)
             }
-            else{
+            else {
                 setProfileSource(require("../../assets/MenuPage/dummyProfile.png"))
             }
         })()
@@ -139,7 +139,7 @@ const Profile = () => {
                 <View style={styles.gear}>
                     <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                 </View>
-                <Image style={styles.profileImage} source={{ uri: profileSource }} />
+                {profile ? <Image style={styles.profileImage} source={{ uri: profileSource }} /> : <Image style={styles.profileImage} source={profileSource} />}
                 <Text style={styles.name}>{userData.username}</Text>
                 <View style={styles.statusContShape}>
                     <Text style={styles.status}>ADVENTURER</Text>
