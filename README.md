@@ -18,9 +18,11 @@
 > This application will allow you to discover historical sites by finding close chests in the area you are located or visit. It will also allow you to leave traces behind. Those traces could be text, music, images, or videos. People who pass by the geographical location of the left trace will be able to check what you have left behind.
 
 ### User Stories
-- As a user, I want to browsse ablums, so that I can find quick links
-- As a user, I want to browsse ablums, so that I can find quick links
-- As a user, I want to browsse ablums, so that I can find quick links
+- As a user, I want to learn about history, so that I recognize valuable historical sites
+- As a user, I want to share text at the location I visit, so that other visitors can check
+- As a user, I want to share images at the location I visit, so that other visitors can check
+- As a user, I want to share music at the location I visit, so that other visitors can check
+- As a user, I want to share videos at the location I visit, so that other visitors can check
 
 <br><br>
 
