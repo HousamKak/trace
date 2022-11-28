@@ -77,7 +77,7 @@ const ImageTrace = () => {
                 <View style={styles.header}>
                     <View style={styles.upperheader}>
                         <View style={styles.rightheader}>
-                            <Image source={{uri:profile}} style={styles.profilePicture}></Image>
+                            <Image source={{ uri: profile }} style={styles.profilePicture}></Image>
                             <Text style={styles.name}> {user.username}</Text>
                         </View>
                         <View style={styles.leftheader}>
@@ -87,8 +87,7 @@ const ImageTrace = () => {
                     </View>
                     <View style={styles.lowerheader}>
                         <Text style={styles.title}>Check my Cat</Text>
-                        <Text style={styles.description}>This is some random text and the likes are
-                            whatever you think they are.</Text>
+                        <Text style={styles.description}>{trace.description}</Text>
                     </View>
                 </View>
                 <View style={styles.ImageTrace}>
