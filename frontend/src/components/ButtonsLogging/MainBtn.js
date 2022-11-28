@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, TouchableOpacity, Image } from "react-native";
 
-const MenuBtn = (props) => {
+const MainBtn = (props) => {
     return (
         <TouchableOpacity
             style={[styles.rectangleView, props.backgroundColor]}
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default MenuBtn;
+export default MainBtn;
