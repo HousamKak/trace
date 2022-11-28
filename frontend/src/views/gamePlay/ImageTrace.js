@@ -43,23 +43,10 @@ const ImageTrace = () => {
             } else {
 
             }
-
-
-
-
-            getData("/user/medals/", "medals")
-            getData("/chests/user/", "userChests")
-            const userChests = await AsyncStorage.getItem("userChests")
-            const userChestsData = JSON.parse(userChests)
-            setChestCount(Object.keys(userChestsData).length)
-            const LoadedMedals = await item("medals", 6, medalImages);
-            setMyMedals(LoadedMedals)
-            if (userData.profile) {
-                setIsEmptyProfile(false)
-                const profiledata = userData.profile
+            if (user.profile) {
+                const profiledata = user.profile
                 const profileImage = base_url + profiledata.slice(1)
-                setProfileSource(profileImage)
-                console.log(profileImage)
+                setProfile(profileImage)
             }
             else {
                 setProfileSource(require("../../assets/MenuPage/dummyProfile.png"))
