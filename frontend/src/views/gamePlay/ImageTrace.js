@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const ImageTrace = () => {
     const navigation = useNavigation();
@@ -14,6 +15,8 @@ const ImageTrace = () => {
     React.useEffect(() => {
 
         (async () => {
+            const type=await AsyncStorage.getItem("Type")
+            
             const token = await AsyncStorage.getItem("token")
             const parsedToken = JSON.parse(token)
             if (parsedToken) {
@@ -59,7 +62,7 @@ const ImageTrace = () => {
 
     }, [refreshing])
 
-    
+
     return (
         <View style={styles.ImageTracePage}>
             <ScrollView >
