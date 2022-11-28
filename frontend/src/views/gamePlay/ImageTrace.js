@@ -27,7 +27,6 @@ const ImageTrace = () => {
         wait(500).then(() => setRefreshing(false));
     }, []);
 
-    let user;
     React.useEffect(() => {
 
         (async () => {
@@ -37,7 +36,8 @@ const ImageTrace = () => {
             const trace_id = JSON.parse(trace_id0)
             if (type === "self") {
                 const user_prime = await AsyncStorage.getItem("user")
-                user = JSON.parse(user_prime)
+                const user = JSON.parse(user_prime)
+                setUserData(user)
                 const configurationObject = {
                     method: "get",
                     url: base_url + "/traces/" + trace_id,
@@ -47,6 +47,7 @@ const ImageTrace = () => {
                     if (response.status === 200) {
                         setTrace(response.data[0])
                         setTraceImage(base_url + response.data[0].file.slice(1))
+                        console.log(traceImage)
                     }
                 }
                 catch (e) {
@@ -60,8 +61,6 @@ const ImageTrace = () => {
                 else {
                     setProfile(require("../../assets/MenuPage/dummyProfile.png"))
                 }
-                console.log(traceImage)
-                console.log(user)
             } else {
 
             }
@@ -82,8 +81,8 @@ const ImageTrace = () => {
                 <View style={styles.header}>
                     <View style={styles.upperheader}>
                         <View style={styles.rightheader}>
-                            <Image source={{ uri: profile }} style={styles.profilePicture}></Image>
-                            {/* <Text style={styles.name}> {user.username}</Text> */}
+                            {profile ? <Image source={{ uri: profile }} style={styles.profilePicture}></Image> : ""}
+                            <Text style={styles.name}> {userData.username}</Text>
                         </View>
                         <View style={styles.leftheader}>
                             <Image source={require("../../assets/MenuPage/Friends/addFriendIcon.png")}></Image>
@@ -96,13 +95,13 @@ const ImageTrace = () => {
                     </View>
                 </View>
                 <View style={styles.ImageTrace}>
-                    <Image source={{ uri: traceImage }} style={styles.Image}></Image>
+                    {traceImage ? <Image source={{ uri: traceImage }} style={styles.Image}></Image> : ""}
                 </View>
-            </ScrollView>
+            </ScrollView >
             <View style={styles.footer}>
                 <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
             </View>
-        </View>
+        </View >
     )
 };
 
@@ -112,6 +111,7 @@ const styles = StyleSheet.create({
         resizeMode: "stretch",
         width: "100%",
         borderRadius: 20,
+        height: 800,
     },
     ImageTrace: {
         backgroundColor: "#302b4f",
