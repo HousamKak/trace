@@ -16,6 +16,7 @@ const ImageTrace = () => {
     const [traceImage, setTraceImage] = React.useState({})
     const [profile, setProfile] = React.useState("")
     const [userData, setUserData] = React.useState({})
+    const [imageState, setImageState] = React.useState(false)
     const navigation = useNavigation();
 
     const [refreshing, setRefreshing] = React.useState(false);
@@ -46,8 +47,9 @@ const ImageTrace = () => {
                     const response = await axios(configurationObject)
                     if (response.status === 200) {
                         setTrace(response.data[0])
-                        setTraceImage(base_url + response.data[0].file.slice(1))
-                        console.log(traceImage)
+                        const traceImageValue = base_url + response.data[0].file.slice(1)
+                        setTraceImage(traceImageValue)
+                        setImageState(true)
                     }
                 }
                 catch (e) {
@@ -99,7 +101,7 @@ const ImageTrace = () => {
                 </View>
             </ScrollView >
             <View style={styles.footer}>
-                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("myTraces")}></MenuBtn>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MyTraces")}></MenuBtn>
             </View>
         </View >
     )
