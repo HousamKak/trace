@@ -63,10 +63,7 @@ const Profile = () => {
             }
         }
     }
-    const forceStateUpdate = () => {
-        const [forceState, setForceState] = React.useState(0);
-        return () => setForceState(forceState + 1);
-    }
+
 
     React.useEffect(() => {
 
@@ -87,6 +84,7 @@ const Profile = () => {
                         AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
                         console.log(response.data[0])
                         setUserData(response.data[0])
+
                     }
                 }
                 catch (e) {
@@ -391,7 +389,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#1e193b",
         paddingHorizontal: "5%",
         paddingTop: "15%",
-
     }
 });
 
