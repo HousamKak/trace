@@ -14,15 +14,15 @@ const MainPage = () => {
     return (
         <View style={styles.middleButtonView}>
             <View style={styles.footer}>
-                <MainBtn src={require("../../assets/MainPage/profileMainIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("Profile")}></MainBtn>
+                <MainBtn src={require("../../assets/MainPage/profileMainIcon.png")} backgroundColor={styles.Color} onPress={() => navigation.navigate("Profile")}></MainBtn>
             </View>
         </View>)
 }
 
 
 const styles = StyleSheet.create({
-    closeColor: {
-        backgroundColor: "#fb7785",
+    Color: {
+        backgroundColor: "#8a67f4",
     },
     footer: {
         marginTop: "100%",
