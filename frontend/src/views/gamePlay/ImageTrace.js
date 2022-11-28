@@ -8,9 +8,11 @@ import {
 import { useNavigation, } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
 const base_url = "http://192.168.1.102:8000"
 
 const ImageTrace = () => {
+    const [trace, setTrace] = React.useState("")
     const navigation = useNavigation();
 
     React.useEffect(() => {
@@ -32,8 +34,6 @@ const ImageTrace = () => {
                 try {
                     const response = await axios(configurationObject)
                     if (response.status === 200) {
-                        AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
-                        console.log(response.data[0])
                         setUserData(response.data[0])
 
                     }
