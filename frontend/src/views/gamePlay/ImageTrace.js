@@ -13,6 +13,7 @@ const base_url = "http://192.168.1.102:8000"
 
 const ImageTrace = () => {
     const [trace, setTrace] = React.useState({})
+    const [traceImage, setTraceImage] = React.useState({})
     const [profile, setProfile] = React.useState("")
     const navigation = useNavigation();
 
@@ -91,7 +92,7 @@ const ImageTrace = () => {
                     </View>
                 </View>
                 <View style={styles.ImageTrace}>
-                    <Image source={require("../../assets/MenuPage/StrongCat.jpg")} style={styles.Image}></Image>
+                    <Image source={{ uri: trace.file }} style={styles.Image}></Image>
                 </View>
             </ScrollView>
             <View style={styles.footer}>
