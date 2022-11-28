@@ -15,11 +15,9 @@ const ImageTrace = () => {
     React.useEffect(() => {
 
         (async () => {
-            const type=await AsyncStorage.getItem("Type")
-            
-            const token = await AsyncStorage.getItem("token")
-            const parsedToken = JSON.parse(token)
-            if (parsedToken) {
+            const type = await AsyncStorage.getItem("Type")
+            if (type === "self") {
+                const user = await AsyncStorage.getItem("user")
                 const configurationObject = {
                     method: "get",
                     headers: {
@@ -27,18 +25,22 @@ const ImageTrace = () => {
                     },
                     url: base_url + "/user",
                 }
-                try {
-                    const response = await axios(configurationObject)
-                    if (response.status === 200) {
-                        AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
-                        console.log(response.data[0])
-                        setUserData(response.data[0])
+            } else {
 
-                    }
+            }
+
+
+            try {
+                const response = await axios(configurationObject)
+                if (response.status === 200) {
+                    AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
+                    console.log(response.data[0])
+                    setUserData(response.data[0])
+
                 }
-                catch (e) {
-                    console.log(e.message)
-                }
+            }
+            catch (e) {
+                console.log(e.message)
             }
 
             getData("/user/medals/", "medals")
