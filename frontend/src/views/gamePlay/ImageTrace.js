@@ -16,6 +16,15 @@ const ImageTrace = () => {
     const [profile, setProfile] = React.useState("")
     const navigation = useNavigation();
 
+    const [refreshing, setRefreshing] = React.useState(false);
+    const wait = (timeout) => {
+        return new Promise(resolve => setTimeout(resolve, timeout));
+    }
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        wait(500).then(() => setRefreshing(false));
+    }, []);
+
     React.useEffect(() => {
 
         (async () => {
@@ -50,7 +59,7 @@ const ImageTrace = () => {
                 setProfile(profileImage)
             }
             else {
-                setProfileSource(require("../../assets/MenuPage/dummyProfile.png"))
+                setProfile(require("../../assets/MenuPage/dummyProfile.png"))
             }
         })()
 
