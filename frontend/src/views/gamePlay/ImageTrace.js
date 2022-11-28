@@ -17,7 +17,7 @@ const ImageTrace = () => {
 
         (async () => {
             const type = await AsyncStorage.getItem("Type")
-            const trace=await AsyncStorage.getItem("displayTrace")
+            const trace_id=await AsyncStorage.getItem("displayTrace")
             if (type === "self") {
                 const user = await AsyncStorage.getItem("user")
                 const configurationObject = {
@@ -25,7 +25,7 @@ const ImageTrace = () => {
                     headers: {
                         'Authorization': parsedToken,
                     },
-                    url: base_url + "/traces/"+,
+                    url: base_url + "/traces/"+trace_id,
                 }
             } else {
 
