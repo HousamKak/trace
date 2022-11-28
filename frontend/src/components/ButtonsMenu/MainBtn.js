@@ -16,9 +16,9 @@ const MainBtn = (props) => {
 
 const styles = StyleSheet.create({
     rectangleView: {
-        borderRadius: 50,
-        width: 56,
-        height: 53,
+        borderRadius: 100,
+        width: 60,
+        height: 60,
         justifyContent: "center",
         alignItems: "center",
     },
