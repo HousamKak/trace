@@ -8,7 +8,7 @@ import {
 import { useNavigation, } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
+import axios from "axios";
 const base_url = "http://192.168.1.102:8000"
 
 const ImageTrace = () => {
@@ -26,6 +26,7 @@ const ImageTrace = () => {
         wait(500).then(() => setRefreshing(false));
     }, []);
 
+    let user;
     React.useEffect(() => {
 
         (async () => {
@@ -34,12 +35,10 @@ const ImageTrace = () => {
             const trace_id0 = await AsyncStorage.getItem("displayTrace")
             const trace_id = JSON.parse(trace_id0)
             if (type === "self") {
-                const user = await AsyncStorage.getItem("user")
+                const user_prime = await AsyncStorage.getItem("user")
+                user = JSON.parse(user_prime)
                 const configurationObject = {
                     method: "get",
-                    headers: {
-                        'Authorization': parsedToken,
-                    },
                     url: base_url + "/traces/" + trace_id,
                 }
                 try {
@@ -52,17 +51,18 @@ const ImageTrace = () => {
                 catch (e) {
                     console.log(e.message)
                 }
+                if (user.profile) {
+                    const profiledata = user.profile
+                    const profileImage = base_url + profiledata.slice(1)
+                    setProfile(profileImage)
+                }
+                else {
+                    setProfile(require("../../assets/MenuPage/dummyProfile.png"))
+                }
             } else {
 
             }
-            if (user.profile) {
-                const profiledata = user.profile
-                const profileImage = base_url + profiledata.slice(1)
-                setProfile(profileImage)
-            }
-            else {
-                setProfile(require("../../assets/MenuPage/dummyProfile.png"))
-            }
+
         })()
 
     }, [refreshing])
@@ -80,7 +80,7 @@ const ImageTrace = () => {
                     <View style={styles.upperheader}>
                         <View style={styles.rightheader}>
                             <Image source={{ uri: profile }} style={styles.profilePicture}></Image>
-                            <Text style={styles.name}> {user.username}</Text>
+                            {user ? <Text style={styles.name}> {user.username}</Text> : ""}
                         </View>
                         <View style={styles.leftheader}>
                             <Image source={require("../../assets/MenuPage/Friends/addFriendIcon.png")}></Image>
@@ -93,7 +93,7 @@ const ImageTrace = () => {
                     </View>
                 </View>
                 <View style={styles.ImageTrace}>
-                    <Image source={{ uri: trace.file }} style={styles.Image}></Image>
+                    <Image source={{ uri: traceImage }} style={styles.Image}></Image>
                 </View>
             </ScrollView>
             <View style={styles.footer}>
