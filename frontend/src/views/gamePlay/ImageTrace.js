@@ -8,6 +8,7 @@ import {
 import { useNavigation, } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+const base_url = "http://192.168.1.102:8000"
 
 const ImageTrace = () => {
     const navigation = useNavigation();
