@@ -46,6 +46,7 @@ const ImageTrace = () => {
                     const response = await axios(configurationObject)
                     if (response.status === 200) {
                         setTrace(response.data[0])
+                        setTraceImage(base_url + response.data[0].file.slice(1))
                     }
                 }
                 catch (e) {
