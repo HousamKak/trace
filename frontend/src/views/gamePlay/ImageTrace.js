@@ -68,7 +68,12 @@ const ImageTrace = () => {
 
     return (
         <View style={styles.ImageTracePage}>
-            <ScrollView >
+            <ScrollView refreshControl={
+                <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                />
+            }>
                 <View style={styles.header}>
                     <View style={styles.upperheader}>
                         <View style={styles.rightheader}>
