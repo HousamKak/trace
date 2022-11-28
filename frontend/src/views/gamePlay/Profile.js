@@ -82,7 +82,6 @@ const Profile = () => {
                     const response = await axios(configurationObject)
                     if (response.status === 200) {
                         AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
-                        console.log(response.data[0])
                         setUserData(response.data[0])
 
                     }
@@ -100,14 +99,10 @@ const Profile = () => {
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
             if (userData.profile) {
-                setIsEmptyProfile(false)
                 const profiledata = userData.profile
                 const profileImage = base_url + profiledata.slice(1)
                 setProfileSource(profileImage)
-                console.log(profileImage)
-            }
-            else {
-                setProfileSource(require("../../assets/MenuPage/dummyProfile.png"))
+                setIsEmptyProfile(false)
             }
         })()
 
@@ -143,7 +138,7 @@ const Profile = () => {
                 <View style={styles.gear}>
                     <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                 </View>
-                {!isEmptyProfile ? <Image style={styles.profileImage} source={{ uri: profileSource }} /> : <Image style={styles.profileImage} source={profileSource} />}
+                {isEmptyProfile ? <Image key={-2} style={styles.profileImage} source={require("../../assets/MenuPage/dummyProfile.png")} /> : <Image key={-1} style={styles.profileImage} source={{ uri: profileSource }} />}
                 <Text style={styles.name}>{userData.username}</Text>
                 <View style={styles.statusContShape}>
                     <Text style={styles.status}>ADVENTURER</Text>
