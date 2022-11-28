@@ -86,7 +86,7 @@ const ImageTrace = () => {
                         </View>
                     </View>
                     <View style={styles.lowerheader}>
-                        <Text style={styles.title}>Check my Cat</Text>
+                        <Text style={styles.title}>{trace.title}</Text>
                         <Text style={styles.description}>{trace.description}</Text>
                     </View>
                 </View>
