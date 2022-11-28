@@ -10,6 +10,56 @@ import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
 
 const ImageTrace = () => {
     const navigation = useNavigation();
+
+    React.useEffect(() => {
+
+        (async () => {
+            const token = await AsyncStorage.getItem("token")
+            const parsedToken = JSON.parse(token)
+            if (parsedToken) {
+                const configurationObject = {
+                    method: "get",
+                    headers: {
+                        'Authorization': parsedToken,
+                    },
+                    url: base_url + "/user",
+                }
+                try {
+                    const response = await axios(configurationObject)
+                    if (response.status === 200) {
+                        AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
+                        console.log(response.data[0])
+                        setUserData(response.data[0])
+
+                    }
+                }
+                catch (e) {
+                    console.log(e.message)
+                }
+            }
+
+            getData("/user/medals/", "medals")
+            getData("/chests/user/", "userChests")
+            const userChests = await AsyncStorage.getItem("userChests")
+            const userChestsData = JSON.parse(userChests)
+            setChestCount(Object.keys(userChestsData).length)
+            const LoadedMedals = await item("medals", 6, medalImages);
+            setMyMedals(LoadedMedals)
+            if (userData.profile) {
+                setIsEmptyProfile(false)
+                const profiledata = userData.profile
+                const profileImage = base_url + profiledata.slice(1)
+                setProfileSource(profileImage)
+                console.log(profileImage)
+            }
+            else {
+                setProfileSource(require("../../assets/MenuPage/dummyProfile.png"))
+            }
+        })()
+
+    }, [refreshing])
+
+    
     return (
         <View style={styles.ImageTracePage}>
             <ScrollView >
