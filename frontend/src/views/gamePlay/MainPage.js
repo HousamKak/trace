@@ -5,7 +5,7 @@ import {
     StyleSheet,
     View,
 } from "react-native";
-import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
+import MainBtn from "../../components/ButtonsMenu/MainBtn";
 import { useNavigation } from "@react-navigation/native";
 
 
@@ -14,7 +14,7 @@ const MainPage = () => {
     return (
         <View style={styles.middleButtonView}>
             <View style={styles.footer}>
-                <MenuBtn src={require("../../assets/MainPage/profile.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("Profile")}></MenuBtn>
+                <MainBtn src={require("../../assets/MainPage/profileMainIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("Profile")}></MainBtn>
             </View>
         </View>)
 }
