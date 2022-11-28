@@ -16,7 +16,6 @@ const item = async (itemStorageKey, dividor, images) => {
         if (Math.floor(itemsList.length / dividor) > 0) {
             for (var i = 0; i < Math.floor(itemsList.length / dividor); i++) {
                 let savedItem = itemsList.slice(dividor * i, dividor * (i + 1)).map((it) => <Image key={it.id.toString()} source={GetImage(it.title, images)} />)
-                // itemsList.slice(dividor * i, dividor * (i + 1)).map((it) => console.log(it.id.toString()))
                 const rapper = <View style={styles.row}>{savedItem}</View>
                 rapperArray.push(rapper)
             }
@@ -27,8 +26,6 @@ const item = async (itemStorageKey, dividor, images) => {
         }
         else {
             const savedItem = itemsList.map((it) => <Image key={it.id.toString()} source={GetImage(it.title, images)} />)
-            itemsList.map((it) => console.log(it.id.toString()))
-
             const rapper = <View key={-10} style={styles.lastRow}>{savedItem}</View>
             rapperArray.push(rapper)
             return rapperArray
