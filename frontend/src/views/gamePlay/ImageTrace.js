@@ -16,8 +16,10 @@ const ImageTrace = () => {
     React.useEffect(() => {
 
         (async () => {
-            const type = await AsyncStorage.getItem("Type")
-            const trace_id=await AsyncStorage.getItem("displayTrace")
+            const type0 = await AsyncStorage.getItem("Type")
+            const type = JSON.parse(type0)
+            const trace_id0 = await AsyncStorage.getItem("displayTrace")
+            const trace_id = JSON.parse(trace_id0)
             if (type === "self") {
                 const user = await AsyncStorage.getItem("user")
                 const configurationObject = {
@@ -25,7 +27,7 @@ const ImageTrace = () => {
                     headers: {
                         'Authorization': parsedToken,
                     },
-                    url: base_url + "/traces/"+trace_id,
+                    url: base_url + "/traces/" + trace_id,
                 }
             } else {
 
