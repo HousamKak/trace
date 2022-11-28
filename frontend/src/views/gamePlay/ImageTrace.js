@@ -99,7 +99,7 @@ const ImageTrace = () => {
                 </View>
             </ScrollView >
             <View style={styles.footer}>
-                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("myTraces")}></MenuBtn>
             </View>
         </View >
     )
