@@ -43,6 +43,12 @@ const GetImage = (title, images) => {
 };
 
 const styles = StyleSheet.create({
+    noContent: {
+        fontSize: 20,
+        alignSelf: "center",
+        marginTop: 20,
+        color: "#fff"
+    },
     row: {
         flexDirection: "row",
         justifyContent: "space-between",
