@@ -95,10 +95,12 @@ const Profile = () => {
             getData("/chests/user/", "userChests")
             const userChests = await AsyncStorage.getItem("userChests")
             const userChestsData = JSON.parse(userChests)
-            setChestCount(Object.keys(userChestsData).length)
+            if (userChestsData) { setChestCount(Object.keys(userChestsData).length) }
+
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
             if (userData.profile) {
+                
                 const profiledata = userData.profile
                 const profileImage = base_url + profiledata.slice(1)
                 setProfileSource(profileImage)
