@@ -12,7 +12,7 @@ import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolic
 const base_url = "http://192.168.1.102:8000"
 
 const ImageTrace = () => {
-    const [trace, setTrace] = React.useState("")
+    const [trace, setTrace] = React.useState({})
     const navigation = useNavigation();
 
     React.useEffect(() => {
@@ -34,8 +34,7 @@ const ImageTrace = () => {
                 try {
                     const response = await axios(configurationObject)
                     if (response.status === 200) {
-                        setUserData(response.data[0])
-
+                        setTrace(response.data[0])
                     }
                 }
                 catch (e) {
