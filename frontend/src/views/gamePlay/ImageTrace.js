@@ -13,6 +13,7 @@ const base_url = "http://192.168.1.102:8000"
 
 const ImageTrace = () => {
     const [trace, setTrace] = React.useState({})
+    const [profile, setProfile] = React.useState("")
     const navigation = useNavigation();
 
     React.useEffect(() => {
