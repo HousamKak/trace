@@ -29,6 +29,7 @@ const MyTraces = () => {
         if (tracesList) {
             const traceItems = tracesList.map((trace) => <FullCard key={trace.trace_id} text={trace.title} profile={getIcon(trace.file_type)} icon={getIcon(trace.file_type)} noType={0} textOnly={1} onPress={() => {
                 AsyncStorage.setItem("displayTrace",trace.trace_id)
+                AsyncStorage.setItem("Type","self")
                 navigation.navigate("ImageTrace")
             }} />)
             setMyTrace(traceItems)
