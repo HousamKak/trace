@@ -15,6 +15,8 @@ const MainPage = () => {
         <View style={styles.middleButtonView}>
             <View style={styles.footer}>
                 <MainBtn src={require("../../assets/MainPage/profileMainIcon.png")} backgroundColor={styles.Color} onPress={() => navigation.navigate("Profile")}></MainBtn>
+                <MainBtn src={require("../../assets/MainPage/profileMainIcon.png")} backgroundColor={styles.Color} onPress={() => navigation.navigate("Profile")}></MainBtn>
+                <MainBtn src={require("../../assets/MainPage/profileMainIcon.png")} backgroundColor={styles.Color} onPress={() => navigation.navigate("Profile")}></MainBtn>
             </View>
         </View>)
 }
@@ -25,9 +27,11 @@ const styles = StyleSheet.create({
         backgroundColor: "#8a67f4",
     },
     footer: {
+        flexDirection: "row",
         marginTop: "100%",
         alignItems: "center",
         width: "100%",
+        justifyContent: "space-around"
     },
     middleButtonView: {
         backgroundColor: "#302b4f",
