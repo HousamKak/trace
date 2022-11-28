@@ -77,8 +77,8 @@ const ImageTrace = () => {
                 <View style={styles.header}>
                     <View style={styles.upperheader}>
                         <View style={styles.rightheader}>
-                            <Image source={require("../../assets/MenuPage/dummyProfile.png")} style={styles.profilePicture}></Image>
-                            <Text style={styles.name}> Random Text</Text>
+                            <Image source={{uri:profile}} style={styles.profilePicture}></Image>
+                            <Text style={styles.name}> {user.username}</Text>
                         </View>
                         <View style={styles.leftheader}>
                             <Image source={require("../../assets/MenuPage/Friends/addFriendIcon.png")}></Image>
