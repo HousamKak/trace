@@ -29,23 +29,24 @@ const ImageTrace = () => {
                     },
                     url: base_url + "/traces/" + trace_id,
                 }
+                try {
+                    const response = await axios(configurationObject)
+                    if (response.status === 200) {
+                        AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
+                        console.log(response.data[0])
+                        setUserData(response.data[0])
+
+                    }
+                }
+                catch (e) {
+                    console.log(e.message)
+                }
             } else {
 
             }
 
 
-            try {
-                const response = await axios(configurationObject)
-                if (response.status === 200) {
-                    AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
-                    console.log(response.data[0])
-                    setUserData(response.data[0])
 
-                }
-            }
-            catch (e) {
-                console.log(e.message)
-            }
 
             getData("/user/medals/", "medals")
             getData("/chests/user/", "userChests")
