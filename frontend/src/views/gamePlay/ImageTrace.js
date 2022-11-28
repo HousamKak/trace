@@ -97,7 +97,7 @@ const ImageTrace = () => {
                     </View>
                 </View>
                 <View style={styles.ImageTrace}>
-                    {traceImage ? <Image source={{ uri: traceImage }} style={styles.Image}></Image> : ""}
+                    {imageState ? <Image source={{ uri: traceImage }} style={styles.Image}></Image> : ""}
                 </View>
             </ScrollView >
             <View style={styles.footer}>
