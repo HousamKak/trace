@@ -15,6 +15,7 @@ const ImageTrace = () => {
     const [trace, setTrace] = React.useState({})
     const [traceImage, setTraceImage] = React.useState({})
     const [profile, setProfile] = React.useState("")
+    const [userData, setUserData] = React.useState({})
     const navigation = useNavigation();
 
     const [refreshing, setRefreshing] = React.useState(false);
@@ -59,6 +60,8 @@ const ImageTrace = () => {
                 else {
                     setProfile(require("../../assets/MenuPage/dummyProfile.png"))
                 }
+                console.log(traceImage)
+                console.log(user)
             } else {
 
             }
@@ -80,7 +83,7 @@ const ImageTrace = () => {
                     <View style={styles.upperheader}>
                         <View style={styles.rightheader}>
                             <Image source={{ uri: profile }} style={styles.profilePicture}></Image>
-                            {user ? <Text style={styles.name}> {user.username}</Text> : ""}
+                            {/* <Text style={styles.name}> {user.username}</Text> */}
                         </View>
                         <View style={styles.leftheader}>
                             <Image source={require("../../assets/MenuPage/Friends/addFriendIcon.png")}></Image>
