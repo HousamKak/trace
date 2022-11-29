@@ -49,10 +49,13 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 > Here you can find the main screens
 
+| Profile  | Chest  | Image Trace | Video Trace |
+| -----------------| -----|-----|-----|
+| ![Profile](https://github.com/HousamKak/trace/blob/main/demo/figma/profile.png) | ![Chest](https://github.com/HousamKak/trace/blob/main/demo/figma/Chest.png) | ![Image Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/Image.png) | ![Video Trace]([https://github.com/HousamKak/trace/blob/main/demo/figma/Friends.png](https://github.com/HousamKak/trace/blob/main/demo/figma/Video.png))
 
-| Artists results  | Artist's Albums  |
-| -----------------| -----|
-| ![Artists results](https://github.com/julescript/spotifyndr/blob/master/demo/Artists_Page.jpg) | ![Artist's Albums](https://github.com/julescript/spotifyndr/blob/master/demo/Albums_Page.jpg) |
+| Main Frame Demo  | Music Trace  | Add Trace | Splash Screen |
+| -----------------| -----|-----|-----|
+| ![Main Frame Demo](https://github.com/HousamKak/trace/blob/main/demo/figma/main%20frame.png) | ![Music Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/Music.png) | ![Add Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/add%20a%20trace.png) | ![Splash Screen](https://github.com/HousamKak/trace/blob/main/demo/figma/splash.png)
 
 
 <br><br>
