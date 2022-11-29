@@ -31,9 +31,20 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-| Log in Page  | Sign in  | Dob Page | Sign up |
+| Log in Page  | Sign In  | Dob Page | Sign Up |
 | -----------------| -----|-----|-----|
 | ![Log in Page](https://github.com/HousamKak/trace/blob/main/demo/figma/Log_in%20_page.png) | ![Sign in](https://github.com/HousamKak/trace/blob/main/demo/figma/Sign%20in.png) | ![Dob Page](https://github.com/HousamKak/trace/blob/main/demo/figma/dob%20page.png) | ![Sign up](https://github.com/HousamKak/trace/blob/main/demo/figma/Sign%20up.png)
+
+| Middle Button  | Saved  | My Traces | Friends |
+| -----------------| -----|-----|-----|
+| ![Middle Button](https://github.com/HousamKak/trace/blob/main/demo/figma/Middle%20button.png) | ![Saved](https://github.com/HousamKak/trace/blob/main/demo/figma/Saved.png) | ![My Traces](https://github.com/HousamKak/trace/blob/main/demo/figma/my%20traces.png) | ![Friends](https://github.com/HousamKak/trace/blob/main/demo/figma/Friends.png)
+
+| Scripts | Items  |
+| -----------------| -----}
+| ![Scripts](https://github.com/HousamKak/trace/blob/main/demo/figma/Scripts.png) | ![Items](https://github.com/HousamKak/trace/blob/main/demo/figma/Items.png) | 
+
+
+
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
