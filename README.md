@@ -76,9 +76,9 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
-| Landing  | Home/Search  |
-| -----------------| -----|
-| ![Landing](https://github.com/julescript/spotifyndr/blob/master/demo/Landing_Page.jpg) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+| Main Frame Demo  | Music Trace  | Add Trace |
+| -----------------| -----|-----|
+| ![Main Frame Demo](https://github.com/HousamKak/trace/blob/main/demo/figma/main%20frame.png) | ![Music Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/Music.png) | ![Add Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/add%20a%20trace.png)
 
 
 <br><br>
