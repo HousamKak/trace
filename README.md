@@ -127,10 +127,9 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
    npm install
    ```
    
-### Unity App can be found here
-```sh
-talk
-```
+### You can find the android unity app here. Location tracking in the application is working.
+
+
 <br><br>
 <img src="./readme/title7.svg"/>
 > Note that React Native app works on both android and ios devices
