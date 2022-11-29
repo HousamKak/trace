@@ -78,17 +78,17 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 
 | Sign Up New Account  |Log In New Account  | Log Out |
 | -----------------| -----|-----|
-| ![Sign Up New Account](https://github.com/HousamKak/trace/blob/main/demo/figma/main%20frame.png) | ![Log In New Account](https://github.com/HousamKak/trace/blob/main/demo/figma/Music.png) | ![Log Out](https://github.com/HousamKak/trace/blob/main/demo/figma/add%20a%20trace.png)
+| ![Sign Up New Account](https://github.com/HousamKak/trace/blob/main/demo/application/sign%20up%20new%20account.gif) | ![Log In New Account](https://github.com/HousamKak/trace/blob/main/demo/application/log%20in%20new%20account.gif) | ![Log Out](https://github.com/HousamKak/trace/blob/main/demo/application/log%20out.gif)
 
 
 | Logging In Current Account  | Show Profile  | Show Middle Button |
 | -----------------| -----|-----|
-| ![Logging In Current Account](https://github.com/HousamKak/trace/blob/main/demo/figma/main%20frame.png) | ![Show Profile](https://github.com/HousamKak/trace/blob/main/demo/figma/Music.png) | ![Show Middle Button](https://github.com/HousamKak/trace/blob/main/demo/figma/add%20a%20trace.png)
+| ![Logging In Current Account](https://github.com/HousamKak/trace/blob/main/demo/application/logging%20in%20current.gif) | ![Show Profile](https://github.com/HousamKak/trace/blob/main/demo/application/show%20profile.gif) | ![Show Middle Button](https://github.com/HousamKak/trace/blob/main/demo/application/show%20middle%20button.gif)
 
 
 | Update Profile  | Remove Image  | Add Trace |
 | -----------------| -----|-----|
-| ![Update Profile](https://github.com/HousamKak/trace/blob/main/demo/figma/main%20frame.png) | ![Remove Image](https://github.com/HousamKak/trace/blob/main/demo/figma/Music.png) | ![Add Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/add%20a%20trace.png)
+| ![Update Profile](https://github.com/HousamKak/trace/blob/main/demo/application/updating%20profile.gif) | ![Remove Image](https://github.com/HousamKak/trace/blob/main/demo/application/remove%20image.gif) | ![Add Trace](https://github.com/HousamKak/trace/blob/main/demo/application/adding%20trace.gif)
 
 
 <br><br>
