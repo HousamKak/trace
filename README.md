@@ -76,6 +76,8 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 
 > Uing the above mentioned tech stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
+> First React Native screens
+
 | Sign Up New Account  |Log In New Account |Log Out |
 | -----------------|-----|-----|
 | ![Sign Up New Account](https://github.com/HousamKak/trace/blob/main/demo/application/sign%20up%20new%20account.gif) | ![Log In New Account](https://github.com/HousamKak/trace/blob/main/demo/application/log%20in%20new%20account.gif) | ![Log Out](https://github.com/HousamKak/trace/blob/main/demo/application/log%20out.gif)
@@ -90,6 +92,12 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 | -----------------| -----|-----|
 | ![Update Profile](https://github.com/HousamKak/trace/blob/main/demo/application/updating%20profile.gif) | ![Remove Image](https://github.com/HousamKak/trace/blob/main/demo/application/remove%20image.gif) | ![Add Trace](https://github.com/HousamKak/trace/blob/main/demo/application/adding%20trace.gif)
 
+> Second Unity
+> On the left you can see the app in development mode with a previously defined path. The application is a location based game using mapbox api for maps. On the right you can see the app on an andriod device.
+
+| App in development  | App on andriod  |
+| -----------------| -----|-----|
+| ![Update Profile](https://github.com/HousamKak/trace/blob/main/demo/application/updating%20profile.gif) | ![Remove Image](https://github.com/HousamKak/trace/blob/main/demo/application/remove%20image.gif) | 
 
 <br><br>
 <img src="./readme/title6.svg"/>
