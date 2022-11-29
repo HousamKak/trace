@@ -74,11 +74,19 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 <br><br>
 <img src="./readme/title5.svg"/>
 
-> Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
+> Uing the above mentioned tech stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
-| Sign Up New Account  |Log In New Account  | Log Out |
-| -----------------| -----|-----|
-| ![Sign Up New Account](https://github.com/HousamKak/trace/blob/main/demo/application/sign%20up%20new%20account.gif) | ![Log In New Account](https://github.com/HousamKak/trace/blob/main/demo/application/log%20in%20new%20account.gif) | ![Log Out](https://github.com/HousamKak/trace/blob/main/demo/application/log%20out.gif)
+| Sign Up New Account  |
+| -----------------| 
+| ![Sign Up New Account](https://github.com/HousamKak/trace/blob/main/demo/application/sign%20up%20new%20account.gif) | 
+
+|Log In New Account 
+|-----|
+![Log In New Account](https://github.com/HousamKak/trace/blob/main/demo/application/log%20in%20new%20account.gif) | 
+
+ | Log Out |
+ |-----|
+ ![Log Out](https://github.com/HousamKak/trace/blob/main/demo/application/log%20out.gif)
 
 
 | Logging In Current Account  | Show Profile  | Show Middle Button |
