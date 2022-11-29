@@ -51,7 +51,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Profile  | Chest  | Image Trace | Video Trace |
 | -----------------| -----|-----|-----|
-| ![Profile](https://github.com/HousamKak/trace/blob/main/demo/figma/profile.png) | ![Chest](https://github.com/HousamKak/trace/blob/main/demo/figma/Chest.png) | ![Image Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/Image.png) | ![Video Trace]([https://github.com/HousamKak/trace/blob/main/demo/figma/Friends.png](https://github.com/HousamKak/trace/blob/main/demo/figma/Video.png))
+| ![Profile](https://github.com/HousamKak/trace/blob/main/demo/figma/profile.png) | ![Chest](https://github.com/HousamKak/trace/blob/main/demo/figma/Chest.png) | ![Image Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/Image.png) | ![Video Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/Video.png)
 
 | Main Frame Demo  | Music Trace  | Add Trace | Splash Screen |
 | -----------------| -----|-----|-----|
