@@ -31,9 +31,9 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-| Log in Page  | Sign in  | Dob Page | SignUp |
+| Log in Page  | Sign in  | Dob Page | Sign up |
 | -----------------| -----|-----|-----|
-| ![Landing](https://github.com/HousamKak/trace/blob/main/demo/figma/Log_in%20_page.png) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+| ![Log in Page](https://github.com/HousamKak/trace/blob/main/demo/figma/Log_in%20_page.png) | ![Sign in](https://github.com/HousamKak/trace/blob/main/demo/figma/Sign%20in.png) | ![Dob Page](https://github.com/HousamKak/trace/blob/main/demo/figma/dob%20page.png) | ![Sign up](https://github.com/HousamKak/trace/blob/main/demo/figma/Sign%20up.png)
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
