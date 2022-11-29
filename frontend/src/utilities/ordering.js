@@ -22,15 +22,13 @@ const item = async (itemStorageKey, dividor, images) => {
             const remainingItems = itemsList.slice(dividor * i).map((it) => <Image key={it.id.toString()} source={GetImage(it.title, images)} />)
             const rapper = <View style={styles.lastRow}>{remainingItems}</View>
             rapperArray.push(rapper)
-            const savedItems = rapperArray.map((rap) => rap)
-            return savedItems
+            return rapperArray
         }
         else {
             const savedItem = itemsList.map((it) => <Image key={it.id.toString()} source={GetImage(it.title, images)} />)
-            const rapper = <View style={styles.lastRow}>{savedItem}</View>
+            const rapper = <View key={-10} style={styles.lastRow}>{savedItem}</View>
             rapperArray.push(rapper)
-            const savedItems = rapperArray.map((rap) => rap)
-            return savedItems
+            return rapperArray
         }
     }
     else {
@@ -45,6 +43,12 @@ const GetImage = (title, images) => {
 };
 
 const styles = StyleSheet.create({
+    noContent: {
+        fontSize: 20,
+        alignSelf: "center",
+        marginTop: 20,
+        color: "#fff"
+    },
     row: {
         flexDirection: "row",
         justifyContent: "space-between",

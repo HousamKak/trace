@@ -7,17 +7,84 @@ import {
 } from "react-native";
 import { useNavigation, } from "@react-navigation/native";
 import MenuBtn from "../../components/ButtonsMenu/MenuBtn";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
+const base_url = "http://192.168.1.102:8000"
 
 const ImageTrace = () => {
+    const [trace, setTrace] = React.useState({})
+    const [traceImage, setTraceImage] = React.useState({})
+    const [profile, setProfile] = React.useState("")
+    const [userData, setUserData] = React.useState({})
+    const [imageState, setImageState] = React.useState(false)
     const navigation = useNavigation();
+
+    const [refreshing, setRefreshing] = React.useState(false);
+    const wait = (timeout) => {
+        return new Promise(resolve => setTimeout(resolve, timeout));
+    }
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        wait(500).then(() => setRefreshing(false));
+    }, []);
+
+    React.useEffect(() => {
+
+        (async () => {
+            const type0 = await AsyncStorage.getItem("Type")
+            const type = JSON.parse(type0)
+            const trace_id0 = await AsyncStorage.getItem("displayTrace")
+            const trace_id = JSON.parse(trace_id0)
+            if (type === "self") {
+                const user_prime = await AsyncStorage.getItem("user")
+                const user = JSON.parse(user_prime)
+                setUserData(user)
+                const configurationObject = {
+                    method: "get",
+                    url: base_url + "/traces/" + trace_id,
+                }
+                try {
+                    const response = await axios(configurationObject)
+                    if (response.status === 200) {
+                        setTrace(response.data[0])
+                        const traceImageValue = base_url + response.data[0].file.slice(1)
+                        setTraceImage(traceImageValue)
+                        setImageState(true)
+                    }
+                }
+                catch (e) {
+                    console.log(e.message)
+                }
+                if (user.profile) {
+                    const profiledata = user.profile
+                    const profileImage = base_url + profiledata.slice(1)
+                    setProfile(profileImage)
+                }
+                else {
+                    setProfile(require("../../assets/MenuPage/dummyProfile.png"))
+                }
+            } else {
+
+            }
+
+        })()
+
+    }, [refreshing])
+
+
     return (
         <View style={styles.ImageTracePage}>
-            <ScrollView >
+            <ScrollView refreshControl={
+                <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                />
+            }>
                 <View style={styles.header}>
                     <View style={styles.upperheader}>
                         <View style={styles.rightheader}>
-                            <Image source={require("../../assets/MenuPage/dummyProfile.png")} style={styles.profilePicture}></Image>
-                            <Text style={styles.name}> Random Text</Text>
+                            {profile ? <Image source={{ uri: profile }} style={styles.profilePicture}></Image> : ""}
+                            <Text style={styles.name}> {userData.username}</Text>
                         </View>
                         <View style={styles.leftheader}>
                             <Image source={require("../../assets/MenuPage/Friends/addFriendIcon.png")}></Image>
@@ -25,19 +92,18 @@ const ImageTrace = () => {
                         </View>
                     </View>
                     <View style={styles.lowerheader}>
-                        <Text style={styles.title}>Check my Cat</Text>
-                        <Text style={styles.description}>This is some random text and the likes are
-                            whatever you think they are.</Text>
+                        <Text style={styles.title}>{trace.title}</Text>
+                        <Text style={styles.description}>{trace.description}</Text>
                     </View>
                 </View>
                 <View style={styles.ImageTrace}>
-                    <Image source={require("../../assets/MenuPage/StrongCat.jpg")} style={styles.Image}></Image>
+                    {imageState ? <Image source={{ uri: traceImage }} style={styles.Image}></Image> : ""}
                 </View>
-            </ScrollView>
+            </ScrollView >
             <View style={styles.footer}>
-                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MyTraces")}></MenuBtn>
             </View>
-        </View>
+        </View >
     )
 };
 
@@ -47,6 +113,7 @@ const styles = StyleSheet.create({
         resizeMode: "stretch",
         width: "100%",
         borderRadius: 20,
+        height: 800,
     },
     ImageTrace: {
         backgroundColor: "#302b4f",
@@ -60,6 +127,7 @@ const styles = StyleSheet.create({
     profilePicture: {
         height: 50,
         width: 50,
+        borderRadius: 50,
     },
     rightheader: {
         flexDirection: "row",

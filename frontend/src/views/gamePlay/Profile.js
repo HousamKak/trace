@@ -36,6 +36,7 @@ const Profile = () => {
     const [errorMsg, setErrorMsg] = React.useState(null);
     const [modalVisible, setModalVisible] = React.useState(false);
     const [usernameModalVisible, setUsernameModalVisible] = React.useState(false);
+    const [trackUpdate, setTrackUpdate] = React.useState(0)
 
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
@@ -63,53 +64,52 @@ const Profile = () => {
             }
         }
     }
-    const forceStateUpdate = () => {
-        const [forceState, setForceState] = React.useState(0);
-        return () => setForceState(forceState + 1);
-    }
+
 
     React.useEffect(() => {
 
         (async () => {
-            const token = await AsyncStorage.getItem("token")
-            const parsedToken = JSON.parse(token)
-            if (parsedToken) {
-                const configurationObject = {
-                    method: "get",
-                    headers: {
-                        'Authorization': parsedToken,
-                    },
-                    url: base_url + "/user",
-                }
-                try {
-                    const response = await axios(configurationObject)
-                    if (response.status === 200) {
-                        AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
-                        console.log(response.data[0])
-                        setUserData(response.data[0])
+
+            if (trackUpdate) {
+                setTrackUpdate(0)
+                const token = await AsyncStorage.getItem("token")
+                const parsedToken = JSON.parse(token)
+                if (parsedToken) {
+                    const configurationObject = {
+                        method: "get",
+                        headers: {
+                            'Authorization': parsedToken,
+                        },
+                        url: base_url + "/user",
+                    }
+                    try {
+                        const response = await axios(configurationObject)
+                        if (response.status === 200) {
+                            AsyncStorage.clearItem("user")
+                            AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
+                            setUserData(response.data[0])
+                        }
+                    }
+                    catch (e) {
+                        console.log(e.message)
                     }
                 }
-                catch (e) {
-                    console.log(e.message)
-                }
+            } else {
+                const sameUserData = await AsyncStorage.getItem("user")
+                setUserData(JSON.parse(sameUserData))
             }
-
             getData("/user/medals/", "medals")
             getData("/chests/user/", "userChests")
             const userChests = await AsyncStorage.getItem("userChests")
             const userChestsData = JSON.parse(userChests)
-            setChestCount(Object.keys(userChestsData).length)
+            if (userChestsData) { setChestCount(Object.keys(userChestsData).length) }
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
             if (userData.profile) {
-                setIsEmptyProfile(false)
                 const profiledata = userData.profile
                 const profileImage = base_url + profiledata.slice(1)
                 setProfileSource(profileImage)
-                console.log(profileImage)
-            }
-            else {
-                setProfileSource(require("../../assets/MenuPage/dummyProfile.png"))
+                setIsEmptyProfile(false)
             }
         })()
 
@@ -128,6 +128,8 @@ const Profile = () => {
             const response = await axios(configurationObject)
             if (response.status !== 200) {
                 setErrorMsg("Something went wrong. Try again later.")
+            } else {
+                setTrackUpdate(1)
             }
         }
         catch (e) { console.log(e.message) }
@@ -145,7 +147,7 @@ const Profile = () => {
                 <View style={styles.gear}>
                     <MenuBtn src={require("../../assets/MenuPage/MenuButtons/gear.png")} backgroundColor={{ backgroundColor: "#302b4f" }} onPress={() => { setModalVisible(!modalVisible) }}></MenuBtn>
                 </View>
-                {!isEmptyProfile ? <Image style={styles.profileImage} source={{ uri: profileSource }} /> : <Image style={styles.profileImage} source={profileSource} />}
+                {isEmptyProfile ? <Image key={-2} style={styles.profileImage} source={require("../../assets/MenuPage/dummyProfile.png")} /> : <Image key={-1} style={styles.profileImage} source={{ uri: profileSource }} />}
                 <Text style={styles.name}>{userData.username}</Text>
                 <View style={styles.statusContShape}>
                     <Text style={styles.status}>ADVENTURER</Text>
@@ -234,7 +236,7 @@ const Profile = () => {
                 </Modal>
             </View>
             <View style={styles.footer}>
-                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MiddleButton")}></MenuBtn>
+                <MenuBtn src={require("../../assets/MenuPage/MenuButtons/closeIcon.png")} backgroundColor={styles.closeColor} onPress={() => navigation.navigate("MainPage")}></MenuBtn>
             </View>
         </View >
     )
@@ -391,7 +393,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#1e193b",
         paddingHorizontal: "5%",
         paddingTop: "15%",
-
     }
 });
 

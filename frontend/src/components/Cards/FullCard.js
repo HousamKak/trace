@@ -7,6 +7,7 @@ const FullCard = (props) => {
         <TouchableOpacity
             style={styles.rectangleView}
             activeOpacity={0.2}
+            onPress={props.onPress}
         >
             <View style={styles.leftCont}>
                 {props.textOnly ? "" : <Image source={props.profile} style={styles.profileSize} />}
