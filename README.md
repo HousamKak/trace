@@ -64,7 +64,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 Here's a brief high-level overview of the tech stack the Trace app uses, as it is seperated into two main parts:
 
-- In the first part of this project, I used the [React Native](https://reactnative.dev/) with the [Expo](https://expo.dev/) framework For user interface. React Native is an open-source UI software framework created by Meta Platforms, Inc. It is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows and UWP by enabling developers to use the React framework along with native platform capabilities.
+- In the first part of this project, I used the [React Native](https://reactnative.dev/) with the [Expo](https://expo.dev/) framework For the user interface. React Native is an open-source UI software framework created by Meta Platforms, Inc. It is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows and UWP by enabling developers to use the React framework along with native platform capabilities.
 - The database used was MySQL.
 - The second part of this project was done using [Unity 3d](https://unity.com/). Unity is a cross-platform game engine developed by Unity Technologies. The main frame that was mentioned in the demo above was done using Unity, in a different way than shown.
 - Currently the project is still seperated, and each part is still standalone. Linking between the two frameworks is the next step.
@@ -124,20 +124,16 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
    ```
 <br><br>
 <img src="./readme/title7.svg"/>
 > Note that React Native app works on both android and ios devices
 - Linking between the two frameworks is needed. The app might move from react native expo to the normal react native because it makes it easier to link with unity
+- Adding the video and the music traces
