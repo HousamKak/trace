@@ -40,7 +40,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 | ![Middle Button](https://github.com/HousamKak/trace/blob/main/demo/figma/Middle%20button.png) | ![Saved](https://github.com/HousamKak/trace/blob/main/demo/figma/Saved.png) | ![My Traces](https://github.com/HousamKak/trace/blob/main/demo/figma/my%20traces.png) | ![Friends](https://github.com/HousamKak/trace/blob/main/demo/figma/Friends.png)
 
 | Scripts | Items  |
-| -----------------| -----}
+| -----------------| -----| 
 | ![Scripts](https://github.com/HousamKak/trace/blob/main/demo/figma/Scripts.png) | ![Items](https://github.com/HousamKak/trace/blob/main/demo/figma/Items.png) | 
 
 
