@@ -76,9 +76,19 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
-| Main Frame Demo  | Music Trace  | Add Trace |
+| Sign Up New Account  |Log In New Account  | Log Out |
 | -----------------| -----|-----|
-| ![Main Frame Demo](https://github.com/HousamKak/trace/blob/main/demo/figma/main%20frame.png) | ![Music Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/Music.png) | ![Add Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/add%20a%20trace.png)
+| ![Sign Up New Account](https://github.com/HousamKak/trace/blob/main/demo/figma/main%20frame.png) | ![Log In New Account](https://github.com/HousamKak/trace/blob/main/demo/figma/Music.png) | ![Log Out](https://github.com/HousamKak/trace/blob/main/demo/figma/add%20a%20trace.png)
+
+
+| Logging In Current Account  | Show Profile  | Show Middle Button |
+| -----------------| -----|-----|
+| ![Logging In Current Account](https://github.com/HousamKak/trace/blob/main/demo/figma/main%20frame.png) | ![Show Profile](https://github.com/HousamKak/trace/blob/main/demo/figma/Music.png) | ![Show Middle Button](https://github.com/HousamKak/trace/blob/main/demo/figma/add%20a%20trace.png)
+
+
+| Update Profile  | Remove Image  | Add Trace |
+| -----------------| -----|-----|
+| ![Update Profile](https://github.com/HousamKak/trace/blob/main/demo/figma/main%20frame.png) | ![Remove Image](https://github.com/HousamKak/trace/blob/main/demo/figma/Music.png) | ![Add Trace](https://github.com/HousamKak/trace/blob/main/demo/figma/add%20a%20trace.png)
 
 
 <br><br>
