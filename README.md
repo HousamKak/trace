@@ -131,3 +131,4 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 > Note that React Native app works on both android and ios devices
 - Linking between the two frameworks is needed. The app might move from react native expo to the normal react native because it makes it easier to link with unity
 - Adding the video and the music traces
+- Add seeding to the repository for local trial
