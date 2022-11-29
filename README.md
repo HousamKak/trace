@@ -99,7 +99,7 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 | -----------------|
 | ![App in development Demo](https://github.com/HousamKak/trace/blob/main/demo/application/unity%20dev.gif) |
 
-> On the right you can see the app on an andriod device.
+> Here you can see the app on an andriod device.
 
 |App on andriod  |
 |-----|
