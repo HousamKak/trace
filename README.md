@@ -76,7 +76,7 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 
 > Uing the above mentioned tech stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
-> First React Native screens
+### First React Native screens
 
 | Sign Up New Account  |Log In New Account |Log Out |
 | -----------------|-----|-----|
@@ -92,7 +92,7 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 | -----------------| -----|-----|
 | ![Update Profile](https://github.com/HousamKak/trace/blob/main/demo/application/updating%20profile.gif) | ![Remove Image](https://github.com/HousamKak/trace/blob/main/demo/application/remove%20image.gif) | ![Add Trace](https://github.com/HousamKak/trace/blob/main/demo/application/adding%20trace.gif)
 
-> Second Unity
+### Second Unity
 > Here you can see the app in development mode with a previously defined path. The application is a location based game using mapbox api for maps. 
 
 | App in development Demo  | 
