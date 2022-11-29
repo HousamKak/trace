@@ -36,6 +36,7 @@ const Profile = () => {
     const [errorMsg, setErrorMsg] = React.useState(null);
     const [modalVisible, setModalVisible] = React.useState(false);
     const [usernameModalVisible, setUsernameModalVisible] = React.useState(false);
+    const [trackUpdate, setTrackUpdate] = React.useState(false)
 
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
@@ -68,6 +69,7 @@ const Profile = () => {
     React.useEffect(() => {
 
         (async () => {
+
             const token = await AsyncStorage.getItem("token")
             const parsedToken = JSON.parse(token)
             if (parsedToken) {
@@ -81,6 +83,7 @@ const Profile = () => {
                 try {
                     const response = await axios(configurationObject)
                     if (response.status === 200) {
+                        AsyncStorage.clearItem("user")
                         AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
                         setUserData(response.data[0])
 
@@ -100,7 +103,7 @@ const Profile = () => {
             const LoadedMedals = await item("medals", 6, medalImages);
             setMyMedals(LoadedMedals)
             if (userData.profile) {
-                
+
                 const profiledata = userData.profile
                 const profileImage = base_url + profiledata.slice(1)
                 setProfileSource(profileImage)
