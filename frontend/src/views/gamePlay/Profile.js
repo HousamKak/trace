@@ -85,7 +85,6 @@ const Profile = () => {
                     try {
                         const response = await axios(configurationObject)
                         if (response.status === 200) {
-                            AsyncStorage.clearItem("user")
                             AsyncStorage.setItem("user", JSON.stringify(response.data[0]))
                             setUserData(response.data[0])
                         }
@@ -108,6 +107,7 @@ const Profile = () => {
             if (userData.profile) {
                 const profiledata = userData.profile
                 const profileImage = base_url + profiledata.slice(1)
+                console.log(profileImage)
                 setProfileSource(profileImage)
                 setIsEmptyProfile(false)
             }
