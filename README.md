@@ -93,11 +93,13 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 | ![Update Profile](https://github.com/HousamKak/trace/blob/main/demo/application/updating%20profile.gif) | ![Remove Image](https://github.com/HousamKak/trace/blob/main/demo/application/remove%20image.gif) | ![Add Trace](https://github.com/HousamKak/trace/blob/main/demo/application/adding%20trace.gif)
 
 > Second Unity
-> On the left you can see the app in development mode with a previously defined path. The application is a location based game using mapbox api for maps. On the right you can see the app on an andriod device.
+> Here you can see the app in development mode with a previously defined path. The application is a location based game using mapbox api for maps. 
 
 | App in development Demo  | 
 | -----------------|
 | ![App in development Demo](https://github.com/HousamKak/trace/blob/main/demo/application/unity%20dev.gif) |
+
+> On the right you can see the app on an andriod device.
 
 |App on andriod  |
 |-----|
