@@ -125,6 +125,7 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 2. navigate to trace folder and install NPM packages
    ```sh
    npm install
+   npm install dotenv mysql2 bcrypt jsonwebtoken
    ```
 3. Install expo go application
 
