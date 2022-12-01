@@ -120,7 +120,7 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
 
 1. Clone the repo
    ```sh
-   https://github.com/HousamKak/trace.git
+   git clone https://github.com/HousamKak/trace.git
    ```
 2. navigate to trace folder and install NPM packages
    ```sh
