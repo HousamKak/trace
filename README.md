@@ -122,11 +122,17 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
    ```sh
    https://github.com/HousamKak/trace.git
    ```
-2. Install NPM packages
+2. navigate to trace folder and install NPM packages
    ```sh
    npm install
    ```
-   
+3. Install expo go application
+
+4. Navigate to frotend folder and run
+   ```sh
+   npm start
+   ```
+ 
 You can find the android unity app [here](https://drive.google.com/file/d/1RlRgOy4_pFaL0gYwkMKLbL85R1396XaL/view?usp=share_link). Location tracking in the application is working.
 
 
