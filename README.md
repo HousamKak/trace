@@ -128,7 +128,7 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
    ```
 3. Install expo go application
 
-4. Navigate to frotend folder and run
+4. Navigate to frontend folder and run
    ```sh
    npm start
    ```
