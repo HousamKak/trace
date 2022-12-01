@@ -132,6 +132,7 @@ Here's a brief high-level overview of the tech stack the Trace app uses, as it i
    ```sh
    npm start
    ```
+   Then scan the QR code
  
 You can find the android unity app [here](https://drive.google.com/file/d/1RlRgOy4_pFaL0gYwkMKLbL85R1396XaL/view?usp=share_link). Location tracking in the application is working.
 
